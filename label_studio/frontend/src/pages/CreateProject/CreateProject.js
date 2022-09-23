@@ -53,9 +53,9 @@ export const CreateProject = ({ onClose }) => {
   const rootClass = cn("create-project");
   const tabClass = rootClass.elem("tab");
   const steps = {
-    name: <span className={tabClass.mod({ disabled: !!error })}>Project Name</span>,
-    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>Data Import</span>,
-    config: "Labeling Setup",
+    name: <span className={tabClass.mod({ disabled: !!error })}>1. Project Name</span>,  
+    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>2. Data Import</span>,
+    config: "3. Labeling Setup",
   };
 
   // name intentionally skipped from deps:
