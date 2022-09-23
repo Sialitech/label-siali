@@ -32,6 +32,7 @@ services:
     depends_on:
       - db
     environment:
+      - DISABLE_SIGNUP_WITHOUT_LINK=true
       - DJANGO_DB=default
       - POSTGRE_NAME=postgres
       - POSTGRE_USER=postgres
