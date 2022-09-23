@@ -1,3 +1,23 @@
+
+# Resumen 
+
+- Para ejecutar basta con hacer `docker-compose up` si quiere compilar los contenedores antes debes introducir por terminal `export DOCKER_BUILDKIT=1`
+
+- Por defecto esta desactivado el **registro de usuarios** (no se muestra en el login y si se accede directamente retorna error). Si quieres activarlo solo tienes que editar la variable de entorno DISABLE_SIGNUP_WITHOUT_LINK y ponerla a valor False (deberás hacerlo la primera vez para tener un usuario y volver a ponerlo a True). [+info](https://labelstud.io/guide/signup.html) 
+
+
+- Para personalozar el formulario al crear un proyecto hay que modificar label_studio/frontend/src/pages/CreateProject/CreateProject.js 
+
+
+- En la parte del frontend tenemos dos subproyectos con su repositorio son: frontend y dm2. Se necesitan para poder personalizar ciertas cosas de la interfaz, y necesitar compilar en react y pasar los archivos resultantes al label-studio.[+inf](https://www.youtube.com/watch?v=QSGgiXie2SE) 
+## Personalizacion
+
+  - Para editar los modos de etiquetado (eliminar los que no necesites) por grupo pasta con editar label_studio/annotation_templates/groups.txt, si lo que quieres el eliminar uno en concreto deberás ir al grupo correspondiente (en label_studio/annotation_templates) y eliminar el tipo de etiquetado en concreto
+
+  - Para cambiar los iconos principales hay que ir al proyecto principal (la carpeta core) y sustituir los archivos correspondiente en label_studio/core/static/images 
+
+
+#####################################################################
 <img src="https://raw.githubusercontent.com/heartexlabs/label-studio/master/images/ls_github_header.png"/>
 
 ![GitHub](https://img.shields.io/github/license/heartexlabs/label-studio?logo=heartex) ![label-studio:build](https://github.com/heartexlabs/label-studio/workflows/label-studio:build/badge.svg) ![GitHub release](https://img.shields.io/github/v/release/heartexlabs/label-studio?include_prereleases)
