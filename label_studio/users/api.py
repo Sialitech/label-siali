@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
     tags=['Users'],
     operation_summary='Save user details',
     operation_description="""
-    Save details for a specific user, such as their name or contact information, in Label Studio.
+    Save details for a specific user, such as their name or contact information, in Siali labeling.
     """,
     manual_parameters=[
         openapi.Parameter(
@@ -44,18 +44,18 @@ logger = logging.getLogger(__name__)
 @method_decorator(name='list', decorator=swagger_auto_schema(
         tags=['Users'],
         operation_summary='List users',
-        operation_description='List the users that exist on the Label Studio server.'
+        operation_description='List the users that exist on the Siali labeling server.'
     ))
 @method_decorator(name='create', decorator=swagger_auto_schema(
         tags=['Users'],
         operation_summary='Create new user',
-        operation_description='Create a user in Label Studio.',
+        operation_description='Create a user in Siali labeling.',
         request_body=UserSerializer
     ))
 @method_decorator(name='retrieve', decorator=swagger_auto_schema(
         tags=['Users'],
         operation_summary='Get user info',
-        operation_description='Get info about a specific Label Studio user, based on the user ID.',
+        operation_description='Get info about a specific Siali labeling user, based on the user ID.',
         manual_parameters = [
             openapi.Parameter(
                 name='id',
@@ -68,7 +68,7 @@ logger = logging.getLogger(__name__)
         tags=['Users'],
         operation_summary='Update user details',
         operation_description="""
-        Update details for a specific user, such as their name or contact information, in Label Studio.
+        Update details for a specific user, such as their name or contact information, in Siali labeling.
         """,
         manual_parameters=[
             openapi.Parameter(
@@ -82,7 +82,7 @@ logger = logging.getLogger(__name__)
 @method_decorator(name='destroy', decorator=swagger_auto_schema(
         tags=['Users'],
         operation_summary='Delete user',
-        operation_description='Delete a specific Label Studio user.',
+        operation_description='Delete a specific Siali labeling user.',
         manual_parameters=[
             openapi.Parameter(
                 name='id',

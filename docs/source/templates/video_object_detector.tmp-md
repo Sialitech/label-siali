@@ -6,7 +6,7 @@ cat: videos
 order: 803
 is_new: t
 meta_title: Video Object Detection Data Labeling Template
-meta_description: Template for detecting objects in videos with Label Studio for your machine learning and data science projects.
+meta_description: Template for detecting objects in videos with Siali labeling for your machine learning and data science projects.
 ---
 
 ## Labeling Configuration

@@ -46,7 +46,7 @@ sentry.init_sentry(release_name='label-studio', release_version=__version__)
 from label_studio.core.utils.common import collect_versions
 versions = collect_versions()
 
-# in Label Studio Community version, feature flags are always ON
+# in Siali labeling Community version, feature flags are always ON
 FEATURE_FLAGS_DEFAULT_VALUE = True
 # or if file is not set, default is using offline mode
 FEATURE_FLAGS_OFFLINE = get_bool_env('FEATURE_FLAGS_OFFLINE', True)

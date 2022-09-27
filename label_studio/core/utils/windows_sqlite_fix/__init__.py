@@ -34,7 +34,7 @@ def start_fix():
         zip_ref.extractall('.')
 
     print('finished')
-    print(colorama.Fore.LIGHTGREEN_EX + '\nPlease restart Label Studio to load the updated sqlite.dll\n')
+    print(colorama.Fore.LIGHTGREEN_EX + '\nPlease restart Siali labeling to load the updated sqlite.dll\n')
     print(colorama.Fore.WHITE)
     exit()
 
@@ -84,7 +84,7 @@ def windows_dll_fix():
         agree = 'n'
         if not auto_agree:
             print(colorama.Fore.WHITE +
-                  'Label Studio can try to resolve this issue by downloading the correct '
+                  'Siali labeling can try to resolve this issue by downloading the correct '
                   'sqlite.dll from https://sqlite.org in the current directory, '
                   'do you want to proceed? \n [y/n] > ', end='')
             agree = input()

@@ -104,8 +104,8 @@ class ProjectFilterSet(FilterSet):
     operation_description="""
     Return a list of the projects that you've created.
 
-    To perform most tasks with the Label Studio API, you must specify the project ID, sometimes referred to as the `pk`.
-    To retrieve a list of your Label Studio projects, update the following command to match your own environment.
+    To perform most tasks with the Siali labeling API, you must specify the project ID, sometimes referred to as the `pk`.
+    To retrieve a list of your Siali labeling projects, update the following command to match your own environment.
     Replace the domain name, port, and authorization token, then run the following from the command line:
     ```bash
     curl -X GET {}/api/projects/ -H 'Authorization: Token abc123'
@@ -116,7 +116,7 @@ class ProjectFilterSet(FilterSet):
     tags=['Projects'],
     operation_summary='Create new project',
     operation_description="""
-    Create a project and set up the labeling interface in Label Studio using the API.
+    Create a project and set up the labeling interface in Siali labeling using the API.
     
     ```bash
     curl -H Content-Type:application/json -H 'Authorization: Token abc123' -X POST '{}/api/projects' \

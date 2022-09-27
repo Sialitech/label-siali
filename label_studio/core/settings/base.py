@@ -1,7 +1,7 @@
 """This file and its contents are licensed under the Apache License 2.0. Please see the included NOTICE for copyright information and LICENSE for a copy of the license.
 """
 """
-Django Base settings for Label Studio.
+Django Base settings for Siali labeling.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/3.1/topics/settings/
@@ -332,7 +332,7 @@ SWAGGER_SETTINGS = {
             'in': 'header',
             'description':
                 'The token (or API key) must be passed as a request header. '
-                'You can find your user token on the User Account page in Label Studio. Example: '
+                'You can find your user token on the User Account page in Siali labeling. Example: '
                 '<br><pre><code class="language-bash">'
                 'curl https://label-studio-host/api/projects -H "Authorization: Token [your-token]"'
                 '</code></pre>'
@@ -417,7 +417,7 @@ RANDOM_NEXT_TASK_SAMPLE_SIZE = int(get_env('RANDOM_NEXT_TASK_SAMPLE_SIZE', 50))
 TASK_API_PAGE_SIZE_MAX = int(get_env('TASK_API_PAGE_SIZE_MAX', 0)) or None
 
 # Email backend
-FROM_EMAIL = get_env('FROM_EMAIL', 'Label Studio <hello@labelstud.io>')
+FROM_EMAIL = get_env('FROM_EMAIL', 'Siali labeling <hello@labelstud.io>')
 EMAIL_BACKEND = get_env('EMAIL_BACKEND', 'django.core.mail.backends.dummy.EmailBackend')
 
 ENABLE_LOCAL_FILES_STORAGE = get_bool_env('ENABLE_LOCAL_FILES_STORAGE', default=True)

@@ -157,7 +157,7 @@ class OrganizationAPI(generics.RetrieveUpdateAPIView):
 @method_decorator(name='get', decorator=swagger_auto_schema(
         tags=["Invites"],
         operation_summary='Get organization invite link',
-        operation_description='Get a link to use to invite a new member to an organization in Label Studio Enterprise.',
+        operation_description='Get a link to use to invite a new member to an organization in Siali labeling Enterprise.',
         responses={200: OrganizationInviteSerializer()}
     ))
 class OrganizationInviteAPI(APIView):

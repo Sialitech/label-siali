@@ -5,8 +5,8 @@
   "icons": [
   ],
   "lang": "en-US",
-  "name": "Label Studio",
-  "short_name": "label studio",
+  "name": "Siali labeling",
+  "short_name": "Siali labeling",
   "start_url": "./menu",
   "theme_color": "#4fc08d"
 }

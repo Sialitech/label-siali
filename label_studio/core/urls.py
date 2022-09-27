@@ -35,7 +35,7 @@ handler500 = 'core.views.custom_500'
 versions = collect_versions()
 schema_view = get_schema_view(
     openapi.Info(
-        title="Label Studio API",
+        title="Siali labeling API",
         default_version='v' + versions['release'],
         contact=openapi.Contact(url="https://labelstud.io"),
         x_logo={"url": "../../static/icons/logo-black.svg"}

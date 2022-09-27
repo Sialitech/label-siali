@@ -440,13 +440,13 @@
 
     function removeLabelStudioMention(text) {
       return text
-        .replace(/into Label Studio$/g, '')
-        .replace(/in Label Studio$/g, '')
-        .replace(/with Label Studio$/g, '')
-        .replace(/by Label Studio$/g, '')
-        .replace(/for Label Studio$/g, '')
-        .replace(/from Label Studio$/g, '')
-        .replace(/Label Studio$/g, '')
+        .replace(/into Siali labeling$/g, '')
+        .replace(/in Siali labeling$/g, '')
+        .replace(/with Siali labeling$/g, '')
+        .replace(/by Siali labeling$/g, '')
+        .replace(/for Siali labeling$/g, '')
+        .replace(/from Siali labeling$/g, '')
+        .replace(/Siali labeling$/g, '')
     };
 
     function makeLink(h) {
