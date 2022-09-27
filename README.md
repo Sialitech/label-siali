@@ -16,7 +16,8 @@
 
   - Para cambiar los iconos principales hay que ir al proyecto principal (la carpeta core) y sustituir los archivos correspondiente en label_studio/core/static/images 
 
-
+  - Sea modificado la creación y el guardado de usuarios para que se pueda modificar la organización en los archivos label_studio/server.py y label_studio/server.py. Al crear un usuario hay que proporcionar el nombre de la organización, sea hace mediante la variable de entorno ORGANIZATION (creada en docker-compose)
+  
 #####################################################################
 <img src="https://raw.githubusercontent.com/heartexlabs/label-studio/master/images/ls_github_header.png"/>
 

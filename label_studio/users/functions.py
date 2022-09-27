@@ -12,6 +12,7 @@ from django.core.files.images import get_image_dimensions
 from organizations.models import Organization
 from core.utils.contextlog import ContextLog
 from core.utils.common import load_func
+import os
 
 
 def hash_upload(instance, filename):
@@ -59,7 +60,9 @@ def save_user(request, next_page, user_form):
         org = Organization.objects.first()
         org.add_user(user)
     else:
-        org = Organization.create_organization(created_by=user, title='Label Studio')
+        org = Organization.create_organization(
+            created_by=user, title=os.environ.get('ORGANIZATION')
+            or 'Siali')
     user.active_organization = org
     user.save(update_fields=['active_organization'])
 

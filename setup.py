@@ -22,12 +22,12 @@ with open('deploy/requirements.txt') as f:
 setuptools.setup(
     name=label_studio.package_name,
     version=label_studio.__version__,
-    author='Heartex',
-    author_email="hello@heartex.ai",
-    description='Label Studio annotation tool',
+    author='Siali',
+    author_email="info@sialitech.com",
+    description='Siali labeling annotation tool',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/heartexlabs/label-studio',
+    url='https://github.com/Sialitech/label-studio',
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[
