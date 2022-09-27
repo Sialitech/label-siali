@@ -204,7 +204,7 @@ export const Menubar = ({
 
                 <VersionNotifier showNewVersion/>
 
-                <Menu.Item
+                {/* <Menu.Item
                   label="API"
                   href="/docs/api"
                   icon={<IconTerminal/>}
@@ -240,7 +240,7 @@ export const Menubar = ({
                   active={sidebarPinned}
                 >
                   {sidebarPinned ?  "Unpin menu" : "Pin menu"}
-                </Menu.Item>
+                </Menu.Item> */}
 
               </Menu>
             </Dropdown>
