@@ -2,7 +2,7 @@ export const recipes = [
   {
     title: "Bbox object detection",
     type: "community",
-    group: "Computer Vision",
+    group: "Project Type",
     image: "bbox.png",
     details: `<h1>Simple object detection</h1>
     <p>Sample config to label with bboxes</p>
@@ -18,7 +18,7 @@ export const recipes = [
   {
     title: "Polygon labeling",
     type: "community",
-    group: "Computer Vision",
+    group: "Project Type",
     image: "polygon.png",
     details: ``,
     config: `<View>
