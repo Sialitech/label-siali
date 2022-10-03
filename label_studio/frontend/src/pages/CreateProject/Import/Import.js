@@ -300,14 +300,10 @@ export const ImportPage = ({
               <div className={dropzoneClass.elem("content")}>
                 <header>Drag & drop files here<br/>or click to browse</header>
                 <IconUpload height="64" className={dropzoneClass.elem("icon")} />
-                <dl>
-                  <dt>Text</dt><dd>txt</dd>
-                  <dt>Audio</dt><dd>wav, aiff, mp3, au, flac, m4a, ogg</dd>
-                  <dt>Images</dt><dd>jpg, png, gif, bmp, svg, webp</dd>
-                  <dt>HTML</dt><dd>html, htm, xml</dd>
-                  <dt>Time Series</dt><dd>csv, tsv</dd>
-                  <dt>Common Formats</dt><dd>csv, tsv, txt, json</dd>
-                </dl>
+                <p>
+                  Here we can upload images that we will label, which will be used to train our AI. 
+                  Press the "Upload images" button and select those you want to start tagging.
+                </p>
               </div>
             </label>
           )}
