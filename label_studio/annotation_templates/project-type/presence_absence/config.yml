@@ -1,8 +1,8 @@
-title: Object Detection with Bounding Boxes
+title: Presence/Absence
 type: community
 group: Project Type
 order: 3
-image: /static/templates/object-detection-with-bounding-boxes.png
+image: /static/templates/presence_absence.jpg
 details: <h1>Draw a bounding box around the object</h1>
 config: |
   <View>
