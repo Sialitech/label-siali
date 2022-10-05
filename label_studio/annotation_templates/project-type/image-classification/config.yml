@@ -1,7 +1,7 @@
-title: Image Classification
+title: Classification
 type: community
-group: Computer Vision
-image: /static/templates/image-classification.png
+group: Project Type
+image: /static/templates/classification.jpg
 details: <h1>Classify the image</h1>
 config: |
   <View>

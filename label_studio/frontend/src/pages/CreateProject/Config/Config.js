@@ -333,7 +333,7 @@ const Configurator = ({ columns, config, project, template, setTemplate, onBrows
       <div className={configClass.elem("container")}>
         <header>
           <button onClick={onBrowse}>Browse Templates</button>
-          <ToggleItems items={{ code: "Code", visual: "Visual" }} active={configure} onSelect={onSelect} />
+          {/* <ToggleItems items={{ code: "Code", visual: "Visual" }} active={configure} onSelect={onSelect} /> */}
         </header>
         <div className={configClass.elem('editor')}>
           {configure === "code" && (
@@ -351,9 +351,9 @@ const Configurator = ({ columns, config, project, template, setTemplate, onBrows
           {visualLoaded && (
             <div className={configClass.elem("visual")} style={{ display: configure === "visual" ? undefined : "none" }}>
               {isEmptyConfig(config) && <EmptyConfigPlaceholder />}
-              <ConfigureColumns columns={columns} project={project} template={template} />
+              {/* <ConfigureColumns columns={columns} project={project} template={template} /> */}
               {template.controls.map(control => <ConfigureControl control={control} template={template} key={control.getAttribute("name")} />)}
-              <ConfigureSettings template={template} />
+              {/* <ConfigureSettings template={template} /> */}
             </div>
           )}
         </div>
