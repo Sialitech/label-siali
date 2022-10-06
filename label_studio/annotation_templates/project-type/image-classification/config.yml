@@ -7,9 +7,8 @@ config: |
   <View>
     <Image name="image" value="$image"/>
     <Choices name="choice" toName="image">
-      <Choice value="Adult content"/>
-      <Choice value="Weapons" />
-      <Choice value="Violence" />
+      <Choice value="Purgue" />
+      <Choice value="Screw" />
     </Choices>
   </View>
 
