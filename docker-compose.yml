@@ -3,7 +3,7 @@ version: "3.9"
 services:
   nginx:
     build: .
-    image: heartexlabs/label-studio:latest
+    # image: heartexlabs/label-studio:latest
     ports:
       - "8080:8085"
       - "8081:8086"
@@ -26,7 +26,7 @@ services:
     stdin_open: true
     tty: true
     build: .
-    image: heartexlabs/label-studio:latest
+    # image: heartexlabs/label-studio:latest
     expose:
       - "8000"
     depends_on:
@@ -41,6 +41,8 @@ services:
       - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
       - JSON_LOG=1
 #      - LOG_LEVEL=DEBUG
+#   Activar o desactivar signup
+      - DISABLE_SIGNUP_WITHOUT_LINK=false
     volumes:
       - ./mydata:/label-studio/data:rw
     command: label-studio-uwsgi
