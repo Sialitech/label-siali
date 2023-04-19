@@ -56,8 +56,8 @@ const Footer = () => {
   return (
     <Modal.Footer>
       <IconInfo className={importClass.elem("info-icon")} width="20" height="20" />
-      See the&nbsp;documentation to <a target="_blank" href="https://labelstud.io/guide/predictions.html">import preannotated data</a>{" "}
-      or&nbsp;to <a target="_blank" href="https://labelstud.io/guide/storage.html">sync data from a&nbsp;database or&nbsp;cloud storage</a>.
+      {/* See the&nbsp;documentation to <a target="_blank" href="https://labelstud.io/guide/predictions.html">import preannotated data</a>{" "}
+      or&nbsp;to <a target="_blank" href="https://labelstud.io/guide/storage.html">sync data from a&nbsp;database or&nbsp;cloud storage</a>. */}
     </Modal.Footer>
   );
 };
@@ -307,7 +307,7 @@ export const ImportPage = ({
               <div className={dropzoneClass.elem("content")}>
                 <header>Drag & drop files here<br/>or click to browse</header>
                 <IconUpload height="64" className={dropzoneClass.elem("icon")} />
-                <dl>
+                {/* <dl>
                   <dt>Text</dt><dd>txt</dd>
                   <dt>Audio</dt><dd>wav, aiff, mp3, au, flac, m4a, ogg</dd>
                   <dt>Video</dt><dd>mpeg4/H.264 webp, webm*</dd>
@@ -315,12 +315,12 @@ export const ImportPage = ({
                   <dt>HTML</dt><dd>html, htm, xml</dd>
                   <dt>Time Series</dt><dd>csv, tsv</dd>
                   <dt>Common Formats</dt><dd>csv, tsv, txt, json</dd>
-                </dl>
-                <b>
+                </dl> */}
+                {/* <b>
                    * – Support depends on the browser<br/>
                    * – Use <a href="https://labelstud.io/guide/storage.html" target="_blank">
                   Cloud Storages</a> if you want to import a large number of files
-                </b>
+                </b> */}
               </div>
             </label>
           )}
