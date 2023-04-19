@@ -1,22 +1,22 @@
 ---
 NOTE: Don't user release_notes.md, it's automatically built from onprem/*.md files on hexo server run!   
 
-title: On-Premise Release Notes for Label Studio Enterprise
+title: On-Premise Release Notes for Siali Label Enterprise
 short: On-Premise Release Notes
 type: guide
 tier: enterprise
 order: 221
 order_enterprise: 142
 section: "Reference"
-meta_title: On-premise Release notes for Label Studio Enterprise
-meta_description: Discover what's new and improved, and review bug fixes, in the release notes and changelog for Label Studio Enterprise.
+meta_title: On-premise Release notes for Siali Label Enterprise
+meta_description: Discover what's new and improved, and review bug fixes, in the release notes and changelog for Siali Label Enterprise.
 ---
 
 !!! info 
-    The release notes for Label Studio Community Edition is available on the <a href="https://github.com/heartexlabs/label-studio/releases"> Label Studio GitHub repository</a>.
+    The release notes for Siali Label Community Edition is available on the <a href="https://github.com/heartexlabs/label-studio/releases"> Siali Label GitHub repository</a>.
 
 !!! info 
-    The release notes for Label Studio Enterprise Cloud (SaaS) is available <a href="https://heartex.com/changelog">here</a>.
+    The release notes for Siali Label Enterprise Cloud (SaaS) is available <a href="https://heartex.com/changelog">here</a>.
 
 <a name="243md"></a>
 
@@ -32,7 +32,7 @@ The migration process can be performed without any downtime. The steps required 
 
 The old chart `heartex/label-studio-enterprise` **has been deprecated**. Support for as many releases as possible will be provided. A notification will be posted in the Release Notes section when this changes. We hope that this revised chart will meet your technical needs. If you have any questions or concerns, please don't hesitate to reach out to us.
   
-## Label Studio Enterprise 2.4.3
+## Siali Label Enterprise 2.4.3
 ### Improvements
 - Support simultaneous render of multi-channel audio with added splitchannels="true" option on Audio config (larger memory requirement) [LSDV-3028](https://labelstudio.aha.io/features/LSDV-3028)
 - Allow selecting task automatically on Data Manager page whenever the user presses shift+up/down [LSDV-3093](https://labelstudio.aha.io/features/LSDV-3093)
@@ -60,7 +60,7 @@ The old chart `heartex/label-studio-enterprise` **has been deprecated**. Support
 
 <a name="242md"></a>
 
-## Label Studio Enterprise 2.4.2
+## Siali Label Enterprise 2.4.2
 ### New Feature
 - Labels are not displayed inside the regions [LSDV-1142](https://labelstudio.aha.io/features/LSDV-1142)
 - Add YOLO support for PolygonLabels in export options [LSDV-2973](https://labelstudio.aha.io/features/LSDV-2973)
@@ -100,7 +100,7 @@ The old chart `heartex/label-studio-enterprise` **has been deprecated**. Support
 
 <a name="241md"></a>
 
-## Label Studio Enterprise 2.4.1
+## Siali Label Enterprise 2.4.1
 
 ### New features and enhancements 
 - Add project annotation history API [DEV-4170]
@@ -134,8 +134,8 @@ The old chart `heartex/label-studio-enterprise` **has been deprecated**. Support
 
 <a name="240md"></a>
 
-## Label Studio Enterprise 2.4.0
-This section highlights the new features and enhancements, and bug fixes in Label Studio Enterprise 2.4.
+## Siali Label Enterprise 2.4.0
+This section highlights the new features and enhancements, and bug fixes in Siali Label Enterprise 2.4.
 
 ### New features and enhancements 
 - The [Comments and Notifications](/guide/comments_notifications.html) feature allows you to discuss task issues and other problems during labeling and reviewing processes.
@@ -214,17 +214,17 @@ This section highlights the new features and enhancements, and bug fixes in Labe
 
 <a name="231md"></a>
 
-## Label Studio Enterprise 2.3.1
-This section highlights the breaking changes, new features and enhancements, and bug fixes in Label Studio Enterprise 2.3.1.
+## Siali Label Enterprise 2.3.1
+This section highlights the breaking changes, new features and enhancements, and bug fixes in Siali Label Enterprise 2.3.1.
 
 ### Breaking changes
-Label Studio Enterprise 2.3.1 includes the following breaking change:
+Siali Label Enterprise 2.3.1 includes the following breaking change:
 
 -  This release moves Nginx to a sidecar container [DEV-3318].
 -  After the announcement in LSE 2.2.9, Minio was still supported. Now, this release finally decommissions MinIO as a service [DEV-3702].
 
 ### New features and enhancements 
-Label Studio Enterprise 2.3.1 introduces the following new features and enhancements.
+Siali Label Enterprise 2.3.1 introduces the following new features and enhancements.
 
 - Allows annotators and reviewers to filter the view of transcriptions by author name [DEV-2669].
 - Improve project list performance by hydrating counters in a second request [DEV-2575].
@@ -274,7 +274,7 @@ Label Studio Enterprise 2.3.1 introduces the following new features and enhancem
 - The region navigation now works in scrolling (list) mode [DEV-3543].
 
 ### Bug fixes
-Label Studio 2.3.1 includes the following bug fixes:
+Siali Label 2.3.1 includes the following bug fixes:
 
 - Fixed an issue where unfinished polygons should save as draft and remain in open state if left unclosed [DEV-2432].
 - Retained history on initial load of annotation review stream [DEV-2437].
@@ -463,18 +463,18 @@ Label Studio 2.3.1 includes the following bug fixes:
 - Added edit/delete comment functionality [DEV-2993].
 - Addressed the issue when the dynamic `Choices` was saved with the incorrect/empty value [DEV-3701].
 - Updated swagger docs for `AllStorage` APIs [DEV-2914].
-- Added example output for `HyperTextLabels` in the Label Studio documentation suite [DEV-3632].
+- Added example output for `HyperTextLabels` in the Siali Label documentation suite [DEV-3632].
 
 <a name="22md"></a>
 
-## Label Studio Enterprise 2.2 Final
+## Siali Label Enterprise 2.2 Final
 
-This section highlights the new features and enhancements in Label Studio Enterprise 2.2.
+This section highlights the new features and enhancements in Siali Label Enterprise 2.2.
 
 ### New features and enhancements 
-Label Studio Enterprise 2.2 introduces the following new features and enhancements.
+Siali Label Enterprise 2.2 introduces the following new features and enhancements.
 
-- Label Studio Enterprise 2.2 introduces the System for Cross-domain Identity Management (SCIM) version 2.0 standard. System for Cross-domain Identity Management (SCIM) is a popular protocol to manage access for services and applications across an organization. Use the [SCIM guide](scim_setup.html) to set up SCIM integration to manage access to Label Studio Enterprise in your organization.
+- Siali Label Enterprise 2.2 introduces the System for Cross-domain Identity Management (SCIM) version 2.0 standard. System for Cross-domain Identity Management (SCIM) is a popular protocol to manage access for services and applications across an organization. Use the [SCIM guide](scim_setup.html) to set up SCIM integration to manage access to Siali Label Enterprise in your organization.
 
 
    <i>Check the following video tutorial about SCIM and Okta setup.</i>
@@ -520,12 +520,12 @@ Label Studio Enterprise 2.2 introduces the following new features and enhancemen
     <i>Figure 5: Lead Time column in Data Manager. </i>
     
 
-## Label Studio Enterprise 2.2.10 
+## Siali Label Enterprise 2.2.10 
 
-This section highlights the bug fixes in Label Studio Enterprise 2.2.10.
+This section highlights the bug fixes in Siali Label Enterprise 2.2.10.
 
 ### Bug fixes
-Label Studio 2.2.10 includes the following bug fixes:
+Siali Label 2.2.10 includes the following bug fixes:
 
 #### Backend 
 - Per label score for `Choices` was calculated when `no Choice` was selected [DEV-2688].
@@ -538,17 +538,17 @@ Label Studio 2.2.10 includes the following bug fixes:
 
 <a name="229md"></a>
 
-## Label Studio Enterprise 2.2.9
+## Siali Label Enterprise 2.2.9
 
-This section highlights the breaking changes, new features and enhancements, and bug fixes in Label Studio Enterprise 2.2.9. 
+This section highlights the breaking changes, new features and enhancements, and bug fixes in Siali Label Enterprise 2.2.9. 
 
 ### Breaking changes
-Label Studio Enterprise 2.2.9 includes the following breaking change:
+Siali Label Enterprise 2.2.9 includes the following breaking change:
 
 - This release decommissions MinIO as a service [DEV-2600].
 
 ### New features and enhancements 
-Label Studio Enterprise 2.2.9 introduces the following new features and enhancements.
+Siali Label Enterprise 2.2.9 introduces the following new features and enhancements.
 
 #### Backend
 - This release provides proxy support for content-range HTTP responses [DEV-2496].
@@ -562,7 +562,7 @@ Label Studio Enterprise 2.2.9 introduces the following new features and enhancem
 - This release introduces [Dynamic Labels templates](https://labelstud.io/templates/gallery_dynamic_labels.html#main). You can now show labels dynamically as a task input, either as a prediction from the model or from a database lookup. With a broader set of options, dynamic labeling saves time and increases the consistency of labeling the objects [DEV-2636]. 
 
 ### Bug fixes
-Label Studio 2.2.9 includes the following bug fixes:
+Siali Label 2.2.9 includes the following bug fixes:
 
 #### Backend
 - Optimized dashboard-members API performance for reviews [DEV-1669].
@@ -611,12 +611,12 @@ Label Studio 2.2.9 includes the following bug fixes:
 
 <a name="228md"></a>
 
-## Label Studio Enterprise 2.2.8
+## Siali Label Enterprise 2.2.8
 
-This section highlights the breaking changes, new features and enhancements, and bug fixes in Label Studio Enterprise 2.2.8. 
+This section highlights the breaking changes, new features and enhancements, and bug fixes in Siali Label Enterprise 2.2.8. 
 
 ### New features and enhancements
-Label Studio Enterprise 2.2.8 introduces the following new features and enhancements.
+Siali Label Enterprise 2.2.8 introduces the following new features and enhancements.
 
 - This release displays comments in **DM** to reviewers [DEV-2598].
 - Support for [Redis Secure Sockets Layer (SSL)](#Secure-access-to-Redis-storage) [DEV-1768].
@@ -629,7 +629,7 @@ Label Studio Enterprise 2.2.8 introduces the following new features and enhancem
 - Add the ability to pass a comment to APIs on skip [DEV-2458].
 
 ### Bugfixes
-Label Studio 2.2.8 includes the following bug fixes:
+Siali Label 2.2.8 includes the following bug fixes:
 
 - Per label score for Choices was calculated when no Choice was selected (hotfix-7) [DEV-2688].
 - Fixed Rotating bounding box bugs (hotfix-4) [DEV-2647]

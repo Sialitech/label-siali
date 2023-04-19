@@ -4,13 +4,13 @@ type: blog
 tier: all
 order: 50
 meta_title: Chatbot response generation with HuggingFace's GPT2 model
-meta_description: Label Studio tutorial for Chatbot response generation with HuggingFace's GPT2 model
+meta_description: Siali Label tutorial for Chatbot response generation with HuggingFace's GPT2 model
 
 ---
 
 
 If you want to build a new chatbot, or just experiment with GPT-based text generators, this [Machine Learning backend](/guide/ml.html) example is for you! Powered by [HuggingFace's Transformers library](https://github.com/huggingface/transformers), 
-it connects a GPT2-like language model to the Label Studio UI, giving you an opportunity to explore different text responses based on the chat history.
+it connects a GPT2-like language model to the Siali Label UI, giving you an opportunity to explore different text responses based on the chat history.
 
 
 Follow this installation guide and then play around with the results. Generate your next superpowered chatbot dataset by editing, removing, or adding new phrases!
@@ -27,7 +27,7 @@ Follow this installation guide and then play around with the results. Generate y
     label-studio-ml start my-ml-backend
     ```
 
-2. Start Label Studio and create a new project.
+2. Start Siali Label and create a new project.
    
 3. In the project **Settings**, set up the **Labeling Interface**.
    

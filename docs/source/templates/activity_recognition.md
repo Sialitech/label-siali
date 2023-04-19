@@ -5,7 +5,7 @@ category: Time Series Analysis
 cat: time-series-analysis
 order: 703
 meta_title: Activity Recognition Data Labeling Template
-meta_description: Template for labeling human activity recognition in a time series using Label Studio for your machine learning and data science projects.
+meta_description: Template for labeling human activity recognition in a time series using Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/activity-recognition.png" alt="" class="gif-border" width="552px" height="408px" />

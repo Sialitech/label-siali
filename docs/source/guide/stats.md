@@ -6,29 +6,29 @@ type: guide
 order: 300
 order_enterprise: 114
 meta_title: Data Labeling Statistics
-meta_description: Label Studio Enterprise documentation about task agreement, annotator consensus, and other data annotation statistics for data labeling and machine learning projects.
+meta_description: Siali Label Enterprise documentation about task agreement, annotator consensus, and other data annotation statistics for data labeling and machine learning projects.
 section: "Quality control"
 ---
 
-Label Studio Enterprise Edition includes various annotation and labeling statistics. The open source Community Edition of Label Studio does not perform these statistical calculations. If you're using Label Studio Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Label Studio Features</a> to learn more.
+Siali Label Enterprise Edition includes various annotation and labeling statistics. The open source Community Edition of Siali Label does not perform these statistical calculations. If you're using Siali Label Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Siali Label Features</a> to learn more.
 
 Annotation statistics help you determine the quality of your dataset, its readiness to be used to train models, and assess the performance of your annotators and reviewers.
 
 
 ## Task agreement
 
-Task agreement shows the consensus between multiple annotators when labeling the same task. There are several types of task agreement in Label Studio Enterprise:
+Task agreement shows the consensus between multiple annotators when labeling the same task. There are several types of task agreement in Siali Label Enterprise:
 - a per-task agreement score, visible on the Data Manager page for a project. This displays how well the annotations on a particular task match across annotators. 
 - an inter-annotator agreement matrix, visible on the Members page for a project. This displays how well the annotations from specific annotators agree with each other in general, or for specific tasks. 
 
 You can also see how the annotations from a specific annotator compare to the prediction scores for a task, or how they compare to the ground truth labels for a task.
 
-For more about viewing agreement in Label Studio Enterprise, see [Verify model and annotator performance](quality.html#Verify-model-and-annotator-performance).
+For more about viewing agreement in Siali Label Enterprise, see [Verify model and annotator performance](quality.html#Verify-model-and-annotator-performance).
 
 
 ## Agreement method
 
-The agreement method defines how [agreement scores](stats.html#Agreement-score) across all annotations for a task are combined to form a single inter-annotator agreement score. Label Studio uses the mean average of all inter-annotation agreement scores for each annotation pair as the final task agreement score. 
+The agreement method defines how [agreement scores](stats.html#Agreement-score) across all annotations for a task are combined to form a single inter-annotator agreement score. Siali Label uses the mean average of all inter-annotation agreement scores for each annotation pair as the final task agreement score. 
 
 Review the diagram for a full explanation:
 <div style="text-align:center"><img alt="Diagram showing annotations are collected for each task, agreement scores are computed for each pair, the resulting scores are averaged for a task." width=800 height=365 src="/images/LSE/stats-no_grouping.png"/></div>
@@ -49,7 +49,7 @@ The agreement score assesses the similarity of annotations for a specific task.
 
 ### Available agreement metrics
 
-The following table lists the agreement metrics available in Label Studio Enterprise. If you want to use a different agreement metric, you can [create a custom agreement metric](custom_metric.html).
+The following table lists the agreement metrics available in Siali Label Enterprise. If you want to use a different agreement metric, you can [create a custom agreement metric](custom_metric.html).
 
 | Agreement Metric | Tag | Labeling Type | Description |
 | --- | --- | --- | --- | 
@@ -163,7 +163,7 @@ For two given task annotations `x` and `y`, the agreement score formula is `m(x,
 - For paragraphs of dialogue annotations, the span is defined by the `startOffset` and `endOffset` keys. 
 
 #### Intersection over union with other metrics 
-The IoU metric can be combined with other metrics. Several metrics in Label Studio Enterprise use IoU to establish initial agreement across annotations, then computes the [precision](#precision-example), [recall](#recall-example), or [F1-score](#f1-score-example) for the IoU values above a specific threshold. Text IoU can also include the [edit distance algorithm](#edit-distance-algorithm-example).
+The IoU metric can be combined with other metrics. Several metrics in Siali Label Enterprise use IoU to establish initial agreement across annotations, then computes the [precision](#precision-example), [recall](#recall-example), or [F1-score](#f1-score-example) for the IoU values above a specific threshold. Text IoU can also include the [edit distance algorithm](#edit-distance-algorithm-example).
 
 ### Intersection over union with threshold
 

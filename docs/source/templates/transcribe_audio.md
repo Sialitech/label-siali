@@ -5,7 +5,7 @@ category: Audio/Speech Processing
 cat: audio-speech-processing
 order: 301
 meta_title: Audio Transcription Data Labeling Template
-meta_description: Template for audio transcription for automatic speech recognition use cases with Label Studio for your machine learning and data science projects.
+meta_description: Template for audio transcription for automatic speech recognition use cases with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/automatic-speech-recognition.png" alt="" class="gif-border" width="552px" height="408px" />

@@ -142,9 +142,9 @@ Also you can check them on LSE SAML settings page `/saml/settings`:
 
 When working with an [external Cloud Storage connection (S3, GCS, Azure)](https://docs.heartex.com/guide/storage.html), there are few things to bear in mind:
 
-1. Label Studio doesn’t import the data stored in the bucket, but instead creates references to the objects. Therefore, you have full access control on the data to be synced and shown on the labeling screen.
+1. Siali Label doesn’t import the data stored in the bucket, but instead creates references to the objects. Therefore, you have full access control on the data to be synced and shown on the labeling screen.
 2. The **Sync** with the bucket is only one way - it’s either creating tasks from objects on the bucket (Source storage) or pushing annotations to the output bucket (Target storage). Changing something on the bucket side doesn’t guarantee consistency in results.
-3. It is recommended to use a separate bucket folders for each Label Studio project.
+3. It is recommended to use a separate bucket folders for each Siali Label project.
 
 ### When I click Sync, I don't see my data in project
 
@@ -152,7 +152,7 @@ When working with an [external Cloud Storage connection (S3, GCS, Azure)](https:
 Go to the cloud storage settings page, click on **Edit** cloud storage connection card settings and check the following:
 
 1. **File Filter Regex** is set and correct. When no filters are specified, all found items are skipped. The filter should be a valid regular expression, not a wildcard (e.g. `.*` is a valid, `*.` not valid)
-2. **Treat every bucket object as a source file** should be `ON` if you work with images, audio, text files or any other binary content stored in the bucket. It instructs Label Studio to create URI endpoints and store this as a labeling task payload, and resolve them into presigned https URLs when opening the labeling screen. If you store [JSON tasks in the Label Studio format](https://docs.heartex.com/guide/task_format.html) in your bucket - turn this toggle `OFF`
+2. **Treat every bucket object as a source file** should be `ON` if you work with images, audio, text files or any other binary content stored in the bucket. It instructs Siali Label to create URI endpoints and store this as a labeling task payload, and resolve them into presigned https URLs when opening the labeling screen. If you store [JSON tasks in the Siali Label format](https://docs.heartex.com/guide/task_format.html) in your bucket - turn this toggle `OFF`
 3. Sometimes the sync process doesn’t start immediately. That is because syncing process is based on internal job scheduler. Please wait, if nothing happens during long period of time - contact us via  form, and please provide the time when you launched the “Sync” job
 4. An easy way to check rq workers is to run an export: go to the Data manager, click Export, and create a new snapshot and download the JSON file. If you see an Error, most likely your rq workers have problems. Another way to check rq workers - login as a superuser and go to /django-rq page. You should see a `workers` column, `workers` values shouldn’t be 0 as far as failed column should be empty (0).
 
@@ -167,7 +167,7 @@ Diagnostic steps:
 1. Try to enable “Treat every bucket object”. Do you see tasks in DM? If yes, go to (2).
 2. Try to disable “Treat every bucket objects”. If you don’t see tasks in DM, your bucket doesn’t have GET permission, seems like it has LIST permission only.
 
-Why does it happen? Because for (1) Label Studio scans bucket and doesn’t read objects, it needs to check existence only. In (2) Label Studio reads data, because it has to extract your JSON files to LS DB. 
+Why does it happen? Because for (1) Siali Label scans bucket and doesn’t read objects, it needs to check existence only. In (2) Siali Label reads data, because it has to extract your JSON files to LS DB. 
 
 
 ### When I click Sync, I see my tasks in the Data Manager, but there is the CORS error inside of tasks
@@ -258,7 +258,7 @@ The most common issues when you import prediction and annotations:
 ### Check labeling configuration
 
 
-[Label Studio offers a very flexible labeling configuration interface](https://docs.heartex.com/guide/setup.html#Set-up-the-labeling-interface-for-your-project) that allows you to combine various input / output data formats and apply custom styles and layouts. For example, users can specify a custom layout by injecting CSS code using [`<Style>`](https://docs.heartex.com/tags/style.html)[ component](https://docs.heartex.com/tags/style.html). At the same time, improperly built style definitions can interfere and break some parts of in-app layout.
+[Siali Label offers a very flexible labeling configuration interface](https://docs.heartex.com/guide/setup.html#Set-up-the-labeling-interface-for-your-project) that allows you to combine various input / output data formats and apply custom styles and layouts. For example, users can specify a custom layout by injecting CSS code using [`<Style>`](https://docs.heartex.com/tags/style.html)[ component](https://docs.heartex.com/tags/style.html). At the same time, improperly built style definitions can interfere and break some parts of in-app layout.
 
 
 To locate a browser-specific error, please try to open tasks in another browser (e.g. Chrome).
@@ -277,7 +277,7 @@ A few recommendations to build a proper labeling config CSS code:
 ### Check the size of the data
 
 
-Label Studio has limitations when working with large data chunks (for example, long audio or video files, documents with many pages, etc.). Check if any of the following limitations apply in your case:
+Siali Label has limitations when working with large data chunks (for example, long audio or video files, documents with many pages, etc.). Check if any of the following limitations apply in your case:
 
 - Audio length longer than 30 minutes
 - Video length longer than 1 hour
@@ -368,7 +368,7 @@ Try to use another browser (e.g. Chrome), or [follow the Troubleshooting guide](
 ## Extra annotations created in task
 
 
-Label Studio can control the distribution of tasks across annotators. This is enabled in Project Settings, by defining “Auto” distribution mode and number of required annotations per task. [You read more detail in the guide.  ](https://docs.heartex.com/guide/setup_project.html#Set-up-task-distribution-for-labeling)
+Siali Label can control the distribution of tasks across annotators. This is enabled in Project Settings, by defining “Auto” distribution mode and number of required annotations per task. [You read more detail in the guide.  ](https://docs.heartex.com/guide/setup_project.html#Set-up-task-distribution-for-labeling)
 
 
 Auto distribution mode doesn’t guarantee that all tasks will get exactly the specified amount of annotations - there are many scenarios where users can assign more annotations per task:
@@ -398,7 +398,7 @@ That effectively reset Matching function procedure and restarts the underlying a
 ## Slow loading time
 
 
-The Label Studio cloud service provides scalability and low-latency for labeling user flow; however, there are some known limitations that could lead to performance degradations:
+The Siali Label cloud service provides scalability and low-latency for labeling user flow; however, there are some known limitations that could lead to performance degradations:
 
 
 ### Local network provider latency
@@ -451,7 +451,7 @@ Also you can go inside of `Failed jobs` and check the error message in the each 
 ### Annotation result or Annotators filter is slow
 
 
-Try upgrading to the most recent version of Label Studio Enterprise. This filter was significantly updated in Label Studio Enterprise 2.4.0 (and beyond). 
+Try upgrading to the most recent version of Siali Label Enterprise. This filter was significantly updated in Siali Label Enterprise 2.4.0 (and beyond). 
 
 
 ### Most of the API works slowly, the LS instance has more than million tasks
@@ -463,7 +463,7 @@ Try upgrading to the most recent version of Label Studio Enterprise. This filter
 ## Other issues
 
 
-[Troubleshoot Label Studio](https://docs.heartex.com/guide/faq)
+[Troubleshoot Siali Label](https://docs.heartex.com/guide/faq)
 
 
 ## Recommendations & best practices

@@ -60,7 +60,7 @@ LABEL name="LabelStudio" \
   version="1.5.0dev" \
   release="1" \
   summary="LabelStudio" \
-  description="Label Studio is an open source data labeling tool."
+  description="Siali Label is an open source data labeling tool."
 
 COPY --chown=1001:0 licenses/ /licenses
 RUN cp $LS_DIR/LICENSE /licenses

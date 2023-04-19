@@ -9,14 +9,14 @@ meta_description: Customize your data labeling and annotation interface with tem
 section: "Configuration"
 ---
 
-All labeling activities in Label Studio occur in the context of a project. After you [create a project](setup_project.html#Create-a-project) and [import data](tasks.html), set up the labeling interface and labeling configuration for your project. This setup process is essential to your labeling project. 
+All labeling activities in Siali Label occur in the context of a project. After you [create a project](setup_project.html#Create-a-project) and [import data](tasks.html), set up the labeling interface and labeling configuration for your project. This setup process is essential to your labeling project. 
 
 ## Set up the labeling interface for your project
 
-Configure the labels and task type for annotators using the templates included with Label Studio or by defining your own combination of tags to set up the labeling interface for your project. 
+Configure the labels and task type for annotators using the templates included with Siali Label or by defining your own combination of tags to set up the labeling interface for your project. 
 
 1. Select a template from the [available templates](/templates) or customize one.
-2. Label Studio automatically selects the field to label based on your data. If needed, modify the selected field. 
+2. Siali Label automatically selects the field to label based on your data. If needed, modify the selected field. 
 3. Add label names on new lines. 
 4. (Optional) Choose new colors for the labels by clicking the label name and choosing a new color using the color selector.
 5. Configure additional settings relevant to the labeling interface functionality. For example, when labeling text you might have the option to **Select text by words**. 
@@ -28,7 +28,7 @@ You can make changes to the labeling interface and configuration in the project 
 !!! note 
     You cannot remove labels or change the type of labeling being performed unless you delete existing annotations using those labels.
 
-1. In Label Studio UI, open the project you want to modify.
+1. In Siali Label UI, open the project you want to modify.
 2. Click **Settings**.
 3. Click **Labeling Interface**.
 4. Browse templates, update the available labels, or use the `Code` option to further customize the interface using [tags](/tags).
@@ -38,9 +38,9 @@ You can make changes to the labeling interface and configuration in the project 
 
 ## Customize a template
 
-You can customize a [labeling config template](/templates) or use a custom configuration that you create from scratch using [tags](/tags). If you create a custom configuration that might be useful to other Label Studio users, consider [contributing the configuration as a template](https://github.com/heartexlabs/label-studio/tree/develop/label_studio/annotation_templates).
+You can customize a [labeling config template](/templates) or use a custom configuration that you create from scratch using [tags](/tags). If you create a custom configuration that might be useful to other Siali Label users, consider [contributing the configuration as a template](https://github.com/heartexlabs/label-studio/tree/develop/label_studio/annotation_templates).
 
-The labeling configuration for a project is an XML file that contains three types of tags specific to Label Studio.
+The labeling configuration for a project is an XML file that contains three types of tags specific to Siali Label.
 
 | Tag type | When to use |
 | --- | --- |
@@ -82,7 +82,7 @@ If you want to customize this example, such as to allow labelers to select both 
 <div class="opensource-only">
 
 ### Add a labeling config from the command line
-You can define the labeling configuration in a `config.xml` file and initialize a specific project in Label Studio with that file. 
+You can define the labeling configuration in a `config.xml` file and initialize a specific project in Siali Label with that file. 
 
 ```bash
 label-studio my_new_project start --label-config config.xml

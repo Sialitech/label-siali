@@ -1,40 +1,40 @@
 ---
-title: From raw data to a trained model&#58; Automate your ML pipeline with Label Studio & Amazon SageMaker
+title: From raw data to a trained model&#58; Automate your ML pipeline with Siali Label & Amazon SageMaker
 type: blog
 order: 90
 image: /images/webhook-blog/sagemaker-illustration-big.png
 meta_title: 
-meta_description: Use webhooks from open source data labeling software Label Studio to seamlessly integrate your Amazon SageMaker model development workflow for your machine learning and data science projects using AWS Lambda, Amazon S3, and public domain bird images.
+meta_description: Use webhooks from open source data labeling software Siali Label to seamlessly integrate your Amazon SageMaker model development workflow for your machine learning and data science projects using AWS Lambda, Amazon S3, and public domain bird images.
 ---
 
-It can be difficult to get from raw data to a fully trained model, but the more you can do to automate your machine learning pipeline, the easier the process is. If you're using Amazon SageMaker but have complex labeling scenarios and corner cases, add Label Studio to your Amazon SageMaker machine learning pipeline and simplify annotating your data.
+It can be difficult to get from raw data to a fully trained model, but the more you can do to automate your machine learning pipeline, the easier the process is. If you're using Amazon SageMaker but have complex labeling scenarios and corner cases, add Siali Label to your Amazon SageMaker machine learning pipeline and simplify annotating your data.
 
-If you have a machine learning pipeline, or retrain your models frequently based on newly-annotated data, you know that it can be challenging to automate that process. Now that Label Studio supports webhooks, you can automatically receive updates every time a new annotation is created or a project is updated to include different labels. 
+If you have a machine learning pipeline, or retrain your models frequently based on newly-annotated data, you know that it can be challenging to automate that process. Now that Siali Label supports webhooks, you can automatically receive updates every time a new annotation is created or a project is updated to include different labels. 
 
-<br/><img src="/images/webhook-blog/sagemaker-illustration.png" alt="Decorative image showing Label Studio logo with birds flying to Amazon SageMaker and then returning with model predictions to Label Studio" class="gif-border" width="800px" height="527px" />
+<br/><img src="/images/webhook-blog/sagemaker-illustration.png" alt="Decorative image showing Siali Label logo with birds flying to Amazon SageMaker and then returning with model predictions to Siali Label" class="gif-border" width="800px" height="527px" />
 
-This blog post walks you through an example of using webhooks with Label Studio to trigger specific actions in an image segmentation machine learning pipeline built in Amazon Web Services (AWS) such as Amazon API Gateway, AWS Lambda, and Amazon SageMaker. 
+This blog post walks you through an example of using webhooks with Siali Label to trigger specific actions in an image segmentation machine learning pipeline built in Amazon Web Services (AWS) such as Amazon API Gateway, AWS Lambda, and Amazon SageMaker. 
 
-Image segmentation is a popular use case for machine learning, identifying the parts of an image. In this example, train an image segmentation model to recognize birds in images by labeling the various parts of birds that might be visible in an image. Whether you're a wildlife researcher, a scientist, or simply want to try out image segmentation, follow along with this example and learn how to integrate a data labeling project in Label Studio with Amazon SageMaker. 
+Image segmentation is a popular use case for machine learning, identifying the parts of an image. In this example, train an image segmentation model to recognize birds in images by labeling the various parts of birds that might be visible in an image. Whether you're a wildlife researcher, a scientist, or simply want to try out image segmentation, follow along with this example and learn how to integrate a data labeling project in Siali Label with Amazon SageMaker. 
 
 This example uses a pre-trained model, so it's faster to start training the model for this specific use case and then continually retrain the model as annotators identify additional birds in photos. This also lets you periodically test the quality of the updated model. When model quality plateaus, you can use that information to decide that you have enough annotations and can start using the trained model.    
 
 This example covers the following steps:
 1. Adding public domain bird images to Amazon S3 storage.
 2. Creating an image segmentation model pipeline in Amazon SageMaker using FCN ResNet-50 Image Segmentation.
-3. Writing an AWS Lambda function to trigger retraining the Amazon SageMaker model based on annotation progress in Label Studio.
-4. Configuring Amazon API Gateway to securely communicate between Label Studio and the AWS Lambda function.
-5. Setting up a labeling project in Label Studio and annotating images.
+3. Writing an AWS Lambda function to trigger retraining the Amazon SageMaker model based on annotation progress in Siali Label.
+4. Configuring Amazon API Gateway to securely communicate between Siali Label and the AWS Lambda function.
+5. Setting up a labeling project in Siali Label and annotating images.
 
-<br/><img src="/images/webhook-blog/sagemaker-webhooks.png" alt="Diagram showing data flow from bird images to an S3 bucket, flowing to Label Studio, which outputs annotations to the S3 bucket and sends a webhook to the Amazon API Gateway, which passes that information to the AWS Lambda function, which triggers the Amazon SageMaker training pipeline when the annotation count reaches at least 16, then outputs the resulting model to the S3 bucket." class="gif-border" width="800px" height="661px" />
+<br/><img src="/images/webhook-blog/sagemaker-webhooks.png" alt="Diagram showing data flow from bird images to an S3 bucket, flowing to Siali Label, which outputs annotations to the S3 bucket and sends a webhook to the Amazon API Gateway, which passes that information to the AWS Lambda function, which triggers the Amazon SageMaker training pipeline when the annotation count reaches at least 16, then outputs the resulting model to the S3 bucket." class="gif-border" width="800px" height="661px" />
 
-Follow along with the entire process to go from a Label Studio installation to a full-fledged model retraining pipeline using Amazon services and Label Studio.
+Follow along with the entire process to go from a Siali Label installation to a full-fledged model retraining pipeline using Amazon services and Siali Label.
  
 ## Before you start 
 
 This example assumes you have an Amazon AWS account with administrator privileges and that you are comfortable running commands from the command line. 
 
-- [Install Label Studio](install.html) locally or on AWS, if you haven't already installed it. Make sure you install the latest version of Label Studio. If you use Docker, pull the latest Docker image before you install. 
+- [Install Siali Label](install.html) locally or on AWS, if you haven't already installed it. Make sure you install the latest version of Siali Label. If you use Docker, pull the latest Docker image before you install. 
 - Install [awscli](https://aws.amazon.com/cli/) and [jq](https://stedolan.github.io/jq/).
 - Download a [bird image dataset](https://ibb.co/album/DPcxnZ). This blog post uses bird images from the United States Midwest, courtesy of [public domain images hosted on Flickr by the US Fish and Wildlife Service](https://www.flickr.com/photos/usfwsmidwest/). 
 
@@ -42,7 +42,7 @@ This example uses an AWS region of `us-east-2`, so if you prefer to use a differ
 
 ## Add bird images to Amazon S3
 
-Add the bird images to Amazon S3 so that you can annotate them in Label Studio and so that Amazon SageMaker can easily access the annotations and source images. 
+Add the bird images to Amazon S3 so that you can annotate them in Siali Label and so that Amazon SageMaker can easily access the annotations and source images. 
 
 1. Make sure that you downloaded the [bird image dataset](https://ibb.co/album/DPcxnZ) and save the images to a folder called `bird-images`.
 2. From the command line, run the following:
@@ -235,7 +235,7 @@ Now you're ready to define the SageMaker pipeline.
 
 ### Create a SageMaker pipeline
 
-In Amazon SageMaker, create a model training pipeline with a pretrained FCN ResNet-50 semantic image segmentation model. using the source images and annotations created in Label Studio and stored in Amazon S3. The pipeline runs the preprocessing script to split the raw and annotation data from the S3 bucket into training and validation sets, retrains the model, and outputs the results to the S3 bucket prefixed with `output`. 
+In Amazon SageMaker, create a model training pipeline with a pretrained FCN ResNet-50 semantic image segmentation model. using the source images and annotations created in Siali Label and stored in Amazon S3. The pipeline runs the preprocessing script to split the raw and annotation data from the S3 bucket into training and validation sets, retrains the model, and outputs the results to the S3 bucket prefixed with `output`. 
 
 This example Amazon SageMaker pipeline definition has been updated to match the S3 bucket names that you created earlier, but you need to update it with the `RoleArn` of the role that you set up in previous steps. Replace `$SageMakerRoleArn` with the actual `RoleArn` value that you saved.
 
@@ -269,17 +269,17 @@ If you want to review the pipeline details, run the following:
 aws sagemaker list-pipelines
 ```
 
-After creating and deploying the Amazon SageMaker pipeline, set up the AWS Lambda function that is going to manage the Label Studio webhook information and trigger the model training pipeline in SageMaker. 
+After creating and deploying the Amazon SageMaker pipeline, set up the AWS Lambda function that is going to manage the Siali Label webhook information and trigger the model training pipeline in SageMaker. 
 
 ## Set up an AWS Lambda function 
 
-You can use AWS Lambda to run code in AWS. In this example, use it to process the webhook event payload from Label Studio and send a model training request to your Amazon SageMaker pipeline. 
+You can use AWS Lambda to run code in AWS. In this example, use it to process the webhook event payload from Siali Label and send a model training request to your Amazon SageMaker pipeline. 
 
 ### Set up IAM policies 
 
 Before you can set up the AWS Lambda function itself, prepare a user role with the appropriate permissions policies to run the code and interact with Amazon SageMaker.
 
-1. Specify the policy needed by a role to process the webhook from Label Studio and run the Lambda function. From the command line, run the following:
+1. Specify the policy needed by a role to process the webhook from Siali Label and run the Lambda function. From the command line, run the following:
 ```bash
 ASSUME_POLICY=$(echo -n '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}')
 ```
@@ -316,7 +316,7 @@ Now that you've set up a user role with the proper permissions, set up the Lambd
 
 ### Set up the Lambda function
 
-This Python Lambda function counts the number of annotations created in Label Studio, based on the `ANNOTATION_CREATED` webhook event payload sent from Label Studio. After the number of completed annotations reaches a "ready to train" checkpoint of 16 annotations, the Lambda function invokes the Amazon SageMaker pipeline and starts the training process. 
+This Python Lambda function counts the number of annotations created in Siali Label, based on the `ANNOTATION_CREATED` webhook event payload sent from Siali Label. After the number of completed annotations reaches a "ready to train" checkpoint of 16 annotations, the Lambda function invokes the Amazon SageMaker pipeline and starts the training process. 
 
 16 annotations is the minimum number of annotations for FCN ResNet-50 Image Segmentation model training, but if your dataset is larger than the one used in this example, you might want to update the function to use a greater number of annotations, such as 50 or 100. In some cases, the number of annotations that you want to specify for initial training might be different than in this use case. Because this example is retraining a pre-trained model to focus on a specific use case of bird recognition, a smaller number of annotations is okay to start. 
 
@@ -365,11 +365,11 @@ LAMBDAARN=$(aws lambda list-functions --query "Functions[?FunctionName==\`LsCust
 ```
 
 
-After you set up and configure the AWS Lambda function, set up the Amazon API Gateway to permit access between AWS Lambda and Label Studio.
+After you set up and configure the AWS Lambda function, set up the Amazon API Gateway to permit access between AWS Lambda and Siali Label.
 
 ## Set up the Amazon API Gateway 
 
-Set up the Amazon API Gateway to allow the webhook events sent from Label Studio to reach the AWS Lambda function. If you're using an Amazon VPC to host Label Studio, you can use a VPC endpoint instead of the Amazon API gateway, but this example only covers the setup for the Amazon API Gateway.
+Set up the Amazon API Gateway to allow the webhook events sent from Siali Label to reach the AWS Lambda function. If you're using an Amazon VPC to host Siali Label, you can use a VPC endpoint instead of the Amazon API gateway, but this example only covers the setup for the Amazon API Gateway.
 
 1. Specify a region. This example uses `us-east-2` as a default region. If you're using a different AWS region, update the `REGION` variable to the AWS region that you're using. From the command line, run the following:
 ```bash
@@ -425,7 +425,7 @@ aws lambda add-permission --function-name LsCustomWebhook \
 --principal apigateway.amazonaws.com \
 --source-arn "arn:aws:execute-api:${REGION}:${ACCOUNT_ID}:${GATEWAY_ID}/*/*/*"
 ```
-10. After you create the gateway, it becomes available at the following URL: `https://$GATEWAY_ID.execute-api.${REGION}.amazonaws.com/prod/LcWebHook`. Send webhook event payloads from Label Studio to this endpoint. To get your URL, from the command line, run the following:
+10. After you create the gateway, it becomes available at the following URL: `https://$GATEWAY_ID.execute-api.${REGION}.amazonaws.com/prod/LcWebHook`. Send webhook event payloads from Siali Label to this endpoint. To get your URL, from the command line, run the following:
 ```bash
 echo https://$GATEWAY_ID.execute-api.${REGION}.amazonaws.com/prod/LcWebHook
 ```
@@ -433,17 +433,17 @@ Save the output somewhere secure.
 
 Now that you've finished setting up the Amazon AWS services for your pipeline configuration, it's time to start preparing to annotate some bird images.
 
-## Set up Label Studio for data annotation
+## Set up Siali Label for data annotation
 
-To start annotating bird images, set up an image segmentation project and connect the S3 bucket with the bird images to Label Studio. You must already have [Label Studio installed](install.html) on AWS or locally using Docker. 
+To start annotating bird images, set up an image segmentation project and connect the S3 bucket with the bird images to Siali Label. You must already have [Siali Label installed](install.html) on AWS or locally using Docker. 
 
 ### Set up an image segmentation project
 
-To perform image segmentation labeling in Label Studio, you want to set up a project to organize your dataset and annotation settings. The SageMaker pipeline defined earlier includes a model that expects 4 classes for image segmentation, so you want to make sure to set up 4 classes in the segmentation labeling project in Label Studio.
+To perform image segmentation labeling in Siali Label, you want to set up a project to organize your dataset and annotation settings. The SageMaker pipeline defined earlier includes a model that expects 4 classes for image segmentation, so you want to make sure to set up 4 classes in the segmentation labeling project in Siali Label.
 
 <br/><img src="/images/webhook-blog/project-setup.png" alt="Screenshot of creating a project with the semantic segmentation with polygons template with custom labels for labeling birds." class="gif-border" width="800px" height="430px" />
 
-1. In the Label Studio UI, click **Create** to create a project. 
+1. In the Siali Label UI, click **Create** to create a project. 
 2. Add a project name of **Bird Segmentation**.
 3. Skip importing data for now, because the data is stored in S3.
 4. On the **Labeling Setup** page, select the **Semantic Segmentation with Polygons** template.
@@ -456,30 +456,30 @@ Body
 ```
 6. Save the project.
 
-Next, connect Label Studio and Amazon S3 so that you can retrieve the source images for labeling and save the data annotations where the Amazon SageMaker pipeline can easily retrieve them. 
+Next, connect Siali Label and Amazon S3 so that you can retrieve the source images for labeling and save the data annotations where the Amazon SageMaker pipeline can easily retrieve them. 
 
-### Connect the S3 bucket to Label Studio
+### Connect the S3 bucket to Siali Label
 
-Connect the S3 bucket and prefixes to Label Studio to ease the automation of your machine learning workflow. 
+Connect the S3 bucket and prefixes to Siali Label to ease the automation of your machine learning workflow. 
 
 <br/><img src="/images/webhook-blog/cloud-storage.png" alt="Screenshot of the configured cloud storage settings for source and target S3 storage." class="gif-border" width="800px" height="448px" />
 
-1. In the Label Studio UI, click **Settings** to open the project settings.
+1. In the Siali Label UI, click **Settings** to open the project settings.
 2. Click **Cloud Storage**.
 3. Click **Add Source Storage**.
 4. Specify a title for the storage. For example, **Source bird images**.
 5. Specify a bucket name of **showcase-bucket** and a bucket prefix of **bird-images**. 
-6. Specify a file filter regex of `.*jpg` so that Label Studio retrieves only images with that file extension from the S3 bucket prefix. 
+6. Specify a file filter regex of `.*jpg` so that Siali Label retrieves only images with that file extension from the S3 bucket prefix. 
 7. Specify a region name of `us-east-2`, unless you're using a different region to follow along with this blog post.
 8. Specify the Access Key ID, Secret Access Key, and Session Token for a user with access to S3 buckets. You can use the credentials of the user account that you used to create the S3 bucket.
 9. Select the option to **Treat every bucket object as a source file**. 
 10. Click **Add Storage**.
 11. Click **Sync Storage** to sync the images.
 
-<br/><img src="/images/webhook-blog/data-manager.png" alt="Screenshot of the Label Studio UI showing bird images and annotation progress on the data manager." class="gif-border" width="800px" height="577px" />
+<br/><img src="/images/webhook-blog/data-manager.png" alt="Screenshot of the Siali Label UI showing bird images and annotation progress on the data manager." class="gif-border" width="800px" height="577px" />
 
-As the images sync to Label Studio using pre-signed URLs, set up the target storage to store annotations. 
-1. In the Label Studio Cloud Storage Settings, click **Add Target Storage**.
+As the images sync to Siali Label using pre-signed URLs, set up the target storage to store annotations. 
+1. In the Siali Label Cloud Storage Settings, click **Add Target Storage**.
 2. Specify a title for the storage. For example, **Annotated birds**.
 3. Specify a bucket name of **showcase-bucket** and a bucket prefix of **annotations**. 
 4. Specify a region name of `us-east-2`, unless you're using a different region to follow along with this blog post.
@@ -488,9 +488,9 @@ As the images sync to Label Studio using pre-signed URLs, set up the target stor
 
 ### Set up the webhook URL and events
 
-Set up the webhook URL so that you can send `ANNOTATION_CREATED` events from Label Studio to the AWS Lambda function using the Amazon API Gateway so that you can trigger the Amazon SageMaker pipeline.  
+Set up the webhook URL so that you can send `ANNOTATION_CREATED` events from Siali Label to the AWS Lambda function using the Amazon API Gateway so that you can trigger the Amazon SageMaker pipeline.  
 
-1. In the Label Studio project settings, click **Webhooks**
+1. In the Siali Label project settings, click **Webhooks**
 2. Click **Add Webhook**.
 3. In the **URL** field, paste the Amazon API Gateway URL created when you set up the AWS API gateway. For example, `https://$GATEWAY_ID.execute-api.${REGION}.amazonaws.com/prod/LcWebHook`.
 4. Skip the **Headers** section, unless you set up authorization for the API Gateway configuration. 
@@ -498,29 +498,29 @@ Set up the webhook URL so that you can send `ANNOTATION_CREATED` events from Lab
 6. For **Send Payload for**, select **Annotation created**. You only want to send events to the AWS Lambda function when an annotation is created.
 6. Click **Add Webhook** to save your webhook.
 
-<br/><img src="/images/webhook-blog/webhook-setup.png" alt="Screenshot of the partially configured webhook settings in Label Studio UI." class="gif-border" width="800px" height="732px" />
+<br/><img src="/images/webhook-blog/webhook-setup.png" alt="Screenshot of the partially configured webhook settings in Siali Label UI." class="gif-border" width="800px" height="732px" />
 
-## Start annotating data in Label Studio
+## Start annotating data in Siali Label
 
 After you set up the project, you can start labeling! 
 
-<br/><img src="/images/webhook-blog/woodpecker-labeled-full.png" alt="Screenshot of the Label Studio labeling UI with a woodpecker sitting on a bird feeder with the beak, head, wing, and body labeled with different colored polygons, and the labeled regions visible on the right hand sidebar." class="gif-border" width="800px" height="527px" />
+<br/><img src="/images/webhook-blog/woodpecker-labeled-full.png" alt="Screenshot of the Siali Label labeling UI with a woodpecker sitting on a bird feeder with the beak, head, wing, and body labeled with different colored polygons, and the labeled regions visible on the right hand sidebar." class="gif-border" width="800px" height="527px" />
 
-1. In the Label Studio UI, return to the data manager by clicking **Bird Segmentation** in the breadcrumbs. 
+1. In the Siali Label UI, return to the data manager by clicking **Bird Segmentation** in the breadcrumbs. 
 1. From the data manager for the Bird Segmentation project, click **Label All Tasks**.
 2. Select a label and click points on the image to draw a polygon around parts of the bird. 
 3. To make it easier to draw overlapping polygons, use the eye icon in the **Regions** sidebar to hide polygonal regions after you create them.
 4. When you're finished labeling the parts of the bird, click **Submit** to move onto the next task.
 
-<br/><img src="/images/webhook-blog/owl-labeling.gif" alt="Gif of an adorable owl sitting on pavement being labeled in the Label Studio UI with polygons around its beak, head, wing, and body, hiding the polygons after each is created to avoid accidentally interacting with an already-created polygon." class="gif-border" width="800px" height="" />
+<br/><img src="/images/webhook-blog/owl-labeling.gif" alt="Gif of an adorable owl sitting on pavement being labeled in the Siali Label UI with polygons around its beak, head, wing, and body, hiding the polygons after each is created to avoid accidentally interacting with an already-created polygon." class="gif-border" width="800px" height="" />
 
 Label at least 16 bird images to trigger the SageMaker pipeline.
 
 ## What the pipeline does behind the scenes
 
-As you start annotating data, Label Studio saves the annotations to your S3 bucket with the `/annotations/` prefix, and sends an event and payload through the Amazon API Gateway to the AWS Lambda function for each annotation created. 
+As you start annotating data, Siali Label saves the annotations to your S3 bucket with the `/annotations/` prefix, and sends an event and payload through the Amazon API Gateway to the AWS Lambda function for each annotation created. 
 
-<br/><img src="/images/webhook-blog/sagemaker-webhooks.png" alt="The same diagram as earlier showing data flow from bird images to an S3 bucket, flowing to Label Studio, which outputs annotations to the S3 bucket and sends a webhook to the Amazon API Gateway, which passes that information to the AWS Lambda function, which triggers the Amazon SageMaker training pipeline when the annotation count reaches at least 16, then outputs the resulting model to the S3 bucket." class="gif-border" width="800px" height="661px" />
+<br/><img src="/images/webhook-blog/sagemaker-webhooks.png" alt="The same diagram as earlier showing data flow from bird images to an S3 bucket, flowing to Siali Label, which outputs annotations to the S3 bucket and sends a webhook to the Amazon API Gateway, which passes that information to the AWS Lambda function, which triggers the Amazon SageMaker training pipeline when the annotation count reaches at least 16, then outputs the resulting model to the S3 bucket." class="gif-border" width="800px" height="661px" />
 
 After you create at least 16 annotations, the Lambda function invokes the SageMaker pipeline that you created and starts processing the data using the preprocessing script and training the FCN ResNet-50 Image Segmentation model in the SageMaker pipeline.
 
@@ -543,7 +543,7 @@ Setting up an end-to-end pipeline from data labeling to model training is comple
 
 <br/><img src="/images/webhook-blog/bird-labeled.png" alt="Screenshot of a finch perched on a fence with the beak, head, wing, and body labeled with different colored polygons." class="gif-border" width="800px" height="628px" />
 
-This is just one example of how you can use webhooks in Label Studio to simplify and automate part of your machine learning pipeline. You can also use webhooks to:
+This is just one example of how you can use webhooks in Siali Label to simplify and automate part of your machine learning pipeline. You can also use webhooks to:
 - Monitor model performance against ground truth annotations
 - Notify experts when a new project is ready to be annotated
 - Craft an active learning pipeline

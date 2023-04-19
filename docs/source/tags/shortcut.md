@@ -3,7 +3,7 @@ title: Shortcut
 type: tags
 order: 426
 meta_title: Shortcut Tag to Define Shortcuts
-meta_description: Customize Label Studio to define keyboard shortcuts and hotkeys to accelerate labeling for machine learning and data science projects.
+meta_description: Customize Siali Label to define keyboard shortcuts and hotkeys to accelerate labeling for machine learning and data science projects.
 ---
 
 The `Shortcut` tag to define a shortcut that annotators can use to add a predefined object, such as a specific label value, with a hotkey or keyboard shortcut.

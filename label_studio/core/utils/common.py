@@ -190,7 +190,7 @@ def paginator_help(objects_name, tag):
 
 
 def find_editor_files():
-    """ Find label studio files
+    """ Find Siali Label files
     """
 
     # playground uses another LSF build
@@ -425,7 +425,7 @@ def collect_versions(force=False):
         'label-studio-os-backend': version.get_git_commit_info(ls=True)
     }
 
-    # label studio frontend
+    # Siali Label frontend
     try:
         with open(os.path.join(settings.EDITOR_ROOT, 'version.json')) as f:
             lsf = json.load(f)

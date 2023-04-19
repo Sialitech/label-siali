@@ -13,24 +13,24 @@ section: "Labeling"
 
 After you [set up your project](setup_project.html) and [labeling interface](setup.html) and [import your data](tasks.html), you can filter and sort your data to prepare it for [labeling](labeling.html).
 
-You can also take steps to manage your data, such as assigning annotators to tasks in Label Studio Enterprise, or deleting tasks and annotations if needed. 
+You can also take steps to manage your data, such as assigning annotators to tasks in Siali Label Enterprise, or deleting tasks and annotations if needed. 
 
 <div class="opensource-only">
 <br><br>
 <center><i>Data Manager Screenshot</i></center>
-<img class="make-intense-zoom" src="/images/terms/os/project--data-manager-min.png" alt="Screenshot of the Label Studio UI showing an OCR project including photographs of receipts, prediction scores, and other metadata for each labeling task.">
+<img class="make-intense-zoom" src="/images/terms/os/project--data-manager-min.png" alt="Screenshot of the Siali Label UI showing an OCR project including photographs of receipts, prediction scores, and other metadata for each labeling task.">
 </div>
 
 
 <div class="enterprise-only">
 <br><br>
 <center><i>Data Manager Screenshot</i></center>
-<img class="make-intense-zoom" src="/images/terms/ent/project--data-manager-min.png" alt="Screenshot of the Label Studio UI showing an OCR project including photographs of receipts, prediction scores, and other metadata for each labeling task.">
+<img class="make-intense-zoom" src="/images/terms/ent/project--data-manager-min.png" alt="Screenshot of the Siali Label UI showing an OCR project including photographs of receipts, prediction scores, and other metadata for each labeling task.">
 </div>
 
 
 
-In Label Studio Community Edition, the data manager is the default view for your data. In Label Studio Enterprise, click **Data Manager** to open and view the data manager page. Every row in the data manager represents a labeling task in your dataset.
+In Siali Label Community Edition, the data manager is the default view for your data. In Siali Label Enterprise, click **Data Manager** to open and view the data manager page. Every row in the data manager represents a labeling task in your dataset.
 
 ## Filter or sort project data
 
@@ -56,7 +56,7 @@ You can sort the data in your project by prediction score if you upload [pre-ann
 You can also use [task sampling](start.html#Set_up_task_sampling_for_your_project) to use prediction score ordering.
 
 ### Example: Split a dataset using tabs and filters
-If you want to label a large dataset, you might want to use tabs and filters to split it up into smaller sections, and assign different annotators to different tabs. You can't assign annotators to specific tasks in Label Studio Community Edition, but you can rename the tabs after specific annotators as a way to basically assign tasks using tabs.  
+If you want to label a large dataset, you might want to use tabs and filters to split it up into smaller sections, and assign different annotators to different tabs. You can't assign annotators to specific tasks in Siali Label Community Edition, but you can rename the tabs after specific annotators as a way to basically assign tasks using tabs.  
 
 For example, you might split a dataset with 300 images into 3 different tabs, and have different annotators focus on each tab:
 1. In a project, create a filter where the **ID** field **is between** the values "1" and "100". Click away from the filter to review filtered items the tab.
@@ -80,7 +80,7 @@ Tabs that you create depend on your [labeling configuration setup](setup.html), 
 
 ## Assign annotators to tasks
 
-In Label Studio Enterprise, if you're an administrator or project manager, you can assign annotators to tasks in a specific project. After you [add the annotator to the project or workspace](setup_project.html#Add-members-to-a-project), assign the annotator to specific tasks. You must assign annotators to tasks if you're using [manual task distribution](setup_project.html#Set-up-task-distribution-for-labeling).
+In Siali Label Enterprise, if you're an administrator or project manager, you can assign annotators to tasks in a specific project. After you [add the annotator to the project or workspace](setup_project.html#Add-members-to-a-project), assign the annotator to specific tasks. You must assign annotators to tasks if you're using [manual task distribution](setup_project.html#Set-up-task-distribution-for-labeling).
 
 1. For a specific project, select tasks on the Data Manager.
 2. Select the dropdown and choose **Assign Annotators**.
@@ -93,9 +93,9 @@ If you want to bulk assign tasks, you can use filters to identify exactly the ta
 
 
 ## Delete tasks or annotations
-If you have duplicate tasks, or want to remove annotations, you can delete tasks and annotations from Label Studio.
+If you have duplicate tasks, or want to remove annotations, you can delete tasks and annotations from Siali Label.
 
-1. In Label Studio UI, open the project you want to update.
+1. In Siali Label UI, open the project you want to update.
 2. Filter the Data Manager page to show only the data you want to delete. For example, specific annotations, or tasks annotated by a specific annotator. 
 3. Select the checkboxes for the tasks or annotations that you want to delete.
 4. Select the dropdown with the number of tasks, and choose **Delete tasks** or **Delete annotations**. 

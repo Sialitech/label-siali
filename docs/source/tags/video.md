@@ -3,7 +3,7 @@ title: Video
 type: tags
 order: 310
 meta_title: Video Tag for Video Labeling
-meta_description: Customize Label Studio with the Video tag for basic video annotation tasks for machine learning and data science projects.
+meta_description: Customize Siali Label with the Video tag for basic video annotation tasks for machine learning and data science projects.
 ---
 
 Video tag plays a simple video file. Use for video annotation tasks such as classification and transcription.

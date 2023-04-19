@@ -5,7 +5,7 @@ category: Audio/Speech Processing
 cat: audio-speech-processing
 order: 303
 meta_title: Automatic Speech Recognition using Segments Data Labeling Template
-meta_description: Template for audio transcription for automatic speech recognition segmentation use cases with Label Studio for your machine learning and data science projects.
+meta_description: Template for audio transcription for automatic speech recognition segmentation use cases with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/automatic-speech-recognition-using-segments.png" alt="" class="gif-border" width="552px" height="408px" />

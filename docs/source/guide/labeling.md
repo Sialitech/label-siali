@@ -10,9 +10,9 @@ section: "Labeling"
 
 ---
 
-Label and annotate your data with the open source data labeling tool, Label Studio. After you [set up your project](setup_project.html) and [labeling interface](setup.html) and [import your data](tasks.html), you can start labeling and annotating your data.
+Label and annotate your data with the open source data labeling tool, Siali Label. After you [set up your project](setup_project.html) and [labeling interface](setup.html) and [import your data](tasks.html), you can start labeling and annotating your data.
 
-1. Open a project in Label Studio and optionally [filter or sort the data](manage_data.html#Filter-or-sort-project-data).    
+1. Open a project in Siali Label and optionally [filter or sort the data](manage_data.html#Filter-or-sort-project-data).    
 2. Click **Label All Tasks** to [start labeling](#Start-labeling).
 3. Use [keyboard shortcuts](#Use-keyboard-shortcuts-to-label-regions-faster) or your mouse to label the data and submit your annotations.
 4. Follow the project instructions for labeling and deciding whether to skip tasks. 
@@ -103,11 +103,11 @@ When annotators skip a task, the task no longer appears in the labeling queue fo
 
 ## Label with collaborators
 
-In both Label Studio and Label Studio Enterprise, you can label tasks with collaborators. Tasks are locked while someone performs annotations so that you don't accidentally overwrite the annotations of another annotator. After the other annotator finishes with the task, it can appear in your queue for labeling if the minimum annotations per task is set to more than one. By default, tasks only need to be annotated by one annotator. 
+In both Siali Label and Siali Label Enterprise, you can label tasks with collaborators. Tasks are locked while someone performs annotations so that you don't accidentally overwrite the annotations of another annotator. After the other annotator finishes with the task, it can appear in your queue for labeling if the minimum annotations per task is set to more than one. By default, tasks only need to be annotated by one annotator. 
 
 <div class="enterprise-only">
 
-If you're using Label Studio Enterprise and want more than one annotator to annotate tasks, <a href="setup_project.html">update the project settings</a>. After you update the minimum annotations required per task, annotators can use the Label Stream workflow to label their tasks.  
+If you're using Siali Label Enterprise and want more than one annotator to annotate tasks, <a href="setup_project.html">update the project settings</a>. After you update the minimum annotations required per task, annotators can use the Label Stream workflow to label their tasks.  
 
 </div>
 
@@ -204,7 +204,7 @@ When labeling video data with the `Video` tag, you can use specific hotkeys to t
 ### Customize hotkeys
 You can specify custom hotkeys for labeling using the [Shortcut tag](/tags/shortcut.html), or change the hotkeys used for specific actions using an environment variable. 
 
-If you want to change the hotkeys used for specific actions, set the `EDITOR_KEYMAP` environment variable with valid JSON in your `.env` file or when starting Label Studio. For example, to change the keyboard shortcut used to submit an annotation to `shift` + `s`, set the environment variable as follows:
+If you want to change the hotkeys used for specific actions, set the `EDITOR_KEYMAP` environment variable with valid JSON in your `.env` file or when starting Siali Label. For example, to change the keyboard shortcut used to submit an annotation to `shift` + `s`, set the environment variable as follows:
 ```
 EDITOR_KEYMAP='{"annotation:submit":{"key": "shift+s","description": "My Custom Submit Hotkey!"}}'
 ```

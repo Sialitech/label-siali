@@ -6,18 +6,18 @@ tier: all
 order: 220
 order_enterprise: 127
 meta_title: Frontend Library Reference
-meta_description: Reference documentation for implementing the Label Studio Frontend into your own machine learning or data science application workflows.
+meta_description: Reference documentation for implementing the Siali Label Frontend into your own machine learning or data science application workflows.
 section: "Integration and Development"
 
 ---
 
-Label Studio Frontend (LSF) includes several UI options and callbacks that you can use when implementing the frontend with a custom labeling backend, or when customizing the Label Studio interface.
+Siali Label Frontend (LSF) includes several UI options and callbacks that you can use when implementing the frontend with a custom labeling backend, or when customizing the Siali Label interface.
 
 
 ## Updates to LSF in version 1.0.0
 
 !!! warning
-    LSF version 1.0.0 is not compatible with earlier versions of Label Studio.
+    LSF version 1.0.0 is not compatible with earlier versions of Siali Label.
 
 If you use LSF with a custom backend, you must make changes to the API callbacks that you use as follows:
 
@@ -27,16 +27,16 @@ If you use LSF with a custom backend, you must make changes to the API callbacks
 | onUpdateCompletion | onUpdateAnnotation |
 | onDeleteCompletion | onDeleteAnnotation |
 
-If you rely on specific formatting of Label Studio completed tasks, [Label Studio's annotation format](export.html#Raw-JSON-format-of-completed-tasks) has also been updated.
+If you rely on specific formatting of Siali Label completed tasks, [Siali Label's annotation format](export.html#Raw-JSON-format-of-completed-tasks) has also been updated.
 
-## Implement the Label Studio Frontend
+## Implement the Siali Label Frontend
 
 
 ```javascript
 var labelStudio = new LabelStudio('editor', options);
 ```
 
-The following options are recognized when initializing a Label Studio instance version 1.0.0.
+The following options are recognized when initializing a Siali Label instance version 1.0.0.
 
 ## Options
 
@@ -63,9 +63,9 @@ Collection of UI elements to show. Available interfaces:
 - `skip` - Show a button to skip the current task.
 - `controls` - Enable panel with controls (`submit`, `update`, `skip`).
 - `infobar` - A show button for information.
-- `topbar` - A labeling interface that lists the top-level items in the Label Studio UI.
+- `topbar` - A labeling interface that lists the top-level items in the Siali Label UI.
 - `instruction` - A button for the [instructions](#description).
-- `side-column` - Show a column on the left or right side of the Label Studio UI.
+- `side-column` - Show a column on the left or right side of the Siali Label UI.
 - `annotations:history` - A show button for annotation history.
 - `annotations:tabs` - A show button for annotation tabs.
 - `annotations:menu` - A show button for the annotation menu.
@@ -176,7 +176,7 @@ Type data: `string`
 Type data: `string`
 
 ## Event system
-LSF has a built-in event system that allows you to listen to events and trigger custom actions. You can subscribe to or unsubscribe from event at any time after the Label Studio instance is initialized.
+LSF has a built-in event system that allows you to listen to events and trigger custom actions. You can subscribe to or unsubscribe from event at any time after the Siali Label instance is initialized.
 
 ### Using events
 #### Subscribe to an event
@@ -207,13 +207,13 @@ labelStudio.off('event', callback);
 This events group contains top-level events. Those events are not related to any internal entities of the LSF.
 
 ### `labelStudioLoad`
-Label Studio instance is loaded.
+Siali Label instance is loaded.
 
 **Event handler arguments**
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 
 
 ### `storageInitialized`
@@ -223,7 +223,7 @@ The internal storage is initialized.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 
 #### Task events
 
@@ -236,7 +236,7 @@ User clicked the "Skip" button.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `payload` | `Object` | Additional data sent during the skip action |
 
 ### `unskipTask`
@@ -244,14 +244,14 @@ User clicked the "Cancel Skip" button.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 
 ### `nextTask`
 User clicked the "Next" (chevron right) button.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `taskId` | `Number?` | ID of the next task in history |
 | `annotationId` | `Number?` | ID of the annotation to select within the task |
 
@@ -260,7 +260,7 @@ User clicked the "Previous" (chevron left) button.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `taskId` | `Number?` | ID of the previous task in history |
 | `annotationId` | `Number?` | ID of the annotation to select within the task |
 
@@ -269,7 +269,7 @@ Draft is sent to the server.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `annotation` | `Object` | Current annotation |
 | `params` | `Object?` | Extra params sent with the draft |
 
@@ -281,7 +281,7 @@ Annotation is submitted.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `annotation` | `Object` | Current annotation |
 
 ### `updateAnnotation`
@@ -289,7 +289,7 @@ Annotation is updated.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `annotation` | `Object` | Current annotation |
 
 ### `selectAnnotation`
@@ -297,7 +297,7 @@ Annotation is selected.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `annotation` | `Object` | Current annotation |
 
 
@@ -306,7 +306,7 @@ Annotation is deleted.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `annotation` | `Object` | Current annotation |
 
 
@@ -315,8 +315,8 @@ Annotation is set as Ground Truth (the star button clicked).
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `store` | `Object` | Instance of Label Studio |
-| `labelStudio` | `Object` | Instance of Label Studio |
+| `store` | `Object` | Instance of Siali Label |
+| `labelStudio` | `Object` | Instance of Siali Label |
 | `params` | `Object` | |
 | `params.isDirty` | `Boolean` | `true` if annotation was changed |
 | `params.entity` | `Object` | Current annotation |
@@ -348,7 +348,7 @@ Region is deleted.
 
   Type data: `function`
 
-  Called when the `submit` button is pressed. `ls` is label studio instance, `annotation` is the value of the current annotation.
+  Called when the `submit` button is pressed. `ls` is Siali Label instance, `annotation` is the value of the current annotation.
 
   #### Example
 
@@ -362,7 +362,7 @@ Region is deleted.
 
   Type data: `function`
 
-  Called when the `update` button is pressed. `ls` is label studio instance, `annotation` is the value of the current annotation.
+  Called when the `update` button is pressed. `ls` is Siali Label instance, `annotation` is the value of the current annotation.
 
   #### Example
 
@@ -376,7 +376,7 @@ Region is deleted.
 
   Type data: `function`
 
-  Called when the `delete` button is pressed. `ls` is label studio instance, `annotation` is value of current annotation.
+  Called when the `delete` button is pressed. `ls` is Siali Label instance, `annotation` is value of current annotation.
 
   #### Example
 
@@ -418,7 +418,7 @@ Region is deleted.
 
   Type data: `function`
 
-  Called when the `skip` button is pressed. `ls` is label studio instance.
+  Called when the `skip` button is pressed. `ls` is Siali Label instance.
 
   #### Example
 
@@ -432,7 +432,7 @@ Region is deleted.
 
   Type data: `function`
 
-  Called when Label Studio has fully loaded and is ready for labeling. `ls` is the label studio instance
+  Called when Siali Label has fully loaded and is ready for labeling. `ls` is the Siali Label instance
 
   #### Example
 

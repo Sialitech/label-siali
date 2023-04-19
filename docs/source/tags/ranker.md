@@ -3,7 +3,7 @@ title: Ranker
 type: tags
 order: 420
 meta_title: Ranker Tag for Model Ranking
-meta_description: Customize Label Studio with the Ranker tag to rank the predictions from different models to rank model quality in your machine learning and data science projects.
+meta_description: Customize Siali Label with the Ranker tag to rank the predictions from different models to rank model quality in your machine learning and data science projects.
 ---
 
 The `Ranker` tag is used to rank the results from models. This tag uses the "prediction" field from a labeling task instead of the "data" field to display content for labeling on the interface. Carefully structure your labeling tasks to work with this tag. See [import pre-annotated data](../guide/predictions.html).
@@ -13,7 +13,7 @@ Use with the following data types: text.
 The Ranker tag renders a given list of strings and allows you to drag and reorder them.
 To see this tag in action:
 1. Save the example JSON below as a file called <code>example_ranker_tag.json</code>.
-2. Upload it as a task on the Label Studio UI.
+2. Upload it as a task on the Siali Label UI.
 3. Set up a project with the given labeling configuration.
 
 ### Parameters

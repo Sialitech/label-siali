@@ -5,7 +5,7 @@ category: Computer Vision
 cat: computer-vision
 order: 106
 meta_title: Image Classification Data Labeling Template
-meta_description: Template for classifying image data with Label Studio for your machine learning and data science projects.
+meta_description: Template for classifying image data with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/image-classification.png" alt="" class="gif-border" width="552px" height="408px" />

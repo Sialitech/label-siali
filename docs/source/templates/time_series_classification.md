@@ -5,7 +5,7 @@ category: Time Series Analysis
 cat: time-series-analysis
 order: 706
 meta_title: Time Series Classification Data Labeling Template
-meta_description: Template for classifying time series data with Label Studio for your machine learning and data science projects.
+meta_description: Template for classifying time series data with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates-misc/time-series-classification.png" alt="" class="gif-border" width="552px" height="546px" />

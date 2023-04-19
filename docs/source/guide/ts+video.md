@@ -8,14 +8,14 @@ meta_title: Time series video audio labeling
 !!! note
     - This feature is not officially supported, experimental, and has a tricky setup way.
     - To use audio instead of video you should replace `.mp4` file to mp3/wav/other browser supported audio format.      
-    - This approach works with Label Studio **1.4.1 and lower**.
+    - This approach works with Siali Label **1.4.1 and lower**.
 
 
 ## Step 1: Media hosting
 
 You have to host your CSV and MP4 somewhere (or another video formats supporting by browsers). You can use S3 
 or another clouds. If you want to host data from your hard drive, please use 
-[Label Studio Local Storage](http://localhost:4000/guide/storage.html#Local-storage).
+[Siali Label Local Storage](http://localhost:4000/guide/storage.html#Local-storage).
 
 As the result of this step you will have two URLs: one for CSV and one for video. For example, 
 ```

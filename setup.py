@@ -24,7 +24,7 @@ setuptools.setup(
     version=label_studio.__version__,
     author='Heartex',
     author_email="hello@heartex.ai",
-    description='Label Studio annotation tool',
+    description='Siali Label annotation tool',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/heartexlabs/label-studio',

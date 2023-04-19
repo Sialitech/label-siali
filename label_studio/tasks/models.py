@@ -48,7 +48,7 @@ class Task(TaskMixin, models.Model):
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID', db_index=True)
     data = JSONField('data', null=False, help_text='User imported or uploaded data for a task. Data is formatted according to '
                                                    'the project label config. You can find examples of data for your project '
-                                                   'on the Import page in the Label Studio Data Manager UI.')
+                                                   'on the Import page in the Siali Label Data Manager UI.')
 
     meta = JSONField('meta', null=True, default=dict,
                      help_text='Meta is user imported (uploaded) data and can be useful as input for an ML '

@@ -3,7 +3,7 @@ title: List
 type: tags
 order: 413
 meta_title: List Tag for Lists
-meta_description: Customize Label Studio with lists for machine learning and data science projects.
+meta_description: Customize Siali Label with lists for machine learning and data science projects.
 ---
 
 The `List` tag is used to rank results, for example for recommendation systems.

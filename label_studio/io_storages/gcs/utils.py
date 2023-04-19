@@ -125,7 +125,7 @@ class GCS(object):
                 "credentials": credentials
             }
         except DefaultCredentialsError as exc:
-            logger.error(f"Label studio couldn't load default GCS credentials from env. {exc}",
+            logger.error(f"Siali Label couldn't load default GCS credentials from env. {exc}",
                          exc_info=True)
             out = {}
         return out

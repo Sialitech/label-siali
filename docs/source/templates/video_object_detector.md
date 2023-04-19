@@ -6,7 +6,7 @@ cat: videos
 order: 803
 is_new: t
 meta_title: Video Object Detection Data Labeling Template
-meta_description: Template for detecting objects in videos with Label Studio for your machine learning and data science projects.
+meta_description: Template for detecting objects in videos with Siali Label for your machine learning and data science projects.
 ---
 
 Video object detection is aimed at detecting object in a video stream with bounding boxes, as opposed to [Image object detection](/templates/image_bbox.html) with static images.
@@ -18,8 +18,8 @@ The illustrated templates provide both manual and automatic ways of tracking obj
 
 !!! attention "important"
 
-    1. Video classification and object tracking were available to preview prior to Label Studio version 1.6, but these features are now fully functional and production-ready. 
-    2. In Label Studio Enterprise, the video object tracking is called video labeling for video object detection. 
+    1. Video classification and object tracking were available to preview prior to Siali Label version 1.6, but these features are now fully functional and production-ready. 
+    2. In Siali Label Enterprise, the video object tracking is called video labeling for video object detection. 
     3. The supported video formats are `mpeg4/H.264 webp` and `webm`. The supported video format also depends on the browser, and any pre-conversions from the customer's side. 
 
 
@@ -171,7 +171,7 @@ The keyframe format inside `value.sequence` list is the following:
 }
 ```
 
-## Label Studio UI enhancements
+## Siali Label UI enhancements
 
 The video player functionality includes the following UI enhancements:
 1. Dual ‘Region’ and ‘Details’ control panels vs. a single sidebar, allowing annotators to view all pertinent information about the task without scrolling.
@@ -193,7 +193,7 @@ The video player provides the following use cases:
 Video object detection has analytics that are built on top of the video. For example, if you look at a video you will see the bounding boxes that have tracking objects on the video.
 
 ### Enhance images
-In the Label Studio UI, the video interface presents the main video canvas with controls that allows annotators to more precisely label blurry images using the following operations:
+In the Siali Label UI, the video interface presents the main video canvas with controls that allows annotators to more precisely label blurry images using the following operations:
 
 **Zoom in, zoom out, zoom to fit, or zoom to 100%.**
 

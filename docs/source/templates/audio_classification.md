@@ -5,7 +5,7 @@ category: Audio/Speech Processing
 cat: audio-speech-processing
 order: 307
 meta_title: Audio Classification Data Labeling Template
-meta_description: Template for classifying audio and intent using Label Studio for your data science and machine learning projects.
+meta_description: Template for classifying audio and intent using Siali Label for your data science and machine learning projects.
 ---
 
 <img src="/images/templates-misc/audio-classification.png" alt="" class="gif-border" width="482px" height="282px" />

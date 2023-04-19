@@ -1,11 +1,11 @@
 ---
-title: Review annotations in Label Studio
+title: Review annotations in Siali Label
 short: Review annotations
 tier: enterprise
 type: guide
 order: 300
 order_enterprise: 113
-meta_title: Review annotation quality in Label Studio
+meta_title: Review annotation quality in Siali Label
 meta_description: In data labeling projects, start evaluating annotator performance against ground truth annotations, predictions, and other annotator's annotations.
 section: "Quality control"
 
@@ -15,7 +15,7 @@ After multiple labelers have annotated tasks, review their output to validate th
 
 <div class="enterprise-only">
 
-The annotation review workflow is only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Label Studio Features</a> to learn more.
+The annotation review workflow is only available in Siali Label Enterprise Edition. If you're using Siali Label Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Siali Label Features</a> to learn more.
 
 </div>
 
@@ -49,7 +49,7 @@ You can review tasks in random order, or order tasks in the project data manager
 
 You can now navigate back through the review stream in the same path as moving forward when `Mark task as reviewed after all annotations are processed` option is set. The go back (`<`)functionality takes you back through the same set of annotations as it had moving forward.
 
-1. As an **ADMINISTRATOR**, log in to the [Label Studio app](https://app.heartex.com/projects/?page=1).
+1. As an **ADMINISTRATOR**, log in to the [Siali Label app](https://app.heartex.com/projects/?page=1).
 
 2. Navigate to **All Projects** page, if needed.
 
@@ -151,12 +151,12 @@ You can also review the distribution of agreement percentages across project tas
 
 ## Review annotations against ground truth annotations 
 
-Define ground truth annotations in a Label Studio project. Use ground truth annotations to assess the quality of your annotated dataset. Review ground truths to make sure that annotators are accurately labeling data at the start of the project, and continually throughout the lifecycle of the training dataset creation.
+Define ground truth annotations in a Siali Label project. Use ground truth annotations to assess the quality of your annotated dataset. Review ground truths to make sure that annotators are accurately labeling data at the start of the project, and continually throughout the lifecycle of the training dataset creation.
 
-Label Studio Enterprise compares annotations from annotators and model predictions against the ground truth annotations for a task to calculate an accuracy score between 0 and 1.
+Siali Label Enterprise compares annotations from annotators and model predictions against the ground truth annotations for a task to calculate an accuracy score between 0 and 1.
 
 !!! note 
-    Ground truth annotations are only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see [Label Studio Features](https://labelstud.io/guide/label_studio_compare.html) to learn more.
+    Ground truth annotations are only available in Siali Label Enterprise Edition. If you're using Siali Label Community Edition, see [Siali Label Features](https://labelstud.io/guide/label_studio_compare.html) to learn more.
 
 
 ## Define ground truth annotations for a project

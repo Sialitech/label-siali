@@ -1,24 +1,24 @@
 ---
-title: Get data into Label Studio
+title: Get data into Siali Label
 short: Import data
 type: guide
 tier: all
 order: 120
 order_enterprise: 105
-meta_title: Import Data into Label Studio
-meta_description: Label and annotate data for your machine learning and data science projects using common file formats or the Label Studio JSON format.
+meta_title: Import Data into Siali Label
+meta_description: Label and annotate data for your machine learning and data science projects using common file formats or the Siali Label JSON format.
 section: "Import and Export"
 ---
 
-Get data into Label Studio by importing files, referencing URLs, or syncing with cloud or database storage. 
+Get data into Siali Label by importing files, referencing URLs, or syncing with cloud or database storage. 
 
 - If your data is stored in a cloud storage bucket, see [Sync data from cloud or database storage](storage.html).
 - If your data is stored in a Redis database, see [Sync data from cloud or database storage](storage.html).
-- If your data is stored at internet-accessible URLs, in files, or directories, [import it from the Label Studio UI](#Import-data-from-the-Label-Studio-UI).
-- If your data is stored locally, [import it into Label Studio](#Import-data-from-a-local-directory).
-- If your data contains predictions or pre-annotations, see [Import pre-annotated data into Label Studio](predictions.html).
+- If your data is stored at internet-accessible URLs, in files, or directories, [import it from the Siali Label UI](#Import-data-from-the-Label-Studio-UI).
+- If your data is stored locally, [import it into Siali Label](#Import-data-from-a-local-directory).
+- If your data contains predictions or pre-annotations, see [Import pre-annotated data into Siali Label](predictions.html).
 
-## Types of data you can import into Label Studio
+## Types of data you can import into Siali Label
 
 You can import many types of data, including text, timeseries, audio, and image data. The file types supported depend on the type of data. 
 
@@ -34,20 +34,20 @@ You can import many types of data, including text, timeseries, audio, and image 
 | [Tasks with multiple data types](#Basic-Label-Studio-JSON-format) | .csv, .tsv, .json |
 | Video | .mp4, .webm, .avi |
 
-If you don't see a supported data or file type that you want to import, reach out in the [Label Studio Slack community](https://slack.labelstudio.heartex.com/?source=docs-gdi). 
+If you don't see a supported data or file type that you want to import, reach out in the [Siali Label Slack community](https://slack.labelstudio.heartex.com/?source=docs-gdi). 
 
 ### How to import your data
 
-The most secure and reliable method to import your data is to store the data outside of Label Studio and import references to the data using URLs. You can import a list of URLs in a TXT, CSV, or TSV file, or reference the URLs in [JSON task format](#Basic-Label-Studio-JSON-format).
+The most secure and reliable method to import your data is to store the data outside of Siali Label and import references to the data using URLs. You can import a list of URLs in a TXT, CSV, or TSV file, or reference the URLs in [JSON task format](#Basic-Label-Studio-JSON-format).
 
 If you're importing audio, image, or video data, you must use URLs to refer to those data types. 
 
 If you're importing HTML, text, dialogue, or timeseries data using the `<HyperText>`, `<Text>`, `<Paragraphs>`, or `<TimeSeries>` tags in your labeling configuration, you can either load data directly, or load data from a URL. 
 - To load data from a URL, specify `valueType="url"` in your labeling configuration. 
-- To load data directly into the Label Studio database, specify `valueType="text"` for `HyperText` or `Text` data, or `valueType="json"` for `Paragraph` or `TimeSeries` data.
+- To load data directly into the Siali Label database, specify `valueType="text"` for `HyperText` or `Text` data, or `valueType="json"` for `Paragraph` or `TimeSeries` data.
 
 !!! note
-    If you load data from a URL, the data is not saved in Label Studio. If you want an annotated task export to include the data that you annotated, you must import the data into the Label Studio database without using URL references, or combine the data with the annotations after exporting.
+    If you load data from a URL, the data is not saved in Siali Label. If you want an annotated task export to include the data that you annotated, you must import the data into the Siali Label database without using URL references, or combine the data with the annotations after exporting.
 
 <br/>
 {% details <b>Click to expand example configurations with each valueType</b> %}
@@ -186,7 +186,7 @@ For example:
 
 ### `resolver` (optional)
     
-Use this parameter to retrieve data from multi-column csv on [S3 or other cloud storage](/guide/storage.html). Label Studio can retrieve it only in run-time, so it's secure.
+Use this parameter to retrieve data from multi-column csv on [S3 or other cloud storage](/guide/storage.html). Siali Label can retrieve it only in run-time, so it's secure.
 
 If you import a file with a list of tasks, and every task in this list is a link to another file in the storage. In this case, you can use the `resolver` parameter to retrieve the content of these files from a storage. 
 
@@ -238,21 +238,21 @@ For example, `resolver="csv|headless|separator=;|column=1"`
 
 ## How to format your data to import it
 
-Label Studio treats different file types different ways. 
+Siali Label treats different file types different ways. 
 
-If you want to import multiple types of data to label at the same time, for example, images with captions or audio recordings with transcripts, you must use the [basic Label Studio JSON format](#Basic-Label-Studio-JSON-format). 
+If you want to import multiple types of data to label at the same time, for example, images with captions or audio recordings with transcripts, you must use the [basic Siali Label JSON format](#Basic-Label-Studio-JSON-format). 
 
-[You can also use a CSV file or a JSON list of tasks to point to URLs with the data](#How-to-import-your-data), rather than directly importing the data if you need to import thousands of files. You can import files containing up to 250,000 tasks or up to 50MB in size into Label Studio.
+[You can also use a CSV file or a JSON list of tasks to point to URLs with the data](#How-to-import-your-data), rather than directly importing the data if you need to import thousands of files. You can import files containing up to 250,000 tasks or up to 50MB in size into Siali Label.
 
 If you're specifying data in a cloud storage bucket or container, and you don't want to [sync cloud storage](storage.html), create and specify [presigned URLs for Amazon S3 storage](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html), [signed URLs for Google Cloud Storage](https://cloud.google.com/storage/docs/access-control/signed-urls), or [shared access signatures for Microsoft Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview) in a JSON, CSV, TSV or TXT file. 
 
-### Basic Label Studio JSON format
+### Basic Siali Label JSON format
 
-The best way to import data into Label Studio is to use a JSON-formatted list of tasks. The `data` key of the JSON file references each task as an entry in a JSON dictionary. If there is no `data` key, Label Studio interprets the entire JSON file as one task. 
+The best way to import data into Siali Label is to use a JSON-formatted list of tasks. The `data` key of the JSON file references each task as an entry in a JSON dictionary. If there is no `data` key, Siali Label interprets the entire JSON file as one task. 
 
 In the `data` JSON dictionary, use key-value pairs that correspond to the source key expected by the object tag in the [label configuration](setup.html#Customize-the-labeling-interface-for-your-project) that you set up for your project. 
 
-Depending on the type of object tag, Label Studio interprets field values differently:
+Depending on the type of object tag, Siali Label interprets field values differently:
 - `<Text value="$key">`: `value` is interpreted as plain text.
 - `<HyperText value="$key">`: `value` is interpreted as HTML markup.
 - `<HyperText value="$key" encoding="base64">`: `value` is interpreted as a base64 encoded HTML markup.
@@ -264,8 +264,8 @@ You can add other, optional keys to the JSON file.
 
 | JSON key | Description |
 | --- | --- | 
-| annotations | Optional. List of annotations exported from Label Studio. [Label Studio's annotation format](export.html#Raw-JSON-format-of-completed-tasks) allows you to import annotation results in order to use them in subsequent labeling tasks. |
-| predictions | Optional. List of model prediction results, where each result is saved using [Label Studio's prediction format](export.html#Raw-JSON-format-of-completed-tasks). Import predictions for automatic task pre-labeling and active learning. See [Import predicted labels into Label Studio](predictions.html) |
+| annotations | Optional. List of annotations exported from Siali Label. [Siali Label's annotation format](export.html#Raw-JSON-format-of-completed-tasks) allows you to import annotation results in order to use them in subsequent labeling tasks. |
+| predictions | Optional. List of model prediction results, where each result is saved using [Siali Label's prediction format](export.html#Raw-JSON-format-of-completed-tasks). Import predictions for automatic task pre-labeling and active learning. See [Import predicted labels into Siali Label](predictions.html) |
 
 See [Relevant JSON property descriptions](export.html#Relevant-JSON-property-descriptions) in the export documentation for more details about the JSON format of exported tasks.
 
@@ -330,10 +330,10 @@ You can then import text tasks to label that match the following JSON format:
   }]
 }]
 ```
-If you're placing JSON files in [cloud storage](storage.html), place 1 task in each JSON file in the storage bucket. If you want to upload a JSON file from your machine directly into Label Studio, you can place multiple tasks in one JSON file and import it using Label Studio GUI (Data Manager => Import button). 
+If you're placing JSON files in [cloud storage](storage.html), place 1 task in each JSON file in the storage bucket. If you want to upload a JSON file from your machine directly into Siali Label, you can place multiple tasks in one JSON file and import it using Siali Label GUI (Data Manager => Import button). 
 
 #### Example JSON with multiple tasks
-You can place multiple tasks in one JSON file if you're uploading the JSON file using Label Studio Import Dialog only (Data Manager => Import button). 
+You can place multiple tasks in one JSON file if you're uploading the JSON file using Siali Label Import Dialog only (Data Manager => Import button). 
 
 <br/>
 {% details <b>To place multiple tasks in one JSON file, use this JSON format example</b> %}
@@ -365,12 +365,12 @@ The "data" parameter must contain the "my_text" field defined in the text labeli
 {% endcodeblock %}
 {% enddetails %}
 
-#### Example JSON for older versions of Label Studio
-If you're still using a Label Studio version earlier than 1.0.0, refer to this example JSON format. 
+#### Example JSON for older versions of Siali Label
+If you're still using a Siali Label version earlier than 1.0.0, refer to this example JSON format. 
 
 <br/>
-{% details <b>For versions of Label Studio earlier than 1.0.0, use this JSON format example.</b> %}
-If you're using a version of Label Studio earlier than version 1.0.0, import tasks that match the following JSON format: 
+{% details <b>For versions of Siali Label earlier than 1.0.0, use this JSON format example.</b> %}
+If you're using a version of Siali Label earlier than version 1.0.0, import tasks that match the following JSON format: 
 
 {% codeblock lang:json %}
 [{
@@ -417,7 +417,7 @@ If you're using a version of Label Studio earlier than version 1.0.0, import tas
 
 ### Import CSV or TSV data
 
-When you import a CSV / TSV formatted text file, Label Studio interprets the column names are as task data keys that correspond to the labeling config you set up: 
+When you import a CSV / TSV formatted text file, Siali Label interprets the column names are as task data keys that correspond to the labeling config you set up: 
 ```csv
 my_text,optional_field
 this is a first task,123
@@ -425,11 +425,11 @@ this is a second task,456
 ```
 
 !!! note
-    If your labeling config has a `TimeSeries` tag, Label Studio interprets the CSV/TSV as time series data when you import it. This CSV/TSV is hosted as a resource file and Label Studio automatically creates a task with a link to the uploaded CSV/TSV.
+    If your labeling config has a `TimeSeries` tag, Siali Label interprets the CSV/TSV as time series data when you import it. This CSV/TSV is hosted as a resource file and Siali Label automatically creates a task with a link to the uploaded CSV/TSV.
 
 ### Plain text
 
-Import data as plain text. Label Studio interprets each line in a plain text file as a separate data labeling task. 
+Import data as plain text. Siali Label interprets each line in a plain text file as a separate data labeling task. 
 
 You might use plain text for labeling tasks if you have only one stream of input data, and only one [object tag](/tags) specified in your label config. 
 
@@ -442,7 +442,7 @@ If you want to import entire plain text files without each line becoming a new l
 
 ### Import HTML data
 
-You can import `HyperText` data in HTML-formatted files and annotate them in Label Studio. When you directly import HTML files, the content is minified by compressing the text, removing whitespace and other nonfunctional data in the HTML code. Annotations that you create are applied to the minified version of the HTML.
+You can import `HyperText` data in HTML-formatted files and annotate them in Siali Label. When you directly import HTML files, the content is minified by compressing the text, removing whitespace and other nonfunctional data in the HTML code. Annotations that you create are applied to the minified version of the HTML.
 
 If you want to label HTML files without minifying the data, you can do one of the following:
 - Import the HTML files as BLOB storage from [external cloud storage such as Amazon S3 or Google Cloud Storage](storage.html).
@@ -451,40 +451,40 @@ If you want to label HTML files without minifying the data, you can do one of th
 ## Import data from a local directory
 
 To import data from a local directory, you have two options:
-- Run a web server to generate URLs for the files, then upload a file that references the URLs to Label Studio. 
-- Add the file directory as a source or target [local storage](storage.html#Local-storage) connection in the Label Studio UI.
+- Run a web server to generate URLs for the files, then upload a file that references the URLs to Siali Label. 
+- Add the file directory as a source or target [local storage](storage.html#Local-storage) connection in the Siali Label UI.
 
 ### Run a web server to generate URLs to local files
 
-To run a web server to generate URLs for the files, you can refer to this provided [helper shell script in the Label Studio repository](https://github.com/heartexlabs/label-studio/blob/master/scripts/serve_local_files.sh) or write your own script. 
+To run a web server to generate URLs for the files, you can refer to this provided [helper shell script in the Siali Label repository](https://github.com/heartexlabs/label-studio/blob/master/scripts/serve_local_files.sh) or write your own script. 
 Use that script to do the following:
-1. On the machine with the file directory that you want Label Studio to import, call the helper script and specify a regex pattern to match the files that you want to import. In this example, the script identifies files with the JPG file extension:
+1. On the machine with the file directory that you want Siali Label to import, call the helper script and specify a regex pattern to match the files that you want to import. In this example, the script identifies files with the JPG file extension:
    ```bash
    ./script/serve_local_files.sh <directory/with/files> *.jpg
    ```
    The script collects the links to the files provided by that HTTP server and saves them to a `files.txt` file with one URL per line. 
-3. Import the file with URLs into Label Studio using the Label Studio UI. 
+3. Import the file with URLs into Siali Label using the Siali Label UI. 
 
 !!! note 
-    You must keep the web server running while you perform your data labeling so that the URLs remain accessible to Label Studio.
+    You must keep the web server running while you perform your data labeling so that the URLs remain accessible to Siali Label.
 
-If your labeling configuration supports HyperText or multiple data types, use the Label Studio JSON format to specify the local file locations instead of a `txt` file. See [an example of this format](storage.html#Tasks-with-local-storage-file-references).
+If your labeling configuration supports HyperText or multiple data types, use the Siali Label JSON format to specify the local file locations instead of a `txt` file. See [an example of this format](storage.html#Tasks-with-local-storage-file-references).
 
-If you serve your data from an HTTP server created like follows: `python -m http.server 8081 -d`, you might need to set up CORS for that server so that Label Studio can access the data files successfully. If needed, run the following from the command line:
+If you serve your data from an HTTP server created like follows: `python -m http.server 8081 -d`, you might need to set up CORS for that server so that Siali Label can access the data files successfully. If needed, run the following from the command line:
 ```bash
 npm install http-server -g
 http-server -p 3000 --cors
 ```
 
-### Add the file directory as source storage in the Label Studio UI
+### Add the file directory as source storage in the Siali Label UI
 
-If you're running Label Studio on Docker and want to add local file storage, you need to mount the file directory and set up environment variables. See [Run Label Studio on Docker and use local storage](start.html#Run-Label-Studio-on-Docker-and-use-local-storage).
+If you're running Siali Label on Docker and want to add local file storage, you need to mount the file directory and set up environment variables. See [Run Siali Label on Docker and use local storage](start.html#Run-Label-Studio-on-Docker-and-use-local-storage).
 
 
-## Import data from the Label Studio UI
+## Import data from the Siali Label UI
 
-To import data from the Label Studio UI, do the following:
-1. On the Label Studio UI, open the Data Manager page for a specific project.
+To import data from the Siali Label UI, do the following:
+1. On the Siali Label UI, open the Data Manager page for a specific project.
 2. Click **Import** to open the Import dialog.
 3. Import your data from files or URLs. 
 
@@ -495,26 +495,26 @@ Data that you import is project-specific.
 
 ## Import data using the API
 
-Import your data using the Label Studio API. See the [API documentation for importing tasks](/api#operation/api_projects_import_create).
+Import your data using the Siali Label API. See the [API documentation for importing tasks](/api#operation/api_projects_import_create).
 
 ### Import data from the command line
 
-In versions of Label Studio earlier than 1.0.0, you can import data from a local directory using the command line. 
+In versions of Siali Label earlier than 1.0.0, you can import data from a local directory using the command line. 
 
 To import data from the command line, do the following:
 
-1. Start Label Studio and use command line arguments to specify the path to the data and format of the data. <br/>For example: <br/>`label-studio init --input-path my_tasks.json --input-format json`
-2. Open the Label Studio UI and confirm that your data was properly imported. 
+1. Start Siali Label and use command line arguments to specify the path to the data and format of the data. <br/>For example: <br/>`label-studio init --input-path my_tasks.json --input-format json`
+2. Open the Siali Label UI and confirm that your data was properly imported. 
 
-You can use the `--input-path` argument to specify a file or directory with the data that you want to label. You can specify other data formats using the `--input-format` argument. For example run the following command to start Label Studio and import audio files from a local directory:
+You can use the `--input-path` argument to specify a file or directory with the data that you want to label. You can specify other data formats using the `--input-format` argument. For example run the following command to start Siali Label and import audio files from a local directory:
 
 ```bash
 label-studio init my-project --input-path=my/audios/dir --input-format=audio-dir --label-config=config.xml --allow-serving-local-files
 ```
 
 !!! warning 
-    The `--allow-serving-local-files` argument is intended for use only with locally-running instances of Label Studio. Avoid using it for remote servers unless you are sure what you're doing.
+    The `--allow-serving-local-files` argument is intended for use only with locally-running instances of Siali Label. Avoid using it for remote servers unless you are sure what you're doing.
 
-By default, Label Studio expects JSON-formatted tasks using the [Basic Label Studio JSON format](tasks.html#Basic-Label-Studio-JSON-format). 
+By default, Siali Label expects JSON-formatted tasks using the [Basic Siali Label JSON format](tasks.html#Basic-Label-Studio-JSON-format). 
 
-If you add more files to a local directory after Label Studio starts, you must restart Label Studio to import the tasks in the additional files.
+If you add more files to a local directory after Siali Label starts, you must restart Siali Label to import the tasks in the additional files.

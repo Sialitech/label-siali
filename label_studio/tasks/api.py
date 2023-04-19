@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 @method_decorator(name='post', decorator=swagger_auto_schema(
         tags=['Tasks'],
         operation_summary='Create task',
-        operation_description='Create a new labeling task in Label Studio.',
+        operation_description='Create a new labeling task in Siali Label.',
         request_body=TaskSerializer))
 @method_decorator(name='get', decorator=swagger_auto_schema(
     tags=['Tasks'],
@@ -128,7 +128,7 @@ class TaskListAPI(DMTaskListAPI):
 @method_decorator(name='delete', decorator=swagger_auto_schema(
         tags=['Tasks'],
         operation_summary='Delete task',
-        operation_description='Delete a task in Label Studio. This action cannot be undone!',
+        operation_description='Delete a task in Siali Label. This action cannot be undone!',
         manual_parameters=[
             openapi.Parameter(
                 name='id',

@@ -3,23 +3,23 @@ title: Install and upgrade
 type: guide
 tier: opensource
 order: 103
-meta_title: Install and Upgrade Label Studio 
-meta_description: "Label Studio documentation: install and upgrade Label Studio with Docker, pip, and anaconda for your machine learning and data science projects." 
+meta_title: Install and Upgrade Siali Label 
+meta_description: "Siali Label documentation: install and upgrade Siali Label with Docker, pip, and anaconda for your machine learning and data science projects." 
 section: "Install"
 ---
 
-Install Label Studio on premises or in the cloud. Choose the installation method that works best for your environment:
+Install Siali Label on premises or in the cloud. Choose the installation method that works best for your environment:
 - [Install with pip](#Install-with-pip)
 - [Install with Docker](#Install-with-Docker)
 - [Install on Ubuntu](#Install-on-Ubuntu)
 - [Install from source](#Install-from-source)
 - [Install with Anaconda](#Install-with-Anaconda)
-- [Upgrade Label Studio](#Upgrade-Label-Studio)
+- [Upgrade Siali Label](#Upgrade-Label-Studio)
 
 <!-- md deploy.md -->
 
 ### Web browser support
-Label Studio is tested with the latest version of Google Chrome and is expected to work in the latest versions of:
+Siali Label is tested with the latest version of Google Chrome and is expected to work in the latest versions of:
 - Google Chrome
 - Apple Safari
 - Mozilla Firefox
@@ -28,33 +28,33 @@ If using other web browsers, or older versions of supported web browsers, unexpe
 
 ## Install prerequisite
 
-Install Label Studio in a clean Python environment. We highly recommend using a virtual environment (venv or conda) to reduce the likelihood of package conflicts or missing packages.
+Install Siali Label in a clean Python environment. We highly recommend using a virtual environment (venv or conda) to reduce the likelihood of package conflicts or missing packages.
 
 
 ## Install using pip
 
-To install Label Studio with pip and a virtual environment, you need Python version 3.7 or later. Run the following:
+To install Siali Label with pip and a virtual environment, you need Python version 3.7 or later. Run the following:
 ```bash
 python3 -m venv env
 source env/bin/activate
 python -m pip install label-studio
 ```
 
-To install Label Studio with pip, you need Python version 3.7 or later. Run the following:
+To install Siali Label with pip, you need Python version 3.7 or later. Run the following:
 ```bash
 pip install label-studio
 ```
 
-After you install Label Studio, start the server with the following command: 
+After you install Siali Label, start the server with the following command: 
 ```bash
 label-studio
 ```
-The default web browser will automatically open at [http://localhost:8080](http://localhost:8080) with Label Studio. Please refer to [start Label Studio](start.html) for more options when starting Label Studio.
+The default web browser will automatically open at [http://localhost:8080](http://localhost:8080) with Siali Label. Please refer to [start Siali Label](start.html) for more options when starting Siali Label.
 
 
 ## Install using Homebrew
 
-To install Label Studio with Brew, you need to have Brew package manager installed on your system. If you do not have Brew installed, please visit [brew.sh](https://brew.sh/) for installation instructions.
+To install Siali Label with Brew, you need to have Brew package manager installed on your system. If you do not have Brew installed, please visit [brew.sh](https://brew.sh/) for installation instructions.
 
 Execute the following command to add the Heartexlabs tap:
 
@@ -62,27 +62,27 @@ Execute the following command to add the Heartexlabs tap:
 brew tap heartexlabs/tap
 ````
 
-Execute the following command to install Label Studio:
+Execute the following command to install Siali Label:
 
 ```bash
 brew install heartexlabs/tap/label-studio
 
 ```
-After you install Label Studio, initiate the server using the following command:
+After you install Siali Label, initiate the server using the following command:
 
 ```bash
 label-studio
 ```
 
-The default web browser will automatically open at [http://localhost:8080](http://localhost:8080) with Label Studio. Please refer to [start Label Studio](start.html) for more options when starting Label Studio.
+The default web browser will automatically open at [http://localhost:8080](http://localhost:8080) with Siali Label. Please refer to [start Siali Label](start.html) for more options when starting Siali Label.
 
 
 ## Install with Docker
 
-Label Studio is also available as a Docker container. Make sure you have [Docker](https://www.docker.com/) installed on your machine.
+Siali Label is also available as a Docker container. Make sure you have [Docker](https://www.docker.com/) installed on your machine.
 
 ### Install with Docker on *nix
-To install and start Label Studio at [http://localhost:8080](http://localhost:8080), storing all labeling data in `./mydata` directory, run the following:
+To install and start Siali Label at [http://localhost:8080](http://localhost:8080), storing all labeling data in `./mydata` directory, run the following:
 ```bash
 docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
 ```
@@ -113,16 +113,16 @@ docker build -t heartexlabs/label-studio:latest .
 ```
 
 ### Run with Docker Compose
-Use Docker Compose to serve Label Studio at `http://localhost:8080`. You must use Docker Compose version 1.25.0 or higher.
+Use Docker Compose to serve Siali Label at `http://localhost:8080`. You must use Docker Compose version 1.25.0 or higher.
 
-Start Label Studio:
+Start Siali Label:
 ```bash
 docker-compose up -d
 ```
 
-This starts Label Studio with a PostgreSQL database backend. You can also use a PostgreSQL database without Docker Compose. See [Set up database storage](storedata.html).
+This starts Siali Label with a PostgreSQL database backend. You can also use a PostgreSQL database without Docker Compose. See [Set up database storage](storedata.html).
 
-### Install Label Studio without internet access
+### Install Siali Label without internet access
 Download label-studio docker image (host with internet access and docker):
 ```bash 
 docker pull heartexlabs/label-studio:latest
@@ -147,7 +147,7 @@ Follow steps from [Install and Upgrade to run LS](install.html#Install-with-Dock
 
 ## Install on Ubuntu
 
-To install Label Studio on Ubuntu and run it in a virtual environment, run the following command:
+To install Siali Label on Ubuntu and run it in a virtual environment, run the following command:
 
 ```bash
 python3 -m venv env
@@ -158,7 +158,7 @@ python -m pip install label-studio
 
 ## Install from source
 
-If you want to use nightly builds or extend the functionality, consider downloading the source code using Git and running Label Studio locally:
+If you want to use nightly builds or extend the functionality, consider downloading the source code using Git and running Siali Label locally:
 
 ```bash
 git clone https://github.com/heartexlabs/label-studio.git
@@ -182,8 +182,8 @@ conda install psycopg2  # required for LS 1.7.2 only
 pip install label-studio
 ```
 
-## Upgrade Label Studio
-To upgrade to the latest version of Label Studio, reinstall or upgrade using pip.
+## Upgrade Siali Label
+To upgrade to the latest version of Siali Label, reinstall or upgrade using pip.
 
 ```bash
 pip install --upgrade label-studio
@@ -191,7 +191,7 @@ pip install --upgrade label-studio
 
 Migration scripts run when you upgrade to version 1.0.0 from version 0.9.1 or earlier.
 
-To make sure an existing project gets migrated, when you [start Label Studio](start.html), run the following command:
+To make sure an existing project gets migrated, when you [start Siali Label](start.html), run the following command:
 
 ```bash
 label-studio start path/to/old/project 
@@ -199,22 +199,22 @@ label-studio start path/to/old/project
 
 The most important change to be aware of is changes to rename "completions" to "annotations". See the [updated JSON format for completed tasks](export.html#Raw_JSON_format_of_completed_tasks).
 
-If you customized the Label Studio Frontend, see the [Frontend reference guide](frontend_reference.html) for required updates to maintain compatibility with version 1.0.0.
+If you customized the Siali Label Frontend, see the [Frontend reference guide](frontend_reference.html) for required updates to maintain compatibility with version 1.0.0.
 
 ## Troubleshoot installation
 
-You might see errors when installing Label Studio. Follow these steps to resolve them.
+You might see errors when installing Siali Label. Follow these steps to resolve them.
 
-### Run the latest version of Label Studio
-Many bugs might be fixed in patch releases or maintenance releases. Make sure you're running the latest version of Label Studio by upgrading your installation before you start Label Studio. 
+### Run the latest version of Siali Label
+Many bugs might be fixed in patch releases or maintenance releases. Make sure you're running the latest version of Siali Label by upgrading your installation before you start Siali Label. 
 
 ### Errors about missing packages
 
-If you see errors about missing packages, install those packages and try to install Label Studio again. Make sure that you run Label Studio in a clean Python environment, such as a virtual environment.
+If you see errors about missing packages, install those packages and try to install Siali Label again. Make sure that you run Siali Label in a clean Python environment, such as a virtual environment.
 
 For Windows users the default installation might fail to build the `lxml` package. Consider manually installing it from [the unofficial Windows binaries](https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml). If you are running Windows 64-bit with Python 3.8 or later, run `pip install lxml‑4.5.0‑cp38‑cp38‑win_amd64.whl` to install it. 
 
-### Errors from Label Studio 
+### Errors from Siali Label 
 If you see any other errors during installation, try to rerun the installation.
 
 ```bash
@@ -227,7 +227,7 @@ Upgrade Docker Engine to the latest available version(>= [20.10.12](https://docs
 ### PermissionError: [Errno 13] Permission denied: `/label-studio/data/media`
 
 !!! warning
-    Starting with Label Studio 1.7.0 release, the application run using a non-root docker user with ID `1001`.
+    Starting with Siali Label 1.7.0 release, the application run using a non-root docker user with ID `1001`.
 
 You may already be aware that Docker containers generally operate with root privileges by default. This unrestricted container management permits actions like installing system packages, modifying configuration files, and binding privileged ports, which are all beneficial for development purposes. However, this can lead to significant risks when containers are deployed in a production environment.
 
@@ -242,7 +242,7 @@ It is advised to use non-root containers for the following reasons:
 Our [Dockerfile](https://github.com/heartexlabs/label-studio/blob/develop/Dockerfile) contains the line `USER 1001` which assigns a non-root user UID to the image, enabling the container to run as an unprivileged user. This implementation applies the security enhancements and other restrictions mentioned above to the container.
 
 #### File permissions for non-root user
-By default, Label Studio container images operate as non-root. As a result, any directory requiring write access must be assigned to the root group (`GID 0`). This ensures that the arbitrary user (default `UID 1001`) can write to the directory, as this user is always part of the root group. To achieve this, simply set the ownership of the local directory to the root group (GID 0), which will be enough regardless of the UID:
+By default, Siali Label container images operate as non-root. As a result, any directory requiring write access must be assigned to the root group (`GID 0`). This ensures that the arbitrary user (default `UID 1001`) can write to the directory, as this user is always part of the root group. To achieve this, simply set the ownership of the local directory to the root group (GID 0), which will be enough regardless of the UID:
 ```bash
 mkdir mydata
 sudo chown :0 mydata

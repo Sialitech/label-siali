@@ -3,7 +3,7 @@ title: Audio
 type: tags
 order: 301
 meta_title: Audio Tag for Audio Labeling
-meta_description: Customize Label Studio with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
+meta_description: Customize Siali Label with the Audio tag for advanced audio annotation tasks for machine learning and data science projects.
 ---
 
 The Audio tag plays audio and shows its waveform. Use for audio annotation tasks where you want to label regions of audio, see the waveform, and manipulate audio during annotation.

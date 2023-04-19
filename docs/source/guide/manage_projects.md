@@ -1,19 +1,19 @@
 ---
-title: Manage projects in Label Studio Enterprise
+title: Manage projects in Siali Label Enterprise
 short: Project management
 tier: enterprise
 type: guide
 order: 115
 order_enterprise: 103
-meta_title: Manage Role-Based Access Control in Label Studio
-meta_description: Manage access and set up permissions with user roles, organizations, and project workspaces for your projects in Label Studio Enterprise.
+meta_title: Manage Role-Based Access Control in Siali Label
+meta_description: Manage access and set up permissions with user roles, organizations, and project workspaces for your projects in Siali Label Enterprise.
 section: "Configuration"
 
 ---
 
-Organize projects into workspaces to make order in labeling data with Label Studio Enterprise. 
+Organize projects into workspaces to make order in labeling data with Siali Label Enterprise. 
 
-You can manage data and projects in the Label Studio UI using the following:
+You can manage data and projects in the Siali Label UI using the following:
 
 - [Use the organization page](#Use-the-organization-page).
 - [Create workspaces to organize projects](#Create-workspaces-to-organize-projects).
@@ -25,20 +25,20 @@ You can manage data and projects in the Label Studio UI using the following:
 
 ### Use the organization page
 
-To manage organization membership, use the **Organization** page in the Label Studio UI. When you sign up for Label Studio Enterprise for the first time, an organization associated with your account is automatically created. You become the owner of that organization. People who join Label Studio Enterprise from an invitation link or with an LDAP or SSO role join an existing organization.
+To manage organization membership, use the **Organization** page in the Siali Label UI. When you sign up for Siali Label Enterprise for the first time, an organization associated with your account is automatically created. You become the owner of that organization. People who join Siali Label Enterprise from an invitation link or with an LDAP or SSO role join an existing organization.
 
-If permitted by your Label Studio Enterprise plan, you can create organizations in Label Studio to further separate access to data and projects. For example, you could create separate organizations to separate work and access between completely unrelated departments. If some departments might collaborate with each other on a project, you can use one organization for both and instead use workspaces to organize the projects that they might or might not be collaborating on. 
+If permitted by your Siali Label Enterprise plan, you can create organizations in Siali Label to further separate access to data and projects. For example, you could create separate organizations to separate work and access between completely unrelated departments. If some departments might collaborate with each other on a project, you can use one organization for both and instead use workspaces to organize the projects that they might or might not be collaborating on. 
 
 For example, you might set up one of the following possible configurations:
 - One organization for your company, with one workspace for the support department and another for the development team, with specific projects in each workspace for different types of customer requests. 
-  <img style="width:70%" src="/images/LSE/LSE-one-org-many-workspaces.jpg" alt="Diagram showing Label Studio with one organization with multiple workspaces and projects within each workspace."/>
+  <img style="width:70%" src="/images/LSE/LSE-one-org-many-workspaces.jpg" alt="Diagram showing Siali Label with one organization with multiple workspaces and projects within each workspace."/>
   <br/>
-  <i>Figure 3: Label Studio with one organization with multiple workspaces and projects within each workspace.</i>
+  <i>Figure 3: Siali Label with one organization with multiple workspaces and projects within each workspace.</i>
 
 - Multiple organizations, such as one for the customer claims department and another for the customer support department, with specific workspaces in each organization for specific types of insurance, such as home insurance claims and auto insurance claims, and specific projects in each workspace for types of claims, such as Accident Claims, Injury Claims, Natural Disaster Claims. The Customer support organization might have workspaces specific to the types of support queues, with projects for specific types of calls received.
-<img style="width:70%" src="/images/LSE/LSE-multiple-orgs-workspaces.jpg" alt="Diagram showing Label Studio with three organizations, each one with multiple workspaces and projects within each workspace."/>
+<img style="width:70%" src="/images/LSE/LSE-multiple-orgs-workspaces.jpg" alt="Diagram showing Siali Label with three organizations, each one with multiple workspaces and projects within each workspace."/>
 <br>
-<i>Figure 4: Label Studio with three organizations, each one with multiple workspaces and projects within each workspace.</i>
+<i>Figure 4: Siali Label with three organizations, each one with multiple workspaces and projects within each workspace.</i>
 
 When you assign a user role to an organization member, they hold that role for all workspaces and projects for that organization.
   
@@ -52,7 +52,7 @@ Within an organization, owners, administrators, and managers can create and mana
 
 Create a workspace to organize projects by doing the following:
 
-1. In the Label Studio UI, click the `+` sign next to **Workspaces** in the menu.
+1. In the Siali Label UI, click the `+` sign next to **Workspaces** in the menu.
   <br>
   <div style="margin:auto; text-align:center;"><img class="gif-border" src="/images/click-plus-sign.png" style="opacity: 0.8"/></div>
   <i>Figure 5: Click the <b>+</b> sign.</i>
@@ -67,7 +67,7 @@ After creating a workspace, you can create projects for that workspace, or use t
 
 ### Add or remove members to a workspace
 
-From a specific workspace inside the Label Studio UI, do the following:
+From a specific workspace inside the Siali Label UI, do the following:
 1. Click **Manage Members**.
 2. Use the search functionality to locate the user that you want to add to the workspace.
 3. Select the checkbox next to their name and click the `>` arrow so that they appear in the list of users that **Belong to the Workspace**.
@@ -81,7 +81,7 @@ You can also remove yourself or other members from a workspace by following the 
 
 ### Sandbox workspace
 
-Each user has a personal Sandbox workspace that they can use to experiment with project settings and get familiar with Label Studio. After you set up a project and want others to collaborate on it with you, you can update the project workspace in the **Project Settings**. You cannot add members to your Sandbox workspace.
+Each user has a personal Sandbox workspace that they can use to experiment with project settings and get familiar with Siali Label. After you set up a project and want others to collaborate on it with you, you can update the project workspace in the **Project Settings**. You cannot add members to your Sandbox workspace.
 
 ### More menu to Pin or Unpin and Duplicate projects
 
@@ -93,9 +93,9 @@ You can pin a project to the top of the page and unpin a project too. The **Pin 
 
 **Roles and Capabilities**
 
-This section describes the user roles and capable actions on the **Pin project** and **Unpin project** feature by using the Label studio UI. 
+This section describes the user roles and capable actions on the **Pin project** and **Unpin project** feature by using the Siali Label UI. 
 
-As an **Organization Admin** and **Reviewer** in Label Studio UI, you can do the following: 
+As an **Organization Admin** and **Reviewer** in Siali Label UI, you can do the following: 
 
 - View all your pinned projects.
 - View all the pinned projects by other administrators.
@@ -117,7 +117,7 @@ As an **Organization Admin** and **Reviewer** in Label Studio UI, you can do the
 !!! note
     If there are no available pinned projects, all other projects will display.
 
-As an **Annotator** in Label Studio UI, you can do the following:
+As an **Annotator** in Siali Label UI, you can do the following:
 
 - View projects that have been pinned by people with permissions.
 - Cannot manage pinning or unpinning projects.
@@ -128,7 +128,7 @@ As an **Annotator** in Label Studio UI, you can do the following:
 
 To pin or unpin projects:
 
-1. In the Label Studio UI, click **All Projects** to see all the projects in one place. 
+1. In the Siali Label UI, click **All Projects** to see all the projects in one place. 
 2. Click on the more menu (three dots **...** located in the bottom-right of each project card) to see the following options. 
 
   <br>
@@ -190,7 +190,7 @@ To duplicate a project:
 You can only delete a workspace if it has no projects. If you want to delete a workspace, first delete the projects or move them to another workspace. 
 
 To delete a workspace, do the following:
-1. In the Label Studio UI, open the workspace.
+1. In the Siali Label UI, open the workspace.
 2. Click the gear icon next to the workspace name.
 3. In the dialog box that appears, click **Delete Workspace**. If the button is not available to select, the workspace still contains projects. 
 

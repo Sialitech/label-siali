@@ -2,11 +2,11 @@
 title: Introduction
 type: tags
 order: 201
-meta_title: Customize the Label Studio User Interface
-meta_description: Customize the Label Studio labeling interface using XML-like tags for data annotation tasks in machine learning and data science projects.
+meta_title: Customize the Siali Label User Interface
+meta_description: Customize the Siali Label labeling interface using XML-like tags for data annotation tasks in machine learning and data science projects.
 ---
 
-You can use XML-like tags in Label Studio to configure the labeling interface. Label Studio uses three different types of tags to manage labeling:
+You can use XML-like tags in Siali Label to configure the labeling interface. Siali Label uses three different types of tags to manage labeling:
 - **Object** tags for data types, used to display elements in a task that can be labeled such as [audio](audio.html), [HTML](hypertext.html), [images](image.html), [paragraphs](paragraphs.html), [text](text.html), and more.
 - **Control** tags that you can use to annotate the objects. For example, use [labels](labels.html) for semantic and named entity tasks, [choices](choices.html) for classification tasks, [textarea](textarea.html) for transcription tasks, and more. 
 - **Visual** tags to modify the visual aspects of the labeling interface, such as by controlling the [view](view.html) of specific labeling options, or adding a [header](header.html).

@@ -5,7 +5,7 @@ category: Natural Language Processing
 cat: natural-language-processing
 order: 206
 meta_title: Text Summarization Data Labeling Template
-meta_description: Template for summarizing text with Label Studio for your machine learning and data science projects.
+meta_description: Template for summarizing text with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/text-summarization.png" alt="" class="gif-border" width="552px" height="408px" />
@@ -81,7 +81,7 @@ Your fully enhanced labeling configuration looks like the following:
 
 ### Display long text samples with a scrollbar
 
-If you want to change how Label Studio displays long text samples on the labeling interface, you can use the [View](/tags/view.html) tags to wrap labeling tags with CSS styling. 
+If you want to change how Siali Label displays long text samples on the labeling interface, you can use the [View](/tags/view.html) tags to wrap labeling tags with CSS styling. 
 
 For example, you can constrain the text sample to a specific height, making it easier to keep the text summary that annotators provide visible.
 ```xml

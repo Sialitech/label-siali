@@ -5,7 +5,7 @@ category: Structured Data Parsing
 cat: structured-data-parsing
 order: 602
 meta_title: PDF Classification Data Labeling Template
-meta_description: Template for classifying PDF data with Label Studio for your machine learning and data science projects.
+meta_description: Template for classifying PDF data with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/pdf-classification.png" alt="" class="gif-border" width="552px" height="408px" />
@@ -63,7 +63,7 @@ Use the [HyperText](/tags/hypertext.html) tag to render an inline version of the
 
 ### Input data
 
-Label Studio does not support labeling PDF-formatted files directly. You should use the `embed` tag inside of your data for pdf loading:
+Siali Label does not support labeling PDF-formatted files directly. You should use the `embed` tag inside of your data for pdf loading:
 
 ```
 {

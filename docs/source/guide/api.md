@@ -1,5 +1,5 @@
 ---
-title: API Reference for Label Studio
+title: API Reference for Siali Label
 short: Backend API
 type: guide
 tier: all
@@ -11,16 +11,16 @@ section: "Integration and Development"
 
 ---
 
-You can use the Label Studio API to import data for labeling, export annotations, set up machine learning with Label Studio, and sync tasks with cloud storage. 
+You can use the Siali Label API to import data for labeling, export annotations, set up machine learning with Siali Label, and sync tasks with cloud storage. 
 
-See the [API reference documentation](/api) for further guidance and interactive examples. If you want to write Python scripts using the API, use the [Label Studio Python SDK](sdk.html). 
+See the [API reference documentation](/api) for further guidance and interactive examples. If you want to write Python scripts using the API, use the [Siali Label Python SDK](sdk.html). 
 
 <div class="enterprise-only">
 
 <p>
-The Label Studio Enterprise API shares many endpoints with the Label Studio Community Edition API, but includes extra payload options and additional endpoints specific to Enterprise features. Access the full Label Studio Enterprise API reference documentation by doing the following:</p>
+The Siali Label Enterprise API shares many endpoints with the Siali Label Community Edition API, but includes extra payload options and additional endpoints specific to Enterprise features. Access the full Siali Label Enterprise API reference documentation by doing the following:</p>
 <ol>
-<li>Log in to Label Studio Enterprise</li>
+<li>Log in to Siali Label Enterprise</li>
 <li>Open the menu and click <b>API</b></li>
 </ol>
 
@@ -30,13 +30,13 @@ The Label Studio Enterprise API shares many endpoints with the Label Studio Comm
 
 You must retrieve your access token so that you can authenticate to the API.
 
-1. In the Label Studio UI, click the user icon in the upper right.
+1. In the Siali Label UI, click the user icon in the upper right.
 2. Click **Account & Settings**.
 3. Copy the access token. 
 
 In your first API call, specify the access token in the headers: 
 ```bash
-curl -X <method> <Label Studio URL>/api/<endpoint> -H 'Authorization: Token <token>'
+curl -X <method> <Siali Label URL>/api/<endpoint> -H 'Authorization: Token <token>'
 ```
 
 <div class="opensource-only">
@@ -54,11 +54,11 @@ See [API documentation for authentication](/api#section/Authentication).
 
 ### List all projects
 
-To perform most tasks with the Label Studio API, you must specify the project ID, sometimes referred to as the `pk`, or primary key. If you don't know what your project ID is, you might want to get a list of all projects in Label Studio that you can access. See the [List your projects API endpoint documentation](/api#operation/api_projects_list).
+To perform most tasks with the Siali Label API, you must specify the project ID, sometimes referred to as the `pk`, or primary key. If you don't know what your project ID is, you might want to get a list of all projects in Siali Label that you can access. See the [List your projects API endpoint documentation](/api#operation/api_projects_list).
 
 ### Create and set up a project
 
-Create a project and set up the labeling interface in Label Studio using the API. See the [Create new project API endpoint documentation](/api#operation/api_projects_create).
+Create a project and set up the labeling interface in Siali Label using the API. See the [Create new project API endpoint documentation](/api#operation/api_projects_create).
 
 If you want to make sure the configuration for your labeling interface is valid before submitting it using the API, you can use the [validate label config](/api#operation/api_projects_validate_create) API endpoint.
 

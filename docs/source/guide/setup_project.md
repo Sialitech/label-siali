@@ -7,12 +7,12 @@ order: 116
 order_enterprise: 103
 section: "Configuration"
 meta_title: Set up your labeling project
-meta_description: Set up data labeling and annotation projects in Label Studio to produce high-quality data for your machine learning and data science projects. 
+meta_description: Set up data labeling and annotation projects in Siali Label to produce high-quality data for your machine learning and data science projects. 
 ---
 
-All labeling activities in Label Studio occur in the context of a project. 
+All labeling activities in Siali Label occur in the context of a project. 
 
-<div class="opensource-only">After you [start Label Studio](start.html) and [create an account](signup.html), create a project to start labeling your data.</div>
+<div class="opensource-only">After you [start Siali Label](start.html) and [create an account](signup.html), create a project to start labeling your data.</div>
 
 1. [Create a project](#Create-a-project)
 2. [Import data](tasks.html).
@@ -29,15 +29,15 @@ All labeling activities in Label Studio occur in the context of a project.
 ## Create a project
 
 When you're creating a project, you can save your progress at any time. You don't need to import your data and set up the labeling interface all at the same time, but you can.
-1. In the Label Studio UI, click **Create Project**.
+1. In the Siali Label UI, click **Create Project**.
 2. Type a project name and a description. If you want, choose a color for your project.
-3. If you're ready to import your data, click **Data Import** and import data from the Label Studio UI. For details about import formats and data types, see [Get data into Label Studio](tasks.html).
+3. If you're ready to import your data, click **Data Import** and import data from the Siali Label UI. For details about import formats and data types, see [Get data into Siali Label](tasks.html).
 4. If you're ready to set up the labeling interface, click **Labeling Setup** and choose a template or create a custom configuration for labeling. See [Set up the labeling interface for your project](setup.html).
 5. When you're done, click **Save** to save your project.
 
 You can also create a project from a template by clicking **Use Template**. See more about [project templates](#Create-a-project-template).
 
-After you save a project, any other collaborator with access to the Label Studio instance can view your project, perform labeling, and make changes. To use role-based access control, you need to use Label Studio Enterprise Edition.
+After you save a project, any other collaborator with access to the Siali Label instance can view your project, perform labeling, and make changes. To use role-based access control, you need to use Siali Label Enterprise Edition.
 
 ## Set up annotation settings for your project
 
@@ -45,7 +45,7 @@ Set up annotation settings to configure how you want annotators to perform label
 
 <div class="enterprise-only">
 
-Some annotation settings are only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Label Studio Features</a> to learn more.
+Some annotation settings are only available in Siali Label Enterprise Edition. If you're using Siali Label Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Siali Label Features</a> to learn more.
 
 </div>
 
@@ -54,7 +54,7 @@ Some annotation settings are only available in Label Studio Enterprise Edition. 
 
 In the project settings, you can add instructions and choose whether to show the instructions to annotators before they perform labeling. 
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 
 <div class="enterprise-only">
 
@@ -78,7 +78,7 @@ Annotators can view instructions at any time when labeling by clicking the (i) b
 ### Set up task distribution for labeling
 Select how you want to distribute tasks to annotators for labeling. Different from task sampling, use this setting to choose whether you need to [assign annotators](manage_data.html##Assign-annotators-to-tasks) before they can start labeling.
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Annotation Settings**.
 3. Under **Distribute Labeling Tasks**, select one of the following:
     - Auto, the default option, to distribute tasks automatically to annotators.
@@ -97,7 +97,7 @@ Your changes save automatically.
 
 By default, each task only needs to be annotated by one annotator. If you want multiple annotators to be able to annotate tasks, set the Overlap of Annotations for a project in the project settings.
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Quality**.
 3. Under **Overlap of Annotations**, select the number of minimum annotations for a task. 
 4. Choose whether to enforce the overlap for the default of 100% of tasks, or a smaller percentage. 
@@ -116,28 +116,28 @@ If you want at least half of the tasks to be annotated by at least 3 people:
 - Set the minimum number of annotations to **3**
 - Enforce the overlap for 50% of tasks.
 
-If you're using manual distribution of tasks, annotators with tasks assigned to them label those tasks first, then Label Studio automatically distributes the remaining tasks to the project annotators so that the desired overlap and minimum number of annotations per task can be achieved.
+If you're using manual distribution of tasks, annotators with tasks assigned to them label those tasks first, then Siali Label automatically distributes the remaining tasks to the project annotators so that the desired overlap and minimum number of annotations per task can be achieved.
 
 ### Set annotating options
 If you want, you can allow empty annotations.
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Annotation Settings**.
 3. Under **Annotating Options**, select **Allow empty annotations**. By default, empty annotations are allowed.
 
 ### Set up task sampling
 
-In Label Studio Community Edition, you can set up task sampling from the command line when you start Label Studio or from the Label Studio UI. 
+In Siali Label Community Edition, you can set up task sampling from the command line when you start Siali Label or from the Siali Label UI. 
 - To start a project with specific task sampling, see [Set up task sampling for your project](start.html#Set-up-task-sampling-for-your-project).
-- To change task sampling settings from the Label Studio UI, do the following:
-    - Within a project on the Label Studio UI, click **Settings**.
+- To change task sampling settings from the Siali Label UI, do the following:
+    - Within a project on the Siali Label UI, click **Settings**.
     - On the **General** settings tab, under **Task Sampling**, choose between `Sequential sampling` and `Random sampling`. 
     - Click **Save**. 
     
 <div class="enterprise-only">
 
-In Label Studio Enterprise, you can set up task sampling in the annotation settings for a project.
-1. Within a project on the Label Studio UI, click **Settings**.
+In Siali Label Enterprise, you can set up task sampling in the annotation settings for a project.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Annotation Settings**.
 3. Select your preferred method of task sampling:
     - Uncertainty sampling, where tasks are shown to annotators according to the model uncertainty, or prediction scores.
@@ -152,9 +152,9 @@ In Label Studio Enterprise, you can set up task sampling in the annotation setti
 
 ### Define the agreement metrics for annotation statistics
 
-Annotation statistics such as annotator consensus are calculated using an agreement metric. If you want the agreement metric to calculate annotation or prediction agreement by requiring exact matching choices, choose that option in the annotation settings. For more about agreement metrics in Label Studio Enterprise, see [Annotation statistics](stats.html).
+Annotation statistics such as annotator consensus are calculated using an agreement metric. If you want the agreement metric to calculate annotation or prediction agreement by requiring exact matching choices, choose that option in the annotation settings. For more about agreement metrics in Siali Label Enterprise, see [Annotation statistics](stats.html).
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Quality**.
 3. Under **Annotation Agreement**, select **Exact matching choices**.
 4. For some types of labeling, you can also select a [specific matching function](stats.html) or add a [custom agreement metric](custom_metric.html). 
@@ -167,9 +167,9 @@ Your changes save automatically.
 
 ## Set up review settings for your project
 
-Set up review settings to guide reviewers when they review annotated tasks. For more about reviewing annotations, see [Review annotations in Label Studio](quality.html)
+Set up review settings to guide reviewers when they review annotated tasks. For more about reviewing annotations, see [Review annotations in Siali Label](quality.html)
 
-Review settings and the review stream are only available in Label Studio Enterprise Edition. If you're using Label Studio Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Label Studio Features</a> to learn more.
+Review settings and the review stream are only available in Siali Label Enterprise Edition. If you're using Siali Label Community Edition, see <a href="https://labelstud.io/guide/label_studio_compare.html">Siali Label Features</a> to learn more.
 </div>
 
 
@@ -177,7 +177,7 @@ Review settings and the review stream are only available in Label Studio Enterpr
 
 In the project settings, you can add instructions and choose whether to show the instructions to reviewers before they start reviewing annotated tasks. 
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Review**. 
 3. Type instructions and choose whether to show the instructions to reviewers before reviewing annotated tasks. If you want to provide additional details or links for reference, instructions support HTML markup.
 4. Click **Save**. 
@@ -187,7 +187,7 @@ In the project settings, you can add instructions and choose whether to show the
 
 Configure the reviewing settings for your project.
 
-1. Within a project on the Label Studio UI, click **Settings**.
+1. Within a project on the Siali Label UI, click **Settings**.
 2. Click **Review**. 
 3. Under **Reviewing Options**, choose whether to mark a task as reviewed if at least one annotation has been reviewed, or only after all annotations for a task have been processed.
 4. Under **Reviewing Options**, choose whether to anonymize annotators when reviewing tasks. 
@@ -197,7 +197,7 @@ Your changes save automatically.
 
 ## Add members to a project
 
-In Label Studio Enterprise, you can [add members to a specific workspace](manage_users.html#Add-or-remove-members-to-a-workspace) or add members to a specific project within a workspace. 
+In Siali Label Enterprise, you can [add members to a specific workspace](manage_users.html#Add-or-remove-members-to-a-workspace) or add members to a specific project within a workspace. 
 
 To add members to a specific project, do the following:
 1. Within a project, click **Members** and then click **Manage Members**.
@@ -213,7 +213,7 @@ After adding a member to a project, you can [assign them as a reviewer](quality.
 
 ## Publish project to annotators
 
-In Label Studio Enterprise, you can hide projects from annotators so that you can fully configure the project before annotators can start labeling. When you're ready for annotators to start labeling, publish the project to annotators.
+In Siali Label Enterprise, you can hide projects from annotators so that you can fully configure the project before annotators can start labeling. When you're ready for annotators to start labeling, publish the project to annotators.
 
 Before you can open a project to annotators, make sure that you've done the following:
 - [Set up the labeling interface](setup.html).
@@ -230,7 +230,7 @@ To publish a project, do the following:
 
 ## Create a project template
 
-If you want to easily create a project with the same labeling interface as an existing project in Label Studio Enterprise, create and use a project template.
+If you want to easily create a project with the same labeling interface as an existing project in Siali Label Enterprise, create and use a project template.
 
 1. In the project that you want to use as a template, open the **Settings**.
 2. In the **General** tab for the project settings, click **Save as Template**.
@@ -249,13 +249,13 @@ After you create a project template, you can use the template when you create a 
 
 <div class="opensource-only">
 
-## Where Label Studio stores your project data and configurations
+## Where Siali Label stores your project data and configurations
 
-All labeling activities in Label Studio occur in the context of a project.
+All labeling activities in Siali Label occur in the context of a project.
 
-Starting in version 1.0.0, Label Studio stores your project data and configurations in a SQLite database. You can choose to use PostgreSQL instead. See [Set up database storage](storedata.html). 
+Starting in version 1.0.0, Siali Label stores your project data and configurations in a SQLite database. You can choose to use PostgreSQL instead. See [Set up database storage](storedata.html). 
 
-In versions of Label Studio earlier than 1.0.0, when you start Label Studio for the first time, it launches from a project directory that Label Studio creates, called `./my_project` by default. 
+In versions of Siali Label earlier than 1.0.0, when you start Siali Label for the first time, it launches from a project directory that Siali Label creates, called `./my_project` by default. 
 
 `label-studio start ./my_project --init`
 

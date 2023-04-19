@@ -1,4 +1,4 @@
-# Label Studio
+# Siali Label
 
 This folder holds all the pieces of the new frontend framework.
 

@@ -1,19 +1,19 @@
 ---
-title: Manage users to Label Studio Enterprise
+title: Manage users to Siali Label Enterprise
 short: User management
 tier: enterprise
 type: guide
 order: 115
 order_enterprise: 102
-meta_title: Manage Role-Based Access Control in Label Studio
-meta_description: Manage access and set up permissions with user roles, organizations, and project workspaces for your projects in Label Studio Enterprise.
+meta_title: Manage Role-Based Access Control in Siali Label
+meta_description: Manage access and set up permissions with user roles, organizations, and project workspaces for your projects in Siali Label Enterprise.
 section: "Configuration"
 
 ---
 
-Manage access to projects, organizations, and workspaces in Label Studio Enterprise to restrict who can view data, annotations, and predictions in your data labeling projects. 
+Manage access to projects, organizations, and workspaces in Siali Label Enterprise to restrict who can view data, annotations, and predictions in your data labeling projects. 
 
-Role-based access control, organizations, and workspaces are available only in Label Studio Enterprise Edition. For information about users in the open source Label Studio Community Edition, see <a href="https://labelstud.io/guide/signup.html">Set up user accounts for Label Studio</a>.
+Role-based access control, organizations, and workspaces are available only in Siali Label Enterprise Edition. For information about users in the open source Siali Label Community Edition, see <a href="https://labelstud.io/guide/signup.html">Set up user accounts for Siali Label</a>.
 
 ## Signup 
 
@@ -24,15 +24,15 @@ There are two ways how users can be registered:
   
 2. [With an invite link](#Invite-users-to-Label-Studio-Enterprise), the newly created user will be added to the existing organization associated with this invite link. 
 
-## Roles in Label Studio Enterprise
+## Roles in Siali Label Enterprise
 
-There are five roles available in Label Studio Enterprise Edition. Organization members have different levels of access to projects and workspaces. Every member can label tasks.
+There are five roles available in Siali Label Enterprise Edition. Organization members have different levels of access to projects and workspaces. Every member can label tasks.
 
-<i> Table 1: Roles in Label Studio Enterprise</i>
+<i> Table 1: Roles in Siali Label Enterprise</i>
 
 | Role | Description |
 | --- | --- |
-| Owner | Not an assignable role. Manages Label Studio. Can create and modify workspaces, create and modify projects, and view activity log. |
+| Owner | Not an assignable role. Manages Siali Label. Can create and modify workspaces, create and modify projects, and view activity log. |
 | Administrator | Has full access to all workspaces and projects. Can modify workspaces, view activity logs, and approve invitations. Can’t see the workspace owner’s account page. | 
 | Manager | After being assigned to a workspace by an Owner or Administrator, has full administrative access in the assigned workspaces. Can view any project and has full access to their own projects. |
 | Reviewer | Reviews annotated tasks. Can view projects with tasks assigned to them. Can review and update task annotations. |
@@ -43,18 +43,18 @@ There are five roles available in Label Studio Enterprise Edition. Organization 
 
 Use a combination of roles, to control what actions users can take, and project workspaces, to control what data and projects users have access to. 
 
-For example, a project annotator using Label Studio sees only the projects they have access to:
-<img src="/images/LSE/LSE-annotator-view.jpg" width=400 height=275 alt="Diagram showing that only Label Studio projects that they have been added to are visible to an annotator."/>
-<i>Figure 1: Only Label Studio projects are added and visible to an annotator.</i>
+For example, a project annotator using Siali Label sees only the projects they have access to:
+<img src="/images/LSE/LSE-annotator-view.jpg" width=400 height=275 alt="Diagram showing that only Siali Label projects that they have been added to are visible to an annotator."/>
+<i>Figure 1: Only Siali Label projects are added and visible to an annotator.</i>
 
-A Label Studio administrator sees all projects and workspaces that exist in the Label Studio instance:
-<img src="/images/LSE/LSE-admin-view.jpg" width=600 height=400 alt="Diagram showing that an administrator can view all projects and workspaces in a Label Studio instance."/>
-<i>Figure 2: An administrator can view all projects and workspaces in a Label Studio instance.</i>
+A Siali Label administrator sees all projects and workspaces that exist in the Siali Label instance:
+<img src="/images/LSE/LSE-admin-view.jpg" width=600 height=400 alt="Diagram showing that an administrator can view all projects and workspaces in a Siali Label instance."/>
+<i>Figure 2: An administrator can view all projects and workspaces in a Siali Label instance.</i>
 
 
-## Permissions in Label Studio Enterprise 
+## Permissions in Siali Label Enterprise 
 
-<i>Table 3: Permissions in Label Studio Enterprise </i>
+<i>Table 3: Permissions in Siali Label Enterprise </i>
 
 <table>
   <tr>
@@ -209,7 +209,7 @@ A Label Studio administrator sees all projects and workspaces that exist in the 
     <td colspan="6"><b>Advanced</b></td>
   </tr>
   <tr>
-    <td>API access to equivalent Label Studio functionality</td>
+    <td>API access to equivalent Siali Label functionality</td>
     <td></td>
     <td></td>
     <td style="text-align:center">✔️ for own or workspace projects</td>
@@ -246,34 +246,34 @@ A Label Studio administrator sees all projects and workspaces that exist in the 
 </table>
 
 
-## Set up role-based access control (RBAC) with Label Studio
+## Set up role-based access control (RBAC) with Siali Label
 
-Set up role-based access control in Label Studio by using [organizations and workspaces to organize projects](#Use-organizations-to-manage-data-and-projects) and assigning roles to organization members. Use roles to control what actions organization members can perform in Label Studio, and manage organization and workspace membership to manage what data and projects those people can access.
+Set up role-based access control in Siali Label by using [organizations and workspaces to organize projects](#Use-organizations-to-manage-data-and-projects) and assigning roles to organization members. Use roles to control what actions organization members can perform in Siali Label, and manage organization and workspace membership to manage what data and projects those people can access.
 
-Only people with the Administrator and Owner roles can invite people to Label Studio and manage their role membership. 
+Only people with the Administrator and Owner roles can invite people to Siali Label and manage their role membership. 
 
 
-### Invite users to Label Studio Enterprise
+### Invite users to Siali Label Enterprise
 
 Invite users to your organization by doing the following:
-1. In the Label Studio UI, click the hamburger icon to expand the left-hand menu and click **Organization**. 
+1. In the Siali Label UI, click the hamburger icon to expand the left-hand menu and click **Organization**. 
 2. On the Organization page, click **+ Add People**.
-3. In the dialog box that appears, click **Copy Link** and share the invitation link to your Label Studio instance with the people that you want to join your organization.
+3. In the dialog box that appears, click **Copy Link** and share the invitation link to your Siali Label instance with the people that you want to join your organization.
 
 
 ### Restrict signup without invite links
 
-To restrict who has access to your Label Studio instance, invite collaborators directly using an invitation link. To disable the signup page unless someone uses the invitation link, you should add this environment variable to your setup:
+To restrict who has access to your Siali Label instance, invite collaborators directly using an invitation link. To disable the signup page unless someone uses the invitation link, you should add this environment variable to your setup:
 
 ```bash
 LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
 ```
 
 ### Assign roles to invited users
-After a user that you invite clicks the link and signs up for an account, their account exists but must be activated by an organization owner or administrator. When you activate someone's account, you also assign them a role in Label Studio. 
+After a user that you invite clicks the link and signs up for an account, their account exists but must be activated by an organization owner or administrator. When you activate someone's account, you also assign them a role in Siali Label. 
 
 To activate a user account and assign a role, do the following:
-1. In the Label Studio UI, click the hamburger icon to expand the left-hand menu and click **Organization**. 
+1. In the Siali Label UI, click the hamburger icon to expand the left-hand menu and click **Organization**. 
 2. Locate the user with a status of **Not Activated**. 
 3. Select the drop-down under **Role** and select the relevant role for the user.
 Your changes save automatically. Repeat these steps for any additional users. 
@@ -291,11 +291,11 @@ If you assign `Deactivate` to a role then it means you free one seat in license 
 To programmatically activate and assign roles to users, you can use the following API endpoints. 
 
 #### Assign a role to a user 
-For a given user ID and a given organization ID, you can programmatically assign a role to a user by sending a POST request to the `/api/organizations/{id}/memberships` endpoint. See the [Organizations API documentation inside Label Studio Enterprise](api#operation/api_organizations_memberships_create).
+For a given user ID and a given organization ID, you can programmatically assign a role to a user by sending a POST request to the `/api/organizations/{id}/memberships` endpoint. See the [Organizations API documentation inside Siali Label Enterprise](api#operation/api_organizations_memberships_create).
 
 #### Determine the organization ID or user ID
 If you're not sure what the organization ID is, you can do the following:
-- If you only have one organization in your Label Studio instance, use `0`.
+- If you only have one organization in your Siali Label instance, use `0`.
 - If you have multiple organizations, make a GET request to the [`/api/organizations/`](/api#operation/api_organizations_read) endpoint.
 
 To retrieve user IDs for the members of an organization, make a GET request to [`/api/organizations/{id}/memberships`](/api#operation/api_organizations_memberships_list).

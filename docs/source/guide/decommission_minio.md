@@ -23,7 +23,7 @@ global:
     MINIO_MIGRATION: true
 ```
 
-2. Redeploy a release by following the steps from [Upgrade Label Studio Enterprise](install_enterprise_k8s.html#Upgrade-Label-Studio-using-Helm). 
+2. Redeploy a release by following the steps from [Upgrade Siali Label Enterprise](install_enterprise_k8s.html#Upgrade-Label-Studio-using-Helm). 
 
 ## Run migration script
 
@@ -60,4 +60,4 @@ minio:
 
 2. Remove `MINIO_MIGRATION: true` from `global.extraEnvironmentVars` section of your `ls-values.yaml` file.
 
-3. Redeploy a release by following steps from [Upgrade Label Studio Enterprise](install_enterprise_k8s.html#Upgrade-Label-Studio-using-Helm).
+3. Redeploy a release by following steps from [Upgrade Siali Label Enterprise](install_enterprise_k8s.html#Upgrade-Label-Studio-using-Helm).

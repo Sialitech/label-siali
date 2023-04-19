@@ -3,7 +3,7 @@ title: ParagraphLabels
 type: tags
 order: 417
 meta_title: Paragraph Label Tag for Paragraph Labels
-meta_description: Customize Label Studio with paragraph labels for machine learning and data science projects.
+meta_description: Customize Siali Label with paragraph labels for machine learning and data science projects.
 ---
 
 The `ParagraphLabels` tag creates labeled paragraphs. Use with the `Paragraphs` tag to label a paragraph of text.

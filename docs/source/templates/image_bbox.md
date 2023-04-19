@@ -5,7 +5,7 @@ category: Computer Vision
 cat: computer-vision
 order: 103
 meta_title: Image Object Detection Data Labeling Template
-meta_description: Template for performing object detection with rectangular bounding boxes with Label Studio for your machine learning and data science projects.
+meta_description: Template for performing object detection with rectangular bounding boxes with Siali Label for your machine learning and data science projects.
 ---
 
 

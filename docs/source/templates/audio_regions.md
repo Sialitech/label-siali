@@ -5,7 +5,7 @@ category: Audio/Speech Processing
 cat: audio-speech-processing
 order: 308
 meta_title: Audio Classification with Segments Data Labeling Template
-meta_description: Template for classifying audio regions for segmentation tasks with Label Studio for your machine learning and data science projects.
+meta_description: Template for classifying audio regions for segmentation tasks with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates-misc/audio-classification-segments.png" alt="" class="gif-border" width="598.4px" height="319.2px" />

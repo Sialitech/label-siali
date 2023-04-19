@@ -3,7 +3,7 @@ title: TimeSeriesLabels
 type: tags
 order: 429
 meta_title: Time Series Label Tag for Labeling Time Series Data
-meta_description: Customize Label Studio for with the TimeSeriesLabel tag to label time series data for machine learning and data science projects.
+meta_description: Customize Siali Label for with the TimeSeriesLabel tag to label time series data for machine learning and data science projects.
 ---
 
 The `TimeSeriesLabels` tag is used to create a labeled time range.

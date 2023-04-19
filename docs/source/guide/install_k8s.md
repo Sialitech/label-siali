@@ -1,30 +1,30 @@
 ---
-title: Deploy Label Studio on Kubernetes
+title: Deploy Siali Label on Kubernetes
 short: Kubernetes
 tier: opensource
 type: guide
 order: 106
 order_enterprise: 132
-meta_title: Deploy Label Studio on Kubernetes
-meta_description: Deploy Label Studio on Kubernetes, such as on Amazon Elastic Container Service for Kubernetes, to create machine learning and data science projects in a scalable containerized environment.
+meta_title: Deploy Siali Label on Kubernetes
+meta_description: Deploy Siali Label on Kubernetes, such as on Amazon Elastic Container Service for Kubernetes, to create machine learning and data science projects in a scalable containerized environment.
 section: "Install"
 
 ---
 
-Deploy Label Studio on a Kubernetes Cluster using Helm 3. You can use this Helm chart to set up Label Studio for deployment onto a Kubernetes cluster and install, upgrade, and manage the application.
+Deploy Siali Label on a Kubernetes Cluster using Helm 3. You can use this Helm chart to set up Siali Label for deployment onto a Kubernetes cluster and install, upgrade, and manage the application.
 
 Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon EKS. See the Amazon tutorial on how to [Deploy a Kubernetes Application with Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/) for more about deploying an app on Amazon EKS.
 
 <div class="opensource-only">
 
 !!! warning 
-    To install Label Studio Enterprise Edition, see <a href="install_enterprise_k8s.html">Deploy Label Studio Enterprise on Kubernetes</a>. This page is specific to the version of Label Studio.
+    To install Siali Label Enterprise Edition, see <a href="install_enterprise_k8s.html">Deploy Siali Label Enterprise on Kubernetes</a>. This page is specific to the version of Siali Label.
 
 </div>
 
-## Install Label Studio on Kubernetes
+## Install Siali Label on Kubernetes
 
-If you want to install Label Studio on Kubernetes and you have unrestricted access to the internet from your K8s cluster, follow these steps.
+If you want to install Siali Label on Kubernetes and you have unrestricted access to the internet from your K8s cluster, follow these steps.
 
 1. Verify that you meet the [Required software prerequisites](#Required-software-prerequisites) and review the [capacity planning](#Capacity-planning) guidance.
 2. [Prepare the Kubernetes cluster](#Prepare-the-Kubernetes-cluster).
@@ -34,16 +34,16 @@ If you want to install Label Studio on Kubernetes and you have unrestricted acce
 6. [Configure a values.yaml file](#Configure-values-yaml).
 7. (Optional) [Set up TLS for PostgreSQL](#Optional-set-up-TLS-for-PostgreSQL)
 8. (Optional) [Set up TLS for Redis](#Optional-set-up-TLS-for-Redis)
-9. [Use Helm to install Label Studio on your Kubernetes cluster](#Use-Helm-to-install-Label-Studio-on-your-Kubernetes-cluster).
+9. [Use Helm to install Siali Label on your Kubernetes cluster](#Use-Helm-to-install-Label-Studio-on-your-Kubernetes-cluster).
 
-If you use a proxy to access the internet from your Kubernetes cluster, or it is airgapped from the internet, see how to [Install Label Studio without public internet access](install_airgapped.html).
+If you use a proxy to access the internet from your Kubernetes cluster, or it is airgapped from the internet, see how to [Install Siali Label without public internet access](install_airgapped.html).
 
 ### Required software prerequisites
 
 - Kubernetes and kubectl version 1.17 or higher
 - Helm version 3.6.3 or higher
 
-This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/). See [Set up an ingress controller for Label Studio Kubernetes deployments](ingress_config.html) for more on ingress settings with Label Studio.
+This chart has been tested and confirmed to work with the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/). See [Set up an ingress controller for Siali Label Kubernetes deployments](ingress_config.html) for more on ingress settings with Siali Label.
 
 Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon EKS.
 
@@ -51,7 +51,7 @@ Your Kubernetes cluster can be self-hosted or installed somewhere such as Amazon
 
 To plan the capacity of your Kubernetes cluster, refer to these guidelines.
 
-Label Studio has the following default configurations for resource requests, resource limits, and replica counts:
+Siali Label has the following default configurations for resource requests, resource limits, and replica counts:
 
 ```yaml
 app:
@@ -77,10 +77,10 @@ If you choose to make changes to these default settings, consider the following:
 
 ### Prepare the Kubernetes cluster
 
-Before installing Label Studio, prepare the Kubernetes cluster with [kubectl](https://kubernetes.io/docs/reference/kubectl/).
+Before installing Siali Label, prepare the Kubernetes cluster with [kubectl](https://kubernetes.io/docs/reference/kubectl/).
 
 ### Add the Helm chart repository
-Add the Helm chart repository to easily install and update Label Studio.
+Add the Helm chart repository to easily install and update Siali Label.
 
 1. From the command line:
    ```shell
@@ -93,7 +93,7 @@ Add the Helm chart repository to easily install and update Label Studio.
    ```
 
 ## Optional: set up TLS for PostgreSQL
-To configure Label Studio to use TLS for end-client connections with PostgreSQL, do the following:
+To configure Siali Label to use TLS for end-client connections with PostgreSQL, do the following:
 
 1. Enable TLS for your PostgreSQL instance and save Root TLS certificate, client certificate and its key for the next steps.
 2. Create a Kubernetes secret with your certificates, replacing `<PATH_TO_CA>`, `<PATH_TO_CLIENT_CRT>` and `<PATH_TO_CLIENT_KEY>` with paths to your certificates:
@@ -117,10 +117,10 @@ global:
       pgSslKeySecretKey: "client.key"
 ```
 
-4. Install or upgrade Label Studio using Helm.
+4. Install or upgrade Siali Label using Helm.
 
 ## Optional: set up TLS for Redis
-To configure Label Studio to use TLS for end-client connections with Redis, do the following:
+To configure Siali Label to use TLS for end-client connections with Redis, do the following:
 
 1. Enable TLS for your Redis instance and save Root TLS certificate, client certificate and its key for the next steps.
 2. Create a Kubernetes secret with your certificates, replacing `<PATH_TO_CA>`, `<PATH_TO_CLIENT_CRT>` and `<PATH_TO_CLIENT_KEY>` with paths to your certificates:
@@ -144,11 +144,11 @@ global:
       redisSslKeyFileSecretKey: "client.key"
 ```
 
-4. Install or upgrade Label Studio using Helm.
+4. Install or upgrade Siali Label using Helm.
 
-### Use Helm to install Label Studio on your Kubernetes cluster
+### Use Helm to install Siali Label on your Kubernetes cluster
 
-Use Helm to install Label Studio on your Kubernetes cluster. Provide your custom resource definitions YAML file. Specify any environment variables that you need to set for your Label Studio installation using the `--set` argument with the `helm install` command.
+Use Helm to install Siali Label on your Kubernetes cluster. Provide your custom resource definitions YAML file. Specify any environment variables that you need to set for your Siali Label installation using the `--set` argument with the `helm install` command.
 
 From the command line, run the following:
 ```shell
@@ -160,23 +160,23 @@ After installing, check the status of the Kubernetes pod creation:
 kubectl get pods
 ```
 
-## Restart Label Studio using Helm
+## Restart Siali Label using Helm
 
 Restart your Helm release by doing the following from the command line:
 
-1. Identify the &lt;RELEASE_NAME&gt; of the latest Label Studio release:
+1. Identify the &lt;RELEASE_NAME&gt; of the latest Siali Label release:
 ```shell
 helm list
 ```
-2Restart the Label Studio app:
+2Restart the Siali Label app:
 ```shell
 kubectl rollout restart deployment/<RELEASE_NAME>-ls-app
 ```
 
-## Upgrade Label Studio using Helm
-To upgrade Label Studio using Helm, do the following.
+## Upgrade Siali Label using Helm
+To upgrade Siali Label using Helm, do the following.
 
-1. Determine the latest tag version of Label Studio and add/replace the following in your `ls-values.yaml` file:
+1. Determine the latest tag version of Siali Label and add/replace the following in your `ls-values.yaml` file:
    ```yaml
    global:
      image:
@@ -197,9 +197,9 @@ To upgrade Label Studio using Helm, do the following.
    This command overrides the tag value stored in `ls-values.yaml`. You must update the tag value when you upgrade or redeploy your instance to avoid version downgrades.
 
 
-## Uninstall Label Studio using Helm
+## Uninstall Siali Label using Helm
 
-To uninstall Label Studio using Helm, delete the configuration.
+To uninstall Siali Label using Helm, delete the configuration.
 
 From the command line, run the following:
 ```shell

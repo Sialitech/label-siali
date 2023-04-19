@@ -3,7 +3,7 @@ title: Text
 type: tags
 order: 308
 meta_title: Text Tags for Text Objects
-meta_description: Customize Label Studio with the Text tag to annotate text for NLP and NER machine learning and data science projects.
+meta_description: Customize Siali Label with the Text tag to annotate text for NLP and NER machine learning and data science projects.
 ---
 
 The `Text` tag shows text that can be labeled. Use to display any type of text on the labeling interface.

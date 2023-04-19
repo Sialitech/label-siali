@@ -3,11 +3,11 @@ title: Compare OSS and Enterprise
 type: guide
 tier: all
 order: 100
-meta_title: Label Studio Community and Enterprise Features
-meta_description: Compare the features of Label Studio Community Edition with the paid Label Studio Enterprise Edition so that you can choose the best option for your data labeling and annotation projects. 
+meta_title: Siali Label Community and Enterprise Features
+meta_description: Compare the features of Siali Label Community Edition with the paid Siali Label Enterprise Edition so that you can choose the best option for your data labeling and annotation projects. 
 ---
 
-Label Studio is available as a Community edition open source data labeling tool. It is also available as a paid version with extended functionality and support. Smaller organizations might want to consider the SaaS option and larger teams with robust data labeling needs can get the Enterprise edition.
+Siali Label is available as a Community edition open source data labeling tool. It is also available as a paid version with extended functionality and support. Smaller organizations might want to consider the SaaS option and larger teams with robust data labeling needs can get the Enterprise edition.
 
 
 <table>
@@ -130,7 +130,7 @@ Label Studio is available as a Community edition open source data labeling tool.
     <td colspan="3"><b>Machine Learning</b></td>
   </tr>
   <tr>
-    <td><a href="ml_create.html">Connect machine learning models to Label Studio with an SDK.</a></td>
+    <td><a href="ml_create.html">Connect machine learning models to Siali Label with an SDK.</a></td>
     <td style="text-align:center">✔️</td>
     <td style="text-align:center">✔️</td>
   </tr>
@@ -161,12 +161,12 @@ Label Studio is available as a Community edition open source data labeling tool.
     <td colspan="3"><b>Advanced Functionality</b></td>
   </tr>
   <tr>
-    <td><a href="api.html">API access to manage Label Studio.</a></td>
+    <td><a href="api.html">API access to manage Siali Label.</a></td>
     <td style="text-align:center">✔️</td>
     <td style="text-align:center">✔️</td>
   </tr>
   <tr>
-    <td>On-premises deployment of Label Studio.</td>
+    <td>On-premises deployment of Siali Label.</td>
     <td style="text-align:center">✔️</td>
     <td style="text-align:center">✔️</td>
   </tr>

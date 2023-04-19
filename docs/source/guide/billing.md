@@ -5,24 +5,24 @@ tier: enterprise
 order: 102
 order_enterprise: 129
 meta_title: Manage billing
-meta_description: Manage billing for the plans for Label Studio Enterprise and Teams, monitor your license usage, and explore the small business options with Label Studio Teams and the larger organization options with Label Studio Enterprise.  
+meta_description: Manage billing for the plans for Siali Label Enterprise and Teams, monitor your license usage, and explore the small business options with Siali Label Teams and the larger organization options with Siali Label Enterprise.  
 section: "Billing and Usage"
 
 ---
 
-Manage the billing and usage settings for your Label Studio Enterprise accounts. For details about Label Studio plan pricing, see [Label Studio Editions & Pricing](https://heartex.com/pricing) on the Heartex website. 
+Manage the billing and usage settings for your Siali Label Enterprise accounts. For details about Siali Label plan pricing, see [Siali Label Editions & Pricing](https://heartex.com/pricing) on the Heartex website. 
 
 You must be the organization Owner to manage billing.
 
 
 ## About billing 
 
-Label Studio teams is priced based on how many seats for users you allocate. You can see the number of seats compared with the number of active users on the **Billing & Usage** page for your organization in Label Studio. 
+Siali Label teams is priced based on how many seats for users you allocate. You can see the number of seats compared with the number of active users on the **Billing & Usage** page for your organization in Siali Label. 
 
 
 ## View billing information 
 
-1. In the Label Studio UI, click the hamburger icon to open the left sidebar menu.
+1. In the Siali Label UI, click the hamburger icon to open the left sidebar menu.
 2. Click **Organization**.
 3. Click **Billing & Usage**.
 4. Review the billing history for **Billing & Usage**. 
@@ -34,12 +34,12 @@ Find answers to common questions related to billing.
 
 ### What happens if my plan is inactive?
 
-If your subscription to Label Studio Enterprise expires or is cancelled, you can no longer perform labeling, review annotations, or add new users to your organization. You can log in and export your completed annotations. 
+If your subscription to Siali Label Enterprise expires or is cancelled, you can no longer perform labeling, review annotations, or add new users to your organization. You can log in and export your completed annotations. 
 
 ### What happens if I have too many active users?
 
-You need to purchase additional seats for your Label Studio Teams subscription if you have more active users than your subscription allows. A user counts as an active user when they are assigned a role. Invited users that have not yet accepted an invitation appear as "Not activated" and do not count toward the seat limit.
+You need to purchase additional seats for your Siali Label Teams subscription if you have more active users than your subscription allows. A user counts as an active user when they are assigned a role. Invited users that have not yet accepted an invitation appear as "Not activated" and do not count toward the seat limit.
 
-### Can I upgrade to Label Studio Enterprise?
+### Can I upgrade to Siali Label Enterprise?
 
-Yes, you can upgrade to a Label Studio Enterprise, please contact our sales: sales@heartex.com.
+Yes, you can upgrade to a Siali Label Enterprise, please contact our sales: sales@heartex.com.

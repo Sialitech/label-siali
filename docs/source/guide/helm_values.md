@@ -1,12 +1,12 @@
 ---
-title: Available Helm values for Label Studio Helm Chart
+title: Available Helm values for Siali Label Helm Chart
 short: Available Helm values
 tier: all
 type: guide
 order: 114
 order_enterprise: 141
-meta_title: Available Helm values for Label Studio Helm Chart
-meta_description: For cases when you want to customize your Label Studio Kubernetes deployment, review these available Helm values that you can set in your Helm chart.
+meta_title: Available Helm values for Siali Label Helm Chart
+meta_description: For cases when you want to customize your Siali Label Kubernetes deployment, review these available Helm values that you can set in your Helm chart.
 section: "Install"
 
 ---
@@ -37,7 +37,7 @@ section: "Install"
 </style>
 
 Refer to these tables with available Helm chart values for your `values.yaml` file
-when configuring your Label Studio deployment on Kubernetes. See [Deploy Label Studio on Kubernetes](install_k8s.html) for more.
+when configuring your Siali Label deployment on Kubernetes. See [Deploy Siali Label on Kubernetes](install_k8s.html) for more.
 
 ## Global parameters
 
@@ -113,7 +113,7 @@ Global parameters for the Helm chart.
 
 ## App parameters
 
-Parameters specific to the `app` portion of the Label Studio deployment.
+Parameters specific to the `app` portion of the Siali Label deployment.
 
 | Parameter                                      | Description                                                                                                          | Default                  |
 |------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------|
@@ -203,7 +203,7 @@ Parameters specific to the `app` portion of the Label Studio deployment.
 
 ## Rqworker parameters
 
-Parameters specific to the `rqworkers` service of your Label Studio Enterprise deployment.
+Parameters specific to the `rqworkers` service of your Siali Label Enterprise deployment.
 
 | Parameter                                        | Description                                                                                     | Default                                |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -261,12 +261,12 @@ Parameters specific to the `rqworkers` service of your Label Studio Enterprise d
 | `rqworker.rbac.rules`                            | Custom RBAC rules to set for rqworker service		                                                 | `[]`                                   |
 | `rqworker.cmdWrapper`                            | Additional commands to run prior to starting App. Useful to run wrappers before startup command | `""`                                   |
 
-## Label Studio Enterprise parameters
+## Siali Label Enterprise parameters
 
 | Parameter                                 | Description                                                                        | Default   |
 |-------------------------------------------|------------------------------------------------------------------------------------|-----------|
 | `enterprise.enabled`                      | Enable Enterprise features                                                         | `false`   |
-| `enterprise.enterpriseLicense.secretName` | Name of an existing secret holding the Label Studio Enterprise license information | `""`      |
+| `enterprise.enterpriseLicense.secretName` | Name of an existing secret holding the Siali Label Enterprise license information | `""`      |
 | `enterprise.enterpriseLicense.secretKey`  | Key of an existing secret holding the enterprise license information               | `license` |
 
 ## Sub-charts parameters
@@ -293,9 +293,9 @@ Parameters specific to the `rqworkers` service of your Label Studio Enterprise d
 
 ## The `global.extraEnvironmentVars` usage
 
-The `global.extraEnvironmentVars` section can be used to configure environment properties of Label Studio.
+The `global.extraEnvironmentVars` section can be used to configure environment properties of Siali Label.
 Any key value put under this section translates to environment variables
-used to control Label Studio's configuration. Every key is upper-cased before setting the environment variable.
+used to control Siali Label's configuration. Every key is upper-cased before setting the environment variable.
 An example:
 
 ```yaml
@@ -306,9 +306,9 @@ global:
 
 ## The `global.featureFlags` usage
 
-The `global.featureFlags` section can be used to set feature flags of Label Studio.
+The `global.featureFlags` section can be used to set feature flags of Siali Label.
 Any key value put under this section translates to environment variables
-used to control Label Studio's feature flags configuration. Every key should start from `ff_` or `fflag_` in lower case.
+used to control Siali Label's feature flags configuration. Every key should start from `ff_` or `fflag_` in lower case.
 An example:
 
 ```yaml

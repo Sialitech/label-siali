@@ -122,7 +122,7 @@ export const Menubar = ({
             closeOnClickOutside={!sidebarPinned}
           >
             <div className={`${menubarClass.elem('trigger')} main-menu-trigger`}>
-              <img src={absoluteURL("/static/icons/siali_text.svg")} alt="Label Studio Logo" height="22"/>
+              <img src={absoluteURL("/static/icons/siali_text.svg")} alt="Siali Label Logo" height="22"/>
               <Hamburger opened={sidebarOpened}/>
             </div>
           </Dropdown.Trigger>

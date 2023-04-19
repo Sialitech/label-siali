@@ -4,7 +4,7 @@
 <% const isEnterpriseTheme = theme.tier === "enterprise" %>
 
 <% var defaultSeo = {
-  description: "Get started with Label Studio by creating projects to label and annotate data for machine learning and data science models.",
+  description: "Get started with Siali Label by creating projects to label and annotate data for machine learning and data science models.",
   ogImage: isEnterpriseTheme ? "enterprise-OG-default.png" : "docs-OG-default.png"
 } %>
 
@@ -33,11 +33,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <% var titlePrefix;
     if (isBlog) {
-      titlePrefix = 'Label Studio Blog';
+      titlePrefix = 'Siali Label Blog';
     } else if (isGuide) {
-      titlePrefix = isEnterpriseTheme ? "Label Studio Enterprise Documentation" : "Label Studio Documentation";
+      titlePrefix = isEnterpriseTheme ? "Siali Label Enterprise Documentation" : "Siali Label Documentation";
     } else {
-      titlePrefix = isEnterpriseTheme ? "Label Studio Enterprise" : "Label Studio";
+      titlePrefix = isEnterpriseTheme ? "Siali Label Enterprise" : "Siali Label";
     }
   %>
   <% if (page.meta_title) { %>
@@ -142,12 +142,12 @@
           <rect x="26" y="26" width="25" height="25" transform="rotate(-180 26 26)" fill="#FFC27B"/>
         </svg>
       <% } %>
-        
+
       <div class="container">
         <%- body %>
         <footer class="content-footer">
           <div class="helpful-container">
-            
+
             <form class="helpful-form" id="helpful-form">
               <%- partial("component/text", {text: "Was this useful?", tag: "h3", size: "Eyebrow"}) %>
               <fieldset>
@@ -173,7 +173,7 @@
 
                   <label for="feedback-email" class="helpful-form-label">Can we contact you with more questions? (optional)</label>
                   <input type="email" name="email" id="feedback-email" placeholder="Your email" class="helpful-form-input" />
-                  
+
                   <div class="helpful-form-submit-container">
                     <button type="button" class="Button Secondary" id="helpful-form-cancel-button">Cancel</button>
                     <button type="submit" class="Button" id="helpful-form-submit-button">Send</button>

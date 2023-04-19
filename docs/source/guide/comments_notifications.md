@@ -6,7 +6,7 @@ tier: enterprise
 section: "Labeling"
 order: 410
 order_enterprise: 113
-meta_title: Comment and notification systems in Label Studio
+meta_title: Comment and notification systems in Siali Label
 meta_description: The Comments and Notifications feature defines how annotators, reviewers and administrators communicate and receive updates on projects and tasks.
 ---
 
@@ -16,7 +16,7 @@ Annotators, reviewers, and administrators can use comments to do the following:
 - Increase the annotation quality
 - Build more solid labeling and review processes
 
-Users can discuss task issues and other problems during labeling and reviewing processes using Comments and Notifications in Label Studio Enterprise.
+Users can discuss task issues and other problems during labeling and reviewing processes using Comments and Notifications in Siali Label Enterprise.
 
 
 ## Workflow overviews
@@ -102,7 +102,7 @@ Note: If the user refreshes the page, the navigation history will be lost. This 
 
 You can add comments to tasks independent of annotation and action such as **Skip** or **Accept**.
   
-1. In the Label Studio UI, navigate to your Data Manager.
+1. In the Siali Label UI, navigate to your Data Manager.
 
 2. Click on the **Columns** drop-down to filter the columns based on the following:
 
@@ -156,13 +156,13 @@ There is a special pink icon that appears on comments attached to annotations or
 
 ## Comments 
 
-The **Comments** feature allows Annotators Reviewers and other higher roles to communicate and discuss queries on Label Studio Enterprise. Users will be notified of comments if they are associated with the task, and new comments will show up in the **Notifications** panel for a quick reference. Users can also filter and sort tasks by **Comments** status in the **Data Manager** view, such as finding tasks with unresolved comments from a particular user.
+The **Comments** feature allows Annotators Reviewers and other higher roles to communicate and discuss queries on Siali Label Enterprise. Users will be notified of comments if they are associated with the task, and new comments will show up in the **Notifications** panel for a quick reference. Users can also filter and sort tasks by **Comments** status in the **Data Manager** view, such as finding tasks with unresolved comments from a particular user.
 
 ### Roles and Capabilities
 
 #### All users
 
-All users with access to Label Studio UI can do the following:
+All users with access to Siali Label UI can do the following:
 
 - Edit and delete own comments in a task.
 - By default, you can see the comment section while annotating tasks.
@@ -216,15 +216,15 @@ A similar option is available for reviewers. You can find it in Project Settings
 
 ## Notifications 
 
-To see the notifications, navigate and click the user profile icon on the top-right of the Label Studio UI.  The **Notifications** pane opens with a bell icon next to it. The blue color bell icon indicates unread notifications and the grey color bell icon indicates read notifications.
+To see the notifications, navigate and click the user profile icon on the top-right of the Siali Label UI.  The **Notifications** pane opens with a bell icon next to it. The blue color bell icon indicates unread notifications and the grey color bell icon indicates read notifications.
 
 <br>
 <img src="/images/comments-notifications/notifications.png" class="gif-border"/><br/>
 <i>Figure 9: Notification panel.</i>
 
 
-1. Navigate and click the user profile icon on the top-right of the Label Studio UI.
-2. The **Notifications** pane opens on the right side of the Label Studio UI. 
+1. Navigate and click the user profile icon on the top-right of the Siali Label UI.
+2. The **Notifications** pane opens on the right side of the Siali Label UI. 
 3. To mark an individual notification as an unread notification, click on the three dots (**...**) >> **Mark as Unread** option. 
 4. To mark all the notification as a read notification, click on the three dots (**...**) >> **Mark All as Read** option. 
 

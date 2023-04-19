@@ -5,7 +5,7 @@ category: Audio/Speech Processing
 cat: audio-speech-processing
 order: 304
 meta_title: Speaker Diarization (Segmentation) Data Labeling Template
-meta_description: Template for segmenting an audio clip based on speaker with Label Studio for your machine learning and data science projects.
+meta_description: Template for segmenting an audio clip based on speaker with Siali Label for your machine learning and data science projects.
 ---
 
 <img src="/images/templates/speaker-segmentation.png" alt="" class="gif-border" width="552px" height="408px" />

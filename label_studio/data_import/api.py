@@ -127,7 +127,7 @@ task_create_response_scheme = {
             
             ### 1\. **POST with data**
             Send JSON tasks as POST data. Only JSON is supported for POSTing files directly.
-            Update this example to specify your authorization token and Label Studio instance host, then run the following from
+            Update this example to specify your authorization token and Siali Label instance host, then run the following from
             the command line.
 
             ```bash
@@ -143,7 +143,7 @@ task_create_response_scheme = {
             - **TSV**: text files with tables in Tab Separated Value format
             - **TXT**: simple text files are similar to CSV with one column and no header, supported for projects with one source only
             
-            Update this example to specify your authorization token, Label Studio instance host, and file name and path,
+            Update this example to specify your authorization token, Siali Label instance host, and file name and path,
             then run the following from the command line:
 
             ```bash

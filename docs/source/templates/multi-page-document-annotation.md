@@ -10,15 +10,15 @@ meta_title: Multi-page Document Annotation
 meta_description: Template for labeling large, multi-page documents more easily and efficiently.
 ---
 
-With Label Studio Enterprise, the multi-page document annotation feature allows you to label large multi-page documents more easily and efficiently. You can now upload hundreds of pages as a single document, allowing navigation and annotation on multiple pages while maintaining the entire document's context. This release eliminates the significant amount of lag in loading the images into the browser and enhances the labeling speed.
+With Siali Label Enterprise, the multi-page document annotation feature allows you to label large multi-page documents more easily and efficiently. You can now upload hundreds of pages as a single document, allowing navigation and annotation on multiple pages while maintaining the entire document's context. This release eliminates the significant amount of lag in loading the images into the browser and enhances the labeling speed.
 
 
 ## Prerequisites
 
 The prerequisites to use the multi-page document annotation detection feature are as follows:
 
-1. Before uploading a PDF document to Label Studio, you must pre-process the document by converting it into separate images. However, you can still annotate PDF documents directly, for example, by performing [classification on each document page](/templates/pdf_classification.html).
-2. In Label Studio, import all the images into the browser using the following format:
+1. Before uploading a PDF document to Siali Label, you must pre-process the document by converting it into separate images. However, you can still annotate PDF documents directly, for example, by performing [classification on each document page](/templates/pdf_classification.html).
+2. In Siali Label, import all the images into the browser using the following format:
 ```json
 [{
   "data": {
@@ -104,7 +104,7 @@ Use the [Choices](/tags/choices.html) tag to create a group of choices, with rad
  ```
 
 
-## Label Studio UI enhancements
+## Siali Label UI enhancements
 
 The multi-page document annotation feature includes the following UI enhancements:
 
@@ -146,7 +146,7 @@ To find a page or a specific page number, use your mouse pad to scroll down the 
 
 You can use `mode` property to the **Repeater** tag and the multi-page document annotation with pagination capability to annotate multiple pages in a single document:
 
-1. In the Label Studio UI, navigate to **Settings** >> **Labeling Interface** >> **Code**. 
+1. In the Siali Label UI, navigate to **Settings** >> **Labeling Interface** >> **Code**. 
 
 <img src="../images/add-mode-pagination-location.png" class="gif-border" />
 

@@ -1,19 +1,19 @@
 ---
-title: Label Studio Task Format
+title: Siali Label Task Format
 short: Task format 
 type: guide
 tier: all
 order: 120
 order_enterprise: 105
-meta_title: Label Studio Task Format
-meta_description: Label Studio documentation for exporting data labeling annotations to use in machine learning models and data science projects.
+meta_title: Siali Label Task Format
+meta_description: Siali Label documentation for exporting data labeling annotations to use in machine learning models and data science projects.
 section: "Import and Export"
 
 ---
 
-## Label Studio JSON format of annotated tasks 
+## Siali Label JSON format of annotated tasks 
 
-When you annotate data, Label Studio stores the output in JSON format. The raw JSON structure of each completed task uses the following example: 
+When you annotate data, Siali Label stores the output in JSON format. The raw JSON structure of each completed task uses the following example: 
 
 ```json
 {
@@ -118,7 +118,7 @@ Review the full list of JSON properties in the [API documentation](api.html).
 | --- | --- | 
 | id | Identifier for the labeling task from the dataset. |
 | data | Data copied from the input data task format. See the documentation for [Task Format](tasks.html#Basic-Label-Studio-JSON-format). |
-| project | Identifier for a specific project in Label Studio. |
+| project | Identifier for a specific project in Siali Label. |
 | annotations | Array containing the labeling results for the task. |
 | annotations.id | Identifier for the completed task. |
 | annotations.lead_time | Time in seconds to label the task. |
@@ -128,7 +128,7 @@ Review the full list of JSON properties in the [API documentation](api.html).
 | result.to_name | Name of the object tag that provided the region to be labeled. See [object tags](/tags). |
 | result.type | Type of tag used to annotate the task. |
 | result.value | Tag-specific value that includes details of the result of labeling the task. The value structure depends on the tag for the label. For more information, see [Explore each tag](/tags). |
-| annotations.completed_by | User ID of the user that created the annotation. Matches the list order of users on the People page on the Label Studio UI. |
+| annotations.completed_by | User ID of the user that created the annotation. Matches the list order of users on the People page on the Siali Label UI. |
 | annotations.was_cancelled | Boolean. Details about whether or not the annotation was skipped, or cancelled. | 
 | drafts | Array of draft annotations. Follows similar format as the annotations array. Included only for tasks exported as a snapshot [from the UI](#Export-snapshots-using-the-UI) or [using the API](#Export-snapshots-using-the-API).
 | predictions | Array of machine learning predictions. Follows the same format as the annotations array, with one additional parameter. |

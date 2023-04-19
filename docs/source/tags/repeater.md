@@ -2,7 +2,7 @@
 title: Repeater
 order: 504
 meta_title: Repeater Tag to duplicate annotation settings
-meta_description: Customize Label Studio with the Repeater tag to repeat similar data blocks to accelerate labeling for machine learning and data science projects.
+meta_description: Customize Siali Label with the Repeater tag to repeat similar data blocks to accelerate labeling for machine learning and data science projects.
 ---
 
 Repeater Tag for annotating multiple data objects in a dynamic range with the same semantics. You can loop through data items in a python-like `for` cycle in the labeling process.

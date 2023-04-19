@@ -4,7 +4,7 @@ type: blog
 tier: all
 order: 60
 meta_title: Automatic Speech Recognition with NVIDIA NeMo
-meta_description: Label Studio tutorial for Automatic Speech Recognition with NVIDIA NeMo
+meta_description: Siali Label tutorial for Automatic Speech Recognition with NVIDIA NeMo
 
 ---
 
@@ -19,13 +19,13 @@ With the NeMo ASR models, you can create audio pre-annotations with a text area,
 
 1. Follow [this installation guide](https://github.com/NVIDIA/NeMo#installation) to set up the NeMo environment.
 
-2. On the same server or Docker container as NeMo, [install Label Studio](https://labelstud.io/guide/#Quickstart). 
+2. On the same server or Docker container as NeMo, [install Siali Label](https://labelstud.io/guide/#Quickstart). 
 
-3. Install the Label Studio machine learning backend. From the command line, run the following: 
+3. Install the Siali Label machine learning backend. From the command line, run the following: 
 ```bash
 git clone https://github.com/heartexlabs/label-studio-ml-backend  
 ```
-4. Set up the Label Studio ML backend environment:
+4. Set up the Siali Label ML backend environment:
 ```bash
 cd label-studio-ml-backend
 # Install label-studio-ml and its dependencies
@@ -34,7 +34,7 @@ pip install -U -e .
 pip install -r label_studio_ml/examples/requirements.txt
 ```
 
-5. Initialize the Label Studio machine learning backend with the ASR example
+5. Initialize the Siali Label machine learning backend with the ASR example
 ```bash
 label-studio-ml init my_model --from label_studio_ml/examples/nemo/asr.py
 ```
@@ -44,14 +44,14 @@ label-studio-ml init my_model --from label_studio_ml/examples/nemo/asr.py
 label-studio-ml start my_model
 ```
 
-7. Start Label Studio:
+7. Start Siali Label:
 ```bash
 label-studio start my_project --init
 ```
    
-8. In Label Studio, open the Settings page for your project and open the Labeling Interface section.
+8. In Siali Label, open the Settings page for your project and open the Labeling Interface section.
 
-9. From the template list, select `Automatic Speech Recognition`. You can also create your own with `<TextArea>` and `<Audio>` tags. Or copy this labeling config into the Label Studio UI: 
+9. From the template list, select `Automatic Speech Recognition`. You can also create your own with `<TextArea>` and `<Audio>` tags. Or copy this labeling config into the Siali Label UI: 
 ```xml    
  <View>
   <Audio name="audio" value="url" zoom="true" hotkey="ctrl+enter" />
@@ -59,11 +59,11 @@ label-studio start my_project --init
   <TextArea name="answer" transcription="true" toName="audio" rows="4" editable="true" maxSubmissions="1" />
 </View>
 ```
-10. In your project settings, open the Machine Learning page in the Label Studio UI. 
+10. In your project settings, open the Machine Learning page in the Siali Label UI. 
 
 
 !!! note 
-    It takes some time to download models from the NeMo engine. The Label Studio UI might hang until the models finish automatically downloading.
+    It takes some time to download models from the NeMo engine. The Siali Label UI might hang until the models finish automatically downloading.
 
 
 11. Click **Add Model** and add the ML backend using this URL: `http://localhost:9090`.

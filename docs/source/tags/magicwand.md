@@ -3,7 +3,7 @@ title: Magicwand
 type: tags
 order: 414
 meta_title: Magic Wand Tag for Quick Thresholded Flood Filling During Image Segmentation
-meta_description: Customize Label Studio with a Magic Wand tag to quickly click and drag to threshold flood fill image areas during image segmentation labeling for machine learning and data science projects.
+meta_description: Customize Siali Label with a Magic Wand tag to quickly click and drag to threshold flood fill image areas during image segmentation labeling for machine learning and data science projects.
 ---
 
 The `Magicwand` tag makes it possible to click in a region of an image a user is doing segmentation
@@ -25,7 +25,7 @@ pixels to create a mask](../images/magicwand_example.gif)
 
 The Magic Wand is currently turned off by default behind a feature flag. If you want to turn it on, you
 must enable it by either:
-- Setting an environment variable when starting the Label Studio server, either by starting up the
+- Setting an environment variable when starting the Siali Label server, either by starting up the
   server with `fflag_feat_front_dev_4081_magic_wand_tool=1 label-studio`, or manually finding the flag
 `flag_feat_front_dev_4081_magic_wand_tool` and setting it to true.
 
@@ -35,7 +35,7 @@ The Magic Wand requires pixel-level access to images that are being labelled in 
 thresholding and flood filling. If you are hosting your images to label on a third-party domain,
 you will need to enable CORS headers for the Magic Wand to work with cross domain HTTP `GET`
 requests in order for the Magic Wand to be able to threshold the actual image pixel data. See the
-[Label Studio storage guide](../guide/storage.html#Troubleshoot-CORS-and-access-problems) for more
+[Siali Label storage guide](../guide/storage.html#Troubleshoot-CORS-and-access-problems) for more
 details on configuring CORS.
 
 ### `Image` Tag Configuration
@@ -54,11 +54,11 @@ kind (i.e. the request must have HTTP headers that prove authentication set alon
 third party request), then you should set `crossOrigin` to `use-credentials`. Note that Google's
 cloud buckets [do not support authenticated requests for CORS requests](https://cloud.google.com/storage/docs/cross-origin#additional_considerations),
 which  means you either need to make that Google bucket world readable to work with the Magic Wand, or
-use Label Studio's signed URL support ([AWS](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI),
+use Siali Label's signed URL support ([AWS](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI),
 [GCP](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-1), and
 [Azure](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-2)).
 
-If the image is on the same host as your Label Studio instance, you can simply leave off the
+If the image is on the same host as your Siali Label instance, you can simply leave off the
 `crossOrigin` attribute or set it to `none`.
 
 ### Parameters

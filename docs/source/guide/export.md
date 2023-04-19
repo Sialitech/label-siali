@@ -1,33 +1,33 @@
 ---
-title: Export annotations and data from Label Studio
+title: Export annotations and data from Siali Label
 short: Export annotations
 type: guide
 tier: all
 order: 206
 order_enterprise: 109
 meta_title: Export Annotations
-meta_description: Label Studio documentation for exporting data labeling annotations to use in machine learning models and data science projects.
+meta_description: Siali Label documentation for exporting data labeling annotations to use in machine learning models and data science projects.
 section: "Import and Export"
 
 ---
 
-At any point in your labeling project, you can export the annotations from Label Studio. 
+At any point in your labeling project, you can export the annotations from Siali Label. 
 
-Label Studio stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage. Cloud storage buckets contain one file per labeled task named `task_id.json`. For more information about syncing target storage, see [Cloud storage setup](storage.html).
+Siali Label stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage. Cloud storage buckets contain one file per labeled task named `task_id.json`. For more information about syncing target storage, see [Cloud storage setup](storage.html).
 
 Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. For more information, see [how to convert the image annotation units](#Units-of-image-annotations).
 
 !!! note
-    Some export formats export only the annotations and not the data from the task. For more information, see the [export formats supported by Label Studio](#Export-formats-supported-by-Label-Studio).
+    Some export formats export only the annotations and not the data from the task. For more information, see the [export formats supported by Siali Label](#Export-formats-supported-by-Label-Studio).
 
 
 <!-- md annotation_ids.md -->
 
 <div class="opensource-only">
 
-### Export using the UI in Community Edition of Label Studio
+### Export using the UI in Community Edition of Siali Label
 
-Use the following steps to export data and annotations from the Label Studio UI. 
+Use the following steps to export data and annotations from the Siali Label UI. 
 
 1. For a project, click **Export**.
 2. Select an available export format.
@@ -64,9 +64,9 @@ DEBUG=1 LOG_LEVEL=DEBUG label-studio export <project-id> <export-format> --path=
 <img src="/images/lse-export-snapshots-ui.png" alt="" class="gif-border" />
 <br>
 
-In Label Studio Enterprise, create a snapshot of your data and annotations. Create a snapshot to export exactly what you want from your data labeling project. This delayed export method makes it easier to export large labeling projects from the Label Studio UI.  
+In Siali Label Enterprise, create a snapshot of your data and annotations. Create a snapshot to export exactly what you want from your data labeling project. This delayed export method makes it easier to export large labeling projects from the Siali Label UI.  
 
-1. Within a project in the Label Studio UI, click **Export**.
+1. Within a project in the Siali Label UI, click **Export**.
 2. Click **Create New Snapshot**.
 3. **Apply filters from tab ...**: Select **Default** from the drop-down list. 
 4. (Optional) **Snapshot Name**: Enter a snapshot name to make it easier to find in the future. By default, export snapshots are named `PROJECT-NAME-at-YEAR-MM-DD-HH-MM`, where the time is in UTC.
@@ -83,12 +83,12 @@ In Label Studio Enterprise, create a snapshot of your data and annotations. Crea
 
 ### Export using the Easy Export API
 
-You can call the Label Studio API to export annotations. For a small labeling project, call the [export endpoint](/api#operation/api_projects_export_read) to export annotations.
+You can call the Siali Label API to export annotations. For a small labeling project, call the [export endpoint](/api#operation/api_projects_export_read) to export annotations.
 
 
 #### Export all tasks including tasks without annotations
 
-Label Studio open source exports tasks with annotations only by default. If you want to easily export all tasks including tasks without annotations, you can call  the [Easy Export API](https://api.labelstud.io/#operation/api_projects_export_read) with query param `download_all_tasks=true`. For example:
+Siali Label open source exports tasks with annotations only by default. If you want to easily export all tasks including tasks without annotations, you can call  the [Easy Export API](https://api.labelstud.io/#operation/api_projects_export_read) with query param `download_all_tasks=true`. For example:
 ```
 curl -X GET https://localhost:8080/api/projects/{id}/export?exportType=JSON&download_all_tasks=true
 ``` 
@@ -104,9 +104,9 @@ For a large labeling project with hundreds of thousands of tasks, do the followi
 3. Using the `id` from the created snapshot as the export primary key, or `export_pk`, make a GET request to [download the export file](/api#operation/api_projects_exports_download_read).
 
 
-## Export formats supported by Label Studio
+## Export formats supported by Siali Label
 
-Label Studio supports many common and standard formats for exporting completed labeling tasks. If you don't see a format that works for you, you can contribute one. For more information, see the [GitHub repository for the Label Studio Converter tool](https://github.com/heartexlabs/label-studio-converter).
+Siali Label supports many common and standard formats for exporting completed labeling tasks. If you don't see a format that works for you, you can contribute one. For more information, see the [GitHub repository for the Siali Label Converter tool](https://github.com/heartexlabs/label-studio-converter).
 
 ### ASR_MANIFEST
 
@@ -163,9 +163,9 @@ A popular XML-formatted task data is used for object detection and image segment
 
 ### spaCy 
 
-Label Studio does not support exporting directly to spaCy binary format, but you can convert annotations exported from Label Studio to a format compatible with spaCy. You must have the spacy python package installed to perform this conversion. 
+Siali Label does not support exporting directly to spaCy binary format, but you can convert annotations exported from Siali Label to a format compatible with spaCy. You must have the spacy python package installed to perform this conversion. 
 
-To transform Label Studio annotations into spaCy binary format, do the following:
+To transform Siali Label annotations into spaCy binary format, do the following:
 1. Export your annotations to CONLL2003 format.
 2. Open the downloaded file and update the first line of the exported file to add `O` on the first line:
 ```
@@ -193,9 +193,9 @@ Results are stored in a tab-separated tabular file with column names specified b
 Export object detection annotations in the YOLOv3 and YOLOv4 format. Supports object detection labeling projects that use the `RectangleLabels` tag. 
 
 
-## Label Studio JSON format of annotated tasks 
+## Siali Label JSON format of annotated tasks 
 
-When you annotate data, Label Studio stores the output in JSON format. The raw JSON structure of each completed task uses the following example: 
+When you annotate data, Siali Label stores the output in JSON format. The raw JSON structure of each completed task uses the following example: 
 
 ```json
 {
@@ -299,7 +299,7 @@ Review the full list of JSON properties in the [API documentation](api.html).
 | --- | --- | 
 | id | Identifier for the labeling task from the dataset. |
 | data | Data copied from the input data task format. See the documentation for [Task Format](tasks.html#Basic-Label-Studio-JSON-format). |
-| project | Identifier for a specific project in Label Studio. |
+| project | Identifier for a specific project in Siali Label. |
 | annotations | Array containing the labeling results for the task. |
 | annotations.id | Identifier for the completed task. |
 | annotations.lead_time | Time in seconds to label the task. |
@@ -309,7 +309,7 @@ Review the full list of JSON properties in the [API documentation](api.html).
 | result.to_name | Name of the object tag that provided the region to be labeled. See [object tags](/tags). |
 | result.type | Type of tag used to annotate the task. |
 | result.value | Tag-specific value that includes details of the result of labeling the task. The value structure depends on the tag for the label. For more information, see [Explore each tag](/tags). |
-| annotations.completed_by | User ID of the user that created the annotation. Matches the list order of users on the People page on the Label Studio UI. |
+| annotations.completed_by | User ID of the user that created the annotation. Matches the list order of users on the People page on the Siali Label UI. |
 | annotations.was_cancelled | Boolean. Details about whether or not the annotation was skipped, or cancelled. | 
 | drafts | Array of draft annotations. Follows similar format as the annotations array. Included only for tasks exported as a snapshot [from the UI](#Export-snapshots-using-the-UI) or [using the API](#Export-snapshots-using-the-Snapshot-API).
 | predictions | Array of machine learning predictions. Follows the same format as the annotations array, with one additional parameter. |
@@ -333,32 +333,32 @@ Enterprise fields are presented in export:
 
 
 ## Manually convert JSON annotations to another format
-You can run the [Label Studio converter tool](https://github.com/heartexlabs/label-studio-converter) on a directory or file of completed JSON annotations using the command line or Python to convert the completed annotations from Label Studio JSON format into another format. 
+You can run the [Siali Label converter tool](https://github.com/heartexlabs/label-studio-converter) on a directory or file of completed JSON annotations using the command line or Python to convert the completed annotations from Siali Label JSON format into another format. 
 
 !!! note
-    If you use versions of Label Studio earlier than 1.0.0, then this is the only way to convert your Label Studio JSON format annotations into another labeling format. 
+    If you use versions of Siali Label earlier than 1.0.0, then this is the only way to convert your Siali Label JSON format annotations into another labeling format. 
 
 
-## Access task data (images, audio, texts) outside of Label Studio for ML backends
+## Access task data (images, audio, texts) outside of Siali Label for ML backends
 
-Machine Learning backend uses data from tasks for predictions, and you need to download them on Machine Learning backend side. Label Studio provides tools for downloading of these resources, and they are located in label-studio-tools Python package. If you are using official Label Studio Machine Learning backend, label-studio-tools package is installed automatically with other requirements.
+Machine Learning backend uses data from tasks for predictions, and you need to download them on Machine Learning backend side. Siali Label provides tools for downloading of these resources, and they are located in label-studio-tools Python package. If you are using official Siali Label Machine Learning backend, label-studio-tools package is installed automatically with other requirements.
 
-### Accessing task data from Label Studio instance
+### Accessing task data from Siali Label instance
 
-There are several ways of storing tasks resources (images, audio, texts, etc) in Label Studio:
+There are several ways of storing tasks resources (images, audio, texts, etc) in Siali Label:
 - Cloud storages 
 - External web links 
 - Uploaded files
 - Local files directory
 
-Label Studio stores uploaded files in Project level structure. Each project has it's own folder for files.
+Siali Label stores uploaded files in Project level structure. Each project has it's own folder for files.
 
 You can use `label_studio_tools.core.utils.io.get_local_path` to get task data - it will transform path or URL from task data to local path.
 In case of local path it will return full local path and download resource in case of using `download_resources` parameter.
 
 Provide `Hostname` and `access_token` for accessing external resource.
 
-### Accessing task data outside of Label Studio instance
+### Accessing task data outside of Siali Label instance
 
 You can use `label_studio_tools.core.utils.io.get_local_path` method to get data from outside machine for external links and cloud storages. 
 
@@ -367,7 +367,7 @@ You can use `label_studio_tools.core.utils.io.get_local_path` method to get data
 
 You can get data with `label_studio_tools.core.utils.io.get_local_path` in case if you mount same disk to your machine. If you mount same disk to external box 
 
-Another way of accessing data is to use link from task and ACCESS_TOKEN ([see documentation for authentication](api.html#Authenticate-to-the-API)). Concatenate Label Studio hostname and link from task data. Then add access token to your request:
+Another way of accessing data is to use link from task and ACCESS_TOKEN ([see documentation for authentication](api.html#Authenticate-to-the-API)). Concatenate Siali Label hostname and link from task data. Then add access token to your request:
 
 ```json
 curl -X GET http://localhost:8080/api/projects/ -H 'Authorization: Token {YOUR_TOKEN}'
@@ -380,14 +380,14 @@ curl -X GET http://localhost:8080/api/projects/ -H 'Authorization: Token {YOUR_T
 - 404 or 403 error code was returned. 
 
 **Answer:**
-First check the network access to your Label Studio instance when you send API requests. You can execute test curl request with sample data. 
+First check the network access to your Siali Label instance when you send API requests. You can execute test curl request with sample data. 
 
 #### Question #2: I tried to access files and received a `FileNotFound` error.
 
 **Answer:**
-1. Check that you have mounted the same disk as your Label Studio instance. Then check your files' existence in Label Studio instance first. 
+1. Check that you have mounted the same disk as your Siali Label instance. Then check your files' existence in Siali Label instance first. 
 
-2. Check `LOCAL_FILES_DOCUMENT_ROOT` environment variable in your Label Studio instance and add it to your accessing data script.
+2. Check `LOCAL_FILES_DOCUMENT_ROOT` environment variable in your Siali Label instance and add it to your accessing data script.
 
 
 #### Question #3: How to modify order of categories for COCO and YOLO exports? 

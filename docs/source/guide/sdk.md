@@ -1,21 +1,21 @@
 ---
-title: Python SDK Tutorial for Label Studio
+title: Python SDK Tutorial for Siali Label
 short: Backend SDK Python Tutorial 
 type: guide
 tier: all
 order: 215
 order_enterprise: 121
-meta_title: Label Studio Python SDK Tutorial
-meta_description: Tutorial documentation for the Label Studio Python SDK. How and why to use the SDK for data labeling project creation and annotated task parsing.
+meta_title: Siali Label Python SDK Tutorial
+meta_description: Tutorial documentation for the Siali Label Python SDK. How and why to use the SDK for data labeling project creation and annotated task parsing.
 section: "Integration and Development"
 
 ---
 
-You can use the Label Studio Python SDK to make annotating data a more integrated part of your data science and machine learning pipelines. This software development kit (SDK) lets you call the Label Studio API directly from scripts using predefined classes and methods. 
+You can use the Siali Label Python SDK to make annotating data a more integrated part of your data science and machine learning pipelines. This software development kit (SDK) lets you call the Siali Label API directly from scripts using predefined classes and methods. 
 
-With the Label Studio Python SDK, you can perform the following tasks in a Python script:
-- [Authenticate to the Label Studio API](#Start-using-the-Label-Studio-Python-SDK).
-- [Create a Label Studio project](#Create-a-project-with-the-Label-Studio-Python-SDK), including setting up a labeling configuration. 
+With the Siali Label Python SDK, you can perform the following tasks in a Python script:
+- [Authenticate to the Siali Label API](#Start-using-the-Label-Studio-Python-SDK).
+- [Create a Siali Label project](#Create-a-project-with-the-Label-Studio-Python-SDK), including setting up a labeling configuration. 
 - [Import tasks](#Import-tasks-with-the-Label-Studio-Python-SDK).
 - [Manage pre-annotated tasks and model predictions](#Add-predictions-to-existing-tasks-with-the-Label-Studio-Python-SDK).
 - [Connect to a cloud storage provider](https://github.com/heartexlabs/label-studio-sdk/blob/master/examples/annotate_data_from_gcs/annotate_data_from_gcs.ipynb), such as Amazon S3, Microsoft Azure, or Google Cloud Services (GCS), to retrieve unlabeled tasks and store annotated tasks.
@@ -23,30 +23,30 @@ With the Label Studio Python SDK, you can perform the following tasks in a Pytho
 
 See the [full SDK reference documentation for all available modules](https://labelstud.io/sdk/), or review the available [API endpoints](/api) for any tasks that the SDK does not cover. 
 
-## Start using the Label Studio Python SDK
+## Start using the Siali Label Python SDK
 
 1. Install the SDK:
    `pip install label-studio-sdk`
 2. In your Python script, do the following:
    - Import the SDK.
-   - Define your API key and Label Studio URL (API key is available at _Account_ page).
+   - Define your API key and Siali Label URL (API key is available at _Account_ page).
    - Connect to the API.
 ```python
-# Define the URL where Label Studio is accessible and the API key for your user account
+# Define the URL where Siali Label is accessible and the API key for your user account
 LABEL_STUDIO_URL = 'http://localhost:8080'
 API_KEY = 'd6f8a2622d39e9d89ff0dfef1a80ad877f4ee9e3'
 
 # Import the SDK and the client module
 from label_studio_sdk import Client
 
-# Connect to the Label Studio API and check the connection
+# Connect to the Siali Label API and check the connection
 ls = Client(url=LABEL_STUDIO_URL, api_key=API_KEY)
 ls.check_connection()
 ```
 
-## Create a project with the Label Studio Python SDK
+## Create a project with the Siali Label Python SDK
 
-Create a project in Label Studio using the SDK. Specify the project title and the labeling configuration. Choose your labeling configuration based on the type of labeling that you wish to perform. See the available [templates for Label Studio projects](/templates), or set a blank configuration with `<View></View>`. 
+Create a project in Siali Label using the SDK. Specify the project title and the labeling configuration. Choose your labeling configuration based on the type of labeling that you wish to perform. See the available [templates for Siali Label projects](/templates), or set a blank configuration with `<View></View>`. 
 
 For example, create an audio transcription project in your Python code:
 ```python
@@ -66,11 +66,11 @@ project = ls.start_project(
 
 For more about what you can do with the project module of the SDK, see the [project module SDK reference](https://labelstud.io/sdk/project.html). 
 
-## Import tasks with the Label Studio Python SDK
+## Import tasks with the Siali Label Python SDK
 
-You can import tasks from your script using the Label Studio Python SDK. 
+You can import tasks from your script using the Siali Label Python SDK. 
 
-For a specific project, you can import tasks in [Label Studio JSON format](tasks.html#Basic-Label-Studio-JSON-format) or [connect to cloud storage providers](https://github.com/heartexlabs/label-studio-sdk/blob/master/examples/annotate_data_from_gcs/annotate_data_from_gcs.ipynb) and import image, audio, or video files directly. 
+For a specific project, you can import tasks in [Siali Label JSON format](tasks.html#Basic-Label-Studio-JSON-format) or [connect to cloud storage providers](https://github.com/heartexlabs/label-studio-sdk/blob/master/examples/annotate_data_from_gcs/annotate_data_from_gcs.ipynb) and import image, audio, or video files directly. 
 
 ```python
 project.import_tasks(
@@ -85,9 +85,9 @@ You can also import predictions:
 - [Add predictions to an existing task](#Add-predictions-to-existing-tasks-with-the-Label-Studio-Python-SDK)
 - [Import pre-annotated tasks](#Import-pre-annotated-tasks-into-Label-Studio)
 
-### Add predictions to existing tasks with the Label Studio Python SDK
+### Add predictions to existing tasks with the Siali Label Python SDK
 
-You can add predictions to existing tasks in Label Studio in your Python script. 
+You can add predictions to existing tasks in Siali Label in your Python script. 
 
 For an existing simple image classification project, you can do the following to add predictions of "Dog" for image tasks that you retrieve:
 ```python
@@ -102,9 +102,9 @@ project.create_prediction(task_ids[1], result={"x": 10, "y": 20, "width": 30, "h
 
 For another example, see the [Jupyter notebook example of importing pre-annotated data](https://github.com/heartexlabs/label-studio-sdk/blob/master/examples/import_preannotations/import_preannotations.ipynb).
 
-### Import pre-annotated tasks into Label Studio
+### Import pre-annotated tasks into Siali Label
 
-You can also import predictions together with tasks as pre-annotated tasks. The SDK offers several ways that you can import pre-annotations into Label Studio.
+You can also import predictions together with tasks as pre-annotated tasks. The SDK offers several ways that you can import pre-annotations into Siali Label.
 
 One way is to import tasks in a simple JSON format, where one key in the JSON identifies the data object being labeled, and the other is the key containing the prediction. 
 
@@ -176,4 +176,4 @@ Filters.create(Filters.OR, [
     )
 ])
 ```
-You can use this example filter to prepare completed tasks for review in Label Studio Enterprise.
+You can use this example filter to prepare completed tasks for review in Siali Label Enterprise.

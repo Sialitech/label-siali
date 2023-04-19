@@ -3,7 +3,7 @@ title: TimeSeries
 type: tags
 order: 309
 meta_title: Time Series Tags for Time Series Data
-meta_description: Customize Label Studio with the TimeSeries tag to annotate time series data for machine learning and data science projects.
+meta_description: Customize Siali Label with the TimeSeries tag to annotate time series data for machine learning and data science projects.
 ---
 
 The `TimeSeries` tag can be used to label time series data. Read more about Time Series Labeling on [the time series template page](../templates/time_series.html).
@@ -19,7 +19,7 @@ Use with the following data types: time series.
 | --- | --- | --- | --- |
 | name | <code>string</code> |  | Name of the element |
 | value | <code>string</code> |  | Key used to look up the data, either URLs for your time-series if valueType=url, otherwise expects JSON |
-| [valueType] | <code>url</code> \| <code>json</code> | <code>url</code> | Format of time series data provided. If set to "url" then Label Studio loads value references inside `value` key, otherwise it expects JSON. |
+| [valueType] | <code>url</code> \| <code>json</code> | <code>url</code> | Format of time series data provided. If set to "url" then Siali Label loads value references inside `value` key, otherwise it expects JSON. |
 | [timeColumn] | <code>string</code> |  | Column name or index that provides temporal values. If your time series data has no temporal column then one is automatically generated. |
 | [timeFormat] | <code>string</code> |  | Pattern used to parse values inside timeColumn, parsing is provided by d3, and follows `strftime` implementation |
 | [timeDisplayFormat] | <code>string</code> |  | Format used to display temporal value. Can be a number or a date. If a temporal column is a date, use strftime to format it. If it's a number, use [d3 number](https://github.com/d3/d3-format#locale_format) formatting. |
@@ -71,7 +71,7 @@ Labeling configuration for time series data stored in a CSV loaded from a URL co
 ```
 ### Example
 
-Labeling configuration for time series data stored in the task field `ts` in Label Studio JSON format. The time field is stored as a date in the `timeformat` field and formatted as a full date on the plot (by default).
+Labeling configuration for time series data stored in the task field `ts` in Siali Label JSON format. The time field is stored as a date in the `timeformat` field and formatted as a full date on the plot (by default).
 
 ```html
 <View>
