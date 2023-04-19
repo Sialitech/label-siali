@@ -185,7 +185,7 @@ export const Menubar = ({
               style={{width: 240}}
             >
               <Menu>
-                {/* <Menu.Item
+                <Menu.Item
                   label="Projects"
                   to="/projects"
                   icon={<IconFolder/>}
@@ -199,7 +199,7 @@ export const Menubar = ({
                   data-external
                   exact
                 />
-
+{/*
                 <Menu.Spacer/>
 
                 <VersionNotifier showNewVersion/>
