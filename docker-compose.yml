@@ -2,8 +2,9 @@ version: "3.9"
 
 services:
   nginx:
-    build: .
+    # build: .
     # image: heartexlabs/label-studio:latest
+    image: siali/siali-label:beta-0.0.2
     ports:
       - "8080:8085"
       - "8081:8086"
@@ -25,8 +26,9 @@ services:
   app:
     stdin_open: true
     tty: true
-    build: .
+    # build: .
     # image: heartexlabs/label-studio:latest
+    image: siali/siali-label:beta-0.0.2
     expose:
       - "8000"
     depends_on:
