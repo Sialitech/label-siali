@@ -6,6 +6,10 @@ run-dev:
 migrate-dev:
 	DJANGO_DB=sqlite LOG_DIR=tmp DEBUG=true LOG_LEVEL=DEBUG DJANGO_SETTINGS_MODULE=core.settings.label_studio python label_studio/manage.py migrate
 
+# Run Django dev make migrations with Sqlite
+makemigrations-dev:
+	DJANGO_DB=sqlite LOG_DIR=tmp DEBUG=true LOG_LEVEL=DEBUG DJANGO_SETTINGS_MODULE=core.settings.label_studio python label_studio/manage.py makemigrations
+
 # Run Django dev shell environment with Sqlite
 shell-dev:
 	DJANGO_DB=sqlite LOG_DIR=tmp DEBUG=true LOG_LEVEL=DEBUG DJANGO_SETTINGS_MODULE=core.settings.label_studio python label_studio/manage.py shell_plus
@@ -29,3 +33,7 @@ frontend-build:
 # Run tests
 test:
 	cd label_studio && DJANGO_DB=sqlite pytest -v -m "not integration_tests"
+
+# Update urls
+update-urls:
+	DJANGO_DB=sqlite LOG_DIR=tmp DEBUG=true LOG_LEVEL=DEBUG DJANGO_SETTINGS_MODULE=core.settings.label_studio python label_studio/manage.py show_urls --format pretty-json > ./label_studio/core/all_urls.json

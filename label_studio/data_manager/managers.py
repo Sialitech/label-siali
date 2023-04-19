@@ -4,7 +4,6 @@ import re
 import ujson as json
 import logging
 
-
 from pydantic import BaseModel
 
 from django.db import models
@@ -164,50 +163,46 @@ def add_result_filter(field_name, _filter, filter_expressions, project):
     from django.db.models.expressions import RawSQL
     from tasks.models import Annotation, Prediction
 
-    # new approach with contain instead of icontains
-    if flag_set('ff_back_2214_annotation_result_12052022_short', project.organization.created_by):
-        _class = Annotation if field_name == 'annotations_results' else Prediction
+    _class = Annotation if field_name == 'annotations_results' else Prediction
+
+    # Annotation
+    if field_name == 'annotations_results':
+        subquery = Q(id__in=
+            Annotation.objects
+                .annotate(json_str=RawSQL('cast(result as text)', ''))
+                .filter(Q(project=project) & Q(json_str__contains=_filter.value))
+                .values_list('task', flat=True)
+        )
+    # Predictions: they don't have `project` yet
+    else:
         subquery = Exists(
             _class.objects
             .annotate(json_str=RawSQL('cast(result as text)', ''))
             .filter(Q(task=OuterRef('pk')) & Q(json_str__contains=_filter.value))
         )
 
-        if _filter.operator in [Operator.EQUAL, Operator.NOT_EQUAL]:
-            try:
-                value = json.loads(_filter.value)
-            except:
-                return 'exit'
+    if _filter.operator in [Operator.EQUAL, Operator.NOT_EQUAL]:
+        try:
+            value = json.loads(_filter.value)
+        except:
+            return 'exit'
 
-            q = Exists(_class.objects.filter(Q(task=OuterRef('pk')) & Q(result=value)))
-            filter_expressions.append(q if _filter.operator == Operator.EQUAL else ~q)
-            return 'continue'
-        elif _filter.operator == Operator.CONTAINS:
-            filter_expressions.append(Q(subquery))
-            return 'continue'
-        elif _filter.operator == Operator.NOT_CONTAINS:
-            filter_expressions.append(~Q(subquery))
-            return 'continue'
-
-    # old approach
-    else:
-        name = 'annotations__result' if field_name == 'annotations_results' else 'predictions__result'
-        if _filter.operator in [Operator.EQUAL, Operator.NOT_EQUAL]:
-            try:
-                value = json.loads(_filter.value)
-            except:
-                return 'exit'
-
-            q = Q(**{name: value})
-            filter_expressions.append(q if _filter.operator == Operator.EQUAL else ~q)
-            return 'continue'
-        elif _filter.operator == Operator.CONTAINS:
-            filter_expressions.append(Q(**{name + '__icontains': _filter.value}))
-            return 'continue'
-        elif _filter.operator == Operator.NOT_CONTAINS:
-            filter_expressions.append(~Q(**{name + '__icontains': _filter.value}))
-            return 'continue'
-
+        q = Exists(_class.objects.filter(Q(task=OuterRef('pk')) & Q(result=value)))
+        filter_expressions.append(q if _filter.operator == Operator.EQUAL else ~q)
+        return 'continue'
+    elif _filter.operator == Operator.CONTAINS:
+        filter_expressions.append(Q(subquery))
+        return 'continue'
+    elif _filter.operator == Operator.NOT_CONTAINS:
+        filter_expressions.append(~Q(subquery))
+        return 'continue'
+    elif _filter.operator == Operator.EMPTY:
+        if cast_bool_from_str(_filter.value):
+            q = Q(annotations__result__isnull=True) | Q(annotations__result=[])
+        else:
+            q = Q(annotations__result__isnull=False) & ~Q(annotations__result=[])
+        filter_expressions.append(q)
+        return 'continue'
 
 def add_user_filter(enabled, key, _filter, filter_expressions):
     if enabled and _filter.operator == Operator.CONTAINS:
@@ -486,7 +481,6 @@ def annotate_completed_at(queryset):
         )
     )
 
-
 def annotate_annotations_results(queryset):
     if settings.DJANGO_DB == settings.DJANGO_DB_SQLITE:
         return queryset.annotate(annotations_results=Coalesce(
@@ -611,10 +605,16 @@ class PreparedTaskManager(models.Manager):
         :param fields_for_evaluation: list of annotated fields in task
         :param prepare_params: filters, ordering, selected items
         :param all_fields: evaluate all fields for task
+        :param request: request for user extraction
         :return: task queryset with annotated fields
         """
         queryset = self.only_filtered(prepare_params=prepare_params)
-        return self.annotate_queryset(queryset, fields_for_evaluation=fields_for_evaluation, all_fields=all_fields)
+        return self.annotate_queryset(
+            queryset,
+            fields_for_evaluation=fields_for_evaluation,
+            all_fields=all_fields,
+            request=prepare_params.request
+        )
 
     def only_filtered(self, prepare_params=None):
         request = prepare_params.request

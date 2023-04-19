@@ -1,15 +1,16 @@
 ---
 title: Repeater
-type: tags
 order: 504
-is_new: t
 meta_title: Repeater Tag to duplicate annotation settings
 meta_description: Customize Label Studio with the Repeater tag to repeat similar data blocks to accelerate labeling for machine learning and data science projects.
 ---
 
 Repeater Tag for annotating multiple data objects in a dynamic range with the same semantics. You can loop through data items in a python-like `for` cycle in the labeling process.
-It repeats tags inside it for every item in a given data array from your dataset. All the occurences of `indexFlag` (default is `{{idx}}`) in parameter values will be replaced by the current index.
+It repeats tags inside it for every item in a given data array from your dataset. All the occurrences of `indexFlag` (default is `{{idx}}`) in parameter values will be replaced by the current index.
 Names should always be unique, so you can use this placeholder in tag names.
+
+The Repeater Tag supports the `mode` property. This creates the possibility to enable pagination in repeater for performance improvement.
+You can add a parameter `<Repeater mode="pagination" ...>`  to show only one page at a time, shrinking memory used to one tag set.
 
 ### Parameters
 
@@ -17,6 +18,7 @@ Names should always be unique, so you can use this placeholder in tag names.
 | --- | --- | --- | --- |
 | on | <code>string</code> |  | Data field object with array with similar data |
 | [indexFlag] | <code>string</code> | <code>&quot;{{idx}}&quot;</code> | Placeholder for array index in params of underlying tags |
+| [mode] | <code>list</code> \| <code>pagination</code> |  | Select display mode between default and paginated |
 
 ### Example
 
@@ -45,7 +47,7 @@ Real world application.
 
 ```html
 <View>
-  <Repeater on="$utterances" indexFlag="{{idx}}">
+  <Repeater on="$utterances" indexFlag="{{idx}}" mode="pagination">
     <Text name="user_{{idx}}" value="$utterances[{{idx}}].text"/>
     <Header value="Utterance Review"/>
     <Choices name="utterance_action_{{idx}}" showInline="true" toName="user_{{idx}}">

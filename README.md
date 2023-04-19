@@ -44,7 +44,7 @@ Have a custom dataset? You can customize Label Studio to fit your needs. Read an
 
 ## Try out Label Studio
 
-Install Label Studio locally, or deploy it in a cloud instance. Also you can try [Label Studio Teams](https://app.heartex.com).
+Install Label Studio locally, or deploy it in a cloud instance. [Or, sign up for a free trial of our Enterprise edition.](https://heartex.com/free-trial).
 
 - [Install locally with Docker](#install-locally-with-docker)
 - [Run with Docker Compose (Label Studio + Nginx + PostgreSQL)](#run-with-docker-compose)
@@ -60,14 +60,14 @@ Run Label Studio in a Docker container and access it at `http://localhost:8080`.
 
 ```bash
 docker pull heartexlabs/label-studio:latest
-docker run -it -p 8080:8080 -v `pwd`/mydata:/label-studio/data heartexlabs/label-studio:latest
+docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
 ```
 You can find all the generated assets, including SQLite3 database storage `label_studio.sqlite3` and uploaded files, in the `./mydata` directory.
 
 #### Override default Docker install
 You can override the default launch command by appending the new arguments:
 ```bash
-docker run -it -p 8080:8080 -v `pwd`/mydata:/label-studio/data heartexlabs/label-studio:latest label-studio --log-level DEBUG
+docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest label-studio --log-level DEBUG
 ```
 
 #### Build a local image with Docker
@@ -103,6 +103,7 @@ label-studio
 ```bash
 conda create --name label-studio
 conda activate label-studio
+conda install psycopg2
 pip install label-studio
 ```
 
@@ -115,6 +116,7 @@ You can run the latest Label Studio version locally without installing the packa
 pip install -e .
 # Run database migrations
 python label_studio/manage.py migrate
+python label_studio/manage.py collectstatic
 # Start the server in development mode at http://localhost:8080
 python label_studio/manage.py runserver
 ```
@@ -246,6 +248,6 @@ Want to use **The Coolest Feature X** but Label Studio doesn't support it? Check
 
 ## License
 
-This software is licensed under the [Apache 2.0 LICENSE](/LICENSE) © [Heartex](https://www.heartex.ai/). 2020-2021
+This software is licensed under the [Apache 2.0 LICENSE](/LICENSE) © [Heartex](https://www.heartex.com/). 2020-2022
 
-<img src="https://github.com/heartexlabs/label-studio/blob/master/images/opossum_looking.png?raw=true" title="Hey everyone!" height="140" width="140" />
+<img src="https://user-images.githubusercontent.com/12534576/192582529-cf628f58-abc5-479b-a0d4-8a3542a4b35e.png" title="Hey everyone!" width="180" />
