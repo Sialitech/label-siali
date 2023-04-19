@@ -45,10 +45,10 @@ const configClass = cn("configure");
 const EmptyConfigPlaceholder = () => (
   <div className={configClass.elem("empty-config")}>
     <p>Your labeling configuration is empty. It is required to label your data.</p>
-    <p>
+    {/* <p>
       Start from one of our predefined templates or create your own config on the Code panel.
       The labeling config is XML-based and you can <a href="https://labelstud.io/tags/" target="_blank">read about the available tags in our documentation</a>.
-    </p>
+    </p> */}
   </div>
 );
 
