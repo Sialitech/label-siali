@@ -4,10 +4,11 @@ services:
   nginx:
     # build: .
     # image: heartexlabs/label-studio:latest
-    image: siali/siali-label:beta-0.0.2
+    image: siali/siali-label:beta-0.0.3
     ports:
       - "8080:8085"
       - "8081:8086"
+    restart: unless-stopped
     depends_on:
       - app
     environment:
@@ -28,11 +29,12 @@ services:
     tty: true
     # build: .
     # image: heartexlabs/label-studio:latest
-    image: siali/siali-label:beta-0.0.2
+    image: siali/siali-label:beta-0.0.3
     expose:
       - "8000"
     depends_on:
       - db
+    restart: unless-stopped
     environment:
       - DJANGO_DB=default
       - POSTGRE_NAME=postgres
@@ -52,7 +54,7 @@ services:
   db:
     image: postgres:11.5
     hostname: db
-    restart: always
+    restart: unless-stopped
     # Optional: Enable TLS on PostgreSQL
     # Just drop your server.crt and server.key into folder 'deploy/pgsql/certs'
     # NOTE: Both files must have permissions u=rw (0600) or less
